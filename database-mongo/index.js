@@ -28,4 +28,32 @@ var selectAll = function(callback) {
   });
 };
 
+var deleteAll = function(callback) {
+  Item.find({}, function(err, items) {
+    if(err) {
+      callback(err, null);
+    } else {
+      callback(null, items);
+    }
+  });
+};
+
+var save = (data) => {
+  
+  var item= new Item({item:data})
+
+    item.save(function(err, data){
+      if(err){
+      console.log(err); 
+      }else{
+    console.log(data)
+      }
+    })
+}
+
+
+
+
 module.exports.selectAll = selectAll;
+module.exports.deleteAll = deleteAll;
+module.exports.save = save;
