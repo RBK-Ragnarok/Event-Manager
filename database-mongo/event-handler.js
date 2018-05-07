@@ -6,7 +6,7 @@ var Event=require('../database-mongo/Event.js');
 var bodyParser = require('body-parser');
 
 exports.retrieveAll = function (req, res) {
-	Event.find({}).(function(err, data) {
+	Event.find({},function(err, data) {
 		if(err){
 	 return res.status(500).json(err.data);
 		}
@@ -20,7 +20,7 @@ exports.retrieveAll = function (req, res) {
 
 exports.retrieveOne = function (req, res) {
 	var name = req.body.name;
-	Event.findOne({name:name}), (function (err, found) {
+	Event.findOne({name:name}, function (err, found) {
 		if(err){
 	  return res.status(500).json(err.data);
 	}
