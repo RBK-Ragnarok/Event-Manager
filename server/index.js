@@ -1,11 +1,16 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var router=require('./routes')
-// UNCOMMENT THE DATABASE YOU'D LIKE TO USE
-// var items = require('../database-mysql');
-// var items = require('../database-mongo');
-
+var Users = require('../database-mongo');
+var session=require('express-session')
 var app = express();
+
+
+app.use(session({
+  secret: '159753d',
+  resave: true,
+  saveUninitialized: false
+}))
 app.use(express.static(__dirname + '/../react-client/dist'));
 
 app.use('/',router);
