@@ -11,9 +11,9 @@ app.use(session({
   resave: true,
   saveUninitialized: false
 }))
-app.use(express.static(__dirname + '/../react-client/dist'));
 
 app.use('/',router);
+// app.use(express.static(__dirname + '/../react-client/dist'));
 
 app.listen(3000, function() {
   console.log('listening on port 3000!');
