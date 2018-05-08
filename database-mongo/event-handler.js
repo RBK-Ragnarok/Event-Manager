@@ -1,8 +1,9 @@
 var request = require('request');
 var bcrypt = require('bcrypt');
 var db=require('../database-mongo');
-var User=require('../database-mongo/user.js');
-var Event=require('../database-mongo/Event.js');
+var User=require('./User.js');
+var Event=require('./Event.js');
+var mongoose=require('mongoose');
 var bodyParser = require('body-parser');
 
 exports.retrieveAll = function (req, res) {
@@ -112,5 +113,3 @@ exports.updateOne = function (req, res) {
 		res.json(data);
 	})
 };
-
-

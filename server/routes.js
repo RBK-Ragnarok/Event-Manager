@@ -1,11 +1,13 @@
 var router=require('express').Router();
 // var controller=require('')
 var util=require('./util.js')
+var User=require('../database-mongo/User.js')
+var Event=require('../database-mongo/Event')
 
 //Home page route.
 router.route('/')
 .get(util.checkUser,function(req,res){
-
+  res.send('logged in!')
 })
 .post(function(req,res){
 

@@ -1,9 +1,11 @@
 var request = require('request');
 var bcrypt = require('bcrypt');
 var db=require('../database-mongo');
-var User=require('../database-mongo/user.js');
-var Event=require('../database-mongo/Event.js');
+var User=require('./user.js');
+var Event=require('./Event.js');
 var bodyParser = require('body-parser');
+var mongoose=require('mongoose');
+
 
 exports.retrieveAll = function (req, res) {
 	User.find({}, function(err, data) {
