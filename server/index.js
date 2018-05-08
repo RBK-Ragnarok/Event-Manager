@@ -1,6 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-var router=require('./routes')
+var Router=require('./routes')
 var Users = require('../database-mongo');
 var session=require('express-session')
 var app = express();
@@ -12,7 +12,7 @@ app.use(session({
   saveUninitialized: false
 }))
 
-app.use('/',router);
+app.use('/',Router);
 // app.use(express.static(__dirname + '/../react-client/dist'));
 
 app.listen(3000, function() {

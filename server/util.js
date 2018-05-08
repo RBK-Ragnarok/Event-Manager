@@ -7,6 +7,7 @@ exports.isLoggedIn=function(req,res){
 
 exports.createSession=function(req,res,aUser){
   req.session.user=aUser;
+  console.log('in create session function:created session and redirected');
   res.redirect('/')
 }
 
@@ -15,5 +16,7 @@ exports.checkUser=function(req,res,next){
     console.log('user not logged in');
     res.send('not logged in')
   }
+  console.log(req.session);
+  console.log('in checkuser function:logged in');
   next()
 }

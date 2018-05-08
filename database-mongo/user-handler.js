@@ -1,9 +1,4 @@
-var request = require('request');
-var bcrypt = require('bcrypt');
-var db=require('../database-mongo');
-var User=require('./user.js');
-var Event=require('./Event.js');
-var bodyParser = require('body-parser');
+var User=require('./User.js');
 var mongoose=require('mongoose');
 
 
@@ -36,7 +31,7 @@ exports.retrieveOne = function (req, res) {
 
 
 
-exports.Usersave = function(req, res) {
+exports.userSave = function(req, res) {
   var userName=req.body.userName;
   var passWord=req.body.passWord;
   var Email=req.body.Email;
