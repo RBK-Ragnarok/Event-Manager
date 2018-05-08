@@ -1,11 +1,13 @@
-var router=require('express').Router();
+var Router=require('express').Router();
 // var controller=require('')
 var util=require('./util.js')
-var User=require('../database-mongo/User.js')
+var User=require('../database-mongo/User')
 var Event=require('../database-mongo/Event')
+var eventFunctions=require('../database-mongo/event-handler.js')
+var userFunctions=require('../database-mongo/user-handler.js')
 
 //Home page route.
-router.route('/')
+Router.route('/')
 .get(util.checkUser,function(req,res){
   res.send('logged in!')
 })
@@ -14,7 +16,7 @@ router.route('/')
 })
 
 //login route
-router.route('/login')
+Router.route('/login')
 .get()
 .post(function(req,res){
   if(req.body.username && req.body.password){
@@ -32,6 +34,7 @@ router.route('/login')
 
           if(match){
             //create session and redirect
+            util.createSession(req,res,user)
           }else{
             console.log('Wrong username or password!');
           }
@@ -43,7 +46,7 @@ router.route('/login')
 })
 
 //signup route.
-router.route('/signup')
+Router.route('/signup')
 .get()
 .post(function(req,res){
   if(req.body.username && req.body.password && req.body.email){
@@ -63,6 +66,7 @@ router.route('/signup')
           })
         })
         //create session
+        util.createSession(req,res,user)
         console.log('Created new User!')
       }else{
         console.log('User already exists!');
@@ -75,17 +79,31 @@ router.route('/signup')
   }
 })
 
+Router.route('/user')
+.get(function(req,res){userFunctions.retrieveOne(req,res)})
+.post(function(req,res){userFunctions.userSave(req,res)})
+.put(function(req,res){userFunctions.updateOne(req,res)})
+.delete(function(req,res){userFunctions.deleteOne(req,res)})
 
-//Users router to get and modify users info.
-router.route('/users')
-.get(util.checkUser,function(req,res){
+//Users Router to get and modify users info.
+Router.route('/users')
+.get(function(req,res){userFunctions.retrieveAll(req,res)})
+.post(function(req,res) {
+  res.sendStatus(404)
 })
-.post()
+
+Router.route('/event')
+.get(function(req,res){eventFunctions.retrieveOne(req,res)})
+.post(function(req,res){eventFunctions.eventSave(req,res)})
+.put(function(req,res){eventFunctions.updateOne(req,res)})
+.delete(function(req,res){eventFunctions.deleteOne(req,res)})
 
 //events route to get and modify events info.
-router.route('/events')
-.get(util.checkUser,function(req,res){
+Router.route('/events')
+.get(function(req,res){eventFunctions.retrieveAll(req,res)})
+.post(function(req,res) {
+  res.sendStatus(404)
 })
-.post()
 
-module.exports=router
+
+module.exports=Router

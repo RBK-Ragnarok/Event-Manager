@@ -1,10 +1,5 @@
-var request = require('request');
-var bcrypt = require('bcrypt');
-var db=require('../database-mongo');
-var User=require('./User.js');
 var Event=require('./Event.js');
 var mongoose=require('mongoose');
-var bodyParser = require('body-parser');
 
 exports.retrieveAll = function (req, res) {
 	Event.find({},function(err, data) {
@@ -35,7 +30,7 @@ exports.retrieveOne = function (req, res) {
 
 
 
-exports.Eventsave = function(req, res) {
+exports.eventSave = function(req, res) {
   var name=req.body.name;
   var duration=req.body.duration;
   var startDate=req.body.startDate;
