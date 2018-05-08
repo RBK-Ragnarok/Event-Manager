@@ -1,36 +1,39 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import $ from 'jquery';
-import List from './components/List.jsx';
-  
-class App extends React.Component {
-  constructor(props) {
+import ReactDom from 'react-dom';
+import $ from'jquery';
+import Signup from './components/Signup.jsx';
+import {BrowserRouter as Router, Route, Link}
+ from 'react-router-dom';
+
+class App extends React.Component{
+  constructor(props){
     super(props);
-    this.state = { 
-      items: []
-    }
+    this.state={
+      arr[]
+    } 
   }
 
-  componentDidMount() {
+  componentDidMount(){
+    var that=this;
     $.ajax({
-      url: '/items', 
-      success: (data) => {
-        this.setState({
-          items: data
-        })
-      },
-      error: (err) => {
-        console.log('err', err);
-      }
-    });
+      url:'login',
+      method:'POSt',
+      data:obj
+    })
+    .done (function(data){
+      alert('Login Successful');
+      that.setState({
+        user: data
+      })
+    })
+    .fail(function(jqXHR, textStatus){
+      alert( "Wrong Login information, please check your username & password ");
+    })
   }
 
-  render () {
-    return (<div>
-      <h1>Item List</h1>
-      <List items={this.state.items}/>
-    </div>)
+  render(){
+    return (
+      
+    )
   }
-}
-
-ReactDOM.render(<App />, document.getElementById('app'));
+} 
