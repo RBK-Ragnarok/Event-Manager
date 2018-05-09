@@ -92,18 +92,7 @@ Router.route('/users')
   res.sendStatus(404)
 })
 
-Router.route('/event')
-.get(function(req,res){eventFunctions.retrieveOne(req,res)})
-.post(function(req,res){eventFunctions.eventSave(req,res)})
-.put(function(req,res){eventFunctions.updateOne(req,res)})
-.delete(function(req,res){eventFunctions.deleteOne(req,res)})
 
-//events route to get and modify events info.
-Router.route('/events')
-.get(function(req,res){eventFunctions.retrieveAll(req,res)})
-.post(function(req,res) {
-  res.sendStatus(404)
-})
 
 
 module.exports=Router
