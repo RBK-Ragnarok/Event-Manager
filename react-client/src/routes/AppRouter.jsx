@@ -16,17 +16,7 @@ class AppRouter extends React.Component {
     }
 
    componentDidMount() {
-     var that=this;
-  axios.get('/logged')
-    .then(response => {
-      const posts = response.data;
-      // console.log(response);
-      that.setState({session:posts});
-
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+    
   }
 
       render() {

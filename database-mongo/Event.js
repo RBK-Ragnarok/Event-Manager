@@ -2,14 +2,14 @@ var mongoose=require('mongoose');
 
 
 var EventSchema = mongoose.Schema({
-  name: {type:String,required : true,unique: true},
-  duration: {type:Number,required : true},
-  startDate: {type:Number,required : true},
-  place: {type:String,required : true},
-  eventType: {type:String,required : true},
-  userId: {type:String,required : true},
-  cost: {type:Number,required : true},
-  description: {type:String,required : true}
+  name: {type:String,required : false,unique: true},
+  duration: {type:Number,required : false},
+  startDate: {type:Number,required : false},
+  place: {type:String,required : false},
+  eventType: {type:String,required : false},
+  userId: {type:String,required : false},
+  cost: {type:Number,required : false},
+  description: {type:String,required : false}
 });
 
 var Event = mongoose.model('Event', EventSchema);
