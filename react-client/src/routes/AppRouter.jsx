@@ -3,6 +3,7 @@ import {BrowserRouter, Route, Switch, Link, NavLink} from 'react-router-dom';
 import login from '../components/login.jsx';
 import Home from '../components/Home.jsx';
 import Signup from '../components/Signup.jsx';
+import axios from 'axios';
 //import NavBarComponent from '../components/NavBarComponent.jsx';
 
 class AppRouter extends React.Component {

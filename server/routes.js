@@ -6,7 +6,8 @@ var Event=require('../database-mongo/Event')
 var eventFunctions=require('../database-mongo/event-handler.js')
 var userFunctions=require('../database-mongo/user-handler.js')
 var bodyParser = require('body-parser');
-var path=require('path')
+var path=require('path');
+var mongooes=require('mongoose');
 
 Router.use(bodyParser.json())
 Router.use(bodyParser.urlencoded({extended : true}))
@@ -15,7 +16,9 @@ Router.use(bodyParser.urlencoded({extended : true}))
 Router.route('/')
 .get(function(req,res){
   console.log('in routes /');
+  
   res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
+
 })
 .post(function(req,res){
 
@@ -64,6 +67,7 @@ Router.route('/signup')
 .post(function(req,res){
   // if(req.body.username && req.body.password && req.body.email){
     console.log(req.body);
+  
     var username=req.body.username;
     var password=req.body.password;
     var email=req.body.email;
