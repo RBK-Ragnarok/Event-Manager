@@ -2,17 +2,25 @@ import React,{Component} from 'react';
 import { SocialIcon } from 'react-social-icons';
 import { Link } from 'react-router-dom';
 import {Navbar,Nav,NavItem,Carousel} from 'react-bootstrap';
-//import login from './login.jsx';
-//import Signup from './Signup.jsx';
+import login from './login.jsx';
+import Signup from './Signup.jsx';
 import axios from 'axios';
 
-export default class Home extends Component{
+
+class Home extends Component{
   constructor(props) {
     super(props);
     this.state = { 
       items: []
     }
+    this.showSignup=this.showSignup.bind(this);
   }
+
+  showSignup() {
+  this.setState({
+   dataa:"changed"
+ });
+}
 
 	render() {
 
@@ -65,3 +73,4 @@ export default class Home extends Component{
 		)
 	}
 } 
+export default Home;
