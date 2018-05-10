@@ -16,39 +16,37 @@ class Signup extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-     states:{
-      userName:"",
-      passWord:"",
-      Email:""
-    },
-    data:"" 
+      username:"",
+      password:"",
+      email:"",
+      data:''
   }
   this.onChange = this.onChange.bind(this);
   this.Signup = this.Signup.bind(this);
 }
 
 onChange (e) {
- var states = this.state.states;
+ var state = this.state;
  var name = e.target.name;
  var value = e.target.value;
- states[name] = value;
- this.setState({states}); 
+ state[name] = value;
+ this.setState({state});
 }
 
 Signup() {
- 
+
  $.ajax({
    url: '/signup',
    type: 'POST',
    data: this.state,
    success: (data) => {
-    
+
     this.setState({data:data})
-   
+
     if(data===""){
      alert("Try another one")
    }
-   
+
  }
 });
 }
@@ -57,9 +55,9 @@ Signup() {
     if(this.state.data!==""){
       return (
         <Router>
-        
+
         <Route path="/login" component={login}/>
-        
+
         </Router>
         )
     }else{

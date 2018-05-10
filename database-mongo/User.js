@@ -7,9 +7,9 @@ var UserSchema = mongoose.Schema({
   Email: { type : String, required : true },
   ownedEvents:[eventSchema.EventSchema],
   attendingEvents:[eventSchema.EventSchema],
-  Age: {type :Number,required :true},
-  gender:{type:String,required:true},
-  rating :{type:Number,required:true},
+  Age: {type :Number,required :false},
+  gender:{type:String,required:false},
+  rating :{type:Number,required:false},
 });
 
 var User = mongoose.model('User', UserSchema);

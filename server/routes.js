@@ -8,6 +8,7 @@ var userFunctions=require('../database-mongo/user-handler.js')
 var bodyParser = require('body-parser');
 var path=require('path');
 var mongooes=require('mongoose');
+var bcrypt=require('bcrypt');
 
 Router.use(bodyParser.json())
 Router.use(bodyParser.urlencoded({extended : true}))
@@ -16,7 +17,7 @@ Router.use(bodyParser.urlencoded({extended : true}))
 Router.route('/')
 .get(function(req,res){
   console.log('in routes /');
-  
+
   res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
 
 })
@@ -34,7 +35,7 @@ Router.route('/login')
   if(req.body.username && req.body.password){
     var username=req.body.username;
     var password=req.body.password;
-
+    console.log(req.body);
     User.find({username:username},function(err,user){
       if(!user){
         console.log('User does not exist!');
@@ -67,7 +68,7 @@ Router.route('/signup')
 .post(function(req,res){
   // if(req.body.username && req.body.password && req.body.email){
     console.log(req.body);
-  
+
     var username=req.body.username;
     var password=req.body.password;
     var email=req.body.email;
