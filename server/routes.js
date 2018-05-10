@@ -1,15 +1,16 @@
 var Router=require('express').Router();
-// var controller=require('')
+var express=require('express')
 var util=require('./util.js')
 var User=require('../database-mongo/User')
 var Event=require('../database-mongo/Event')
 var eventFunctions=require('../database-mongo/event-handler.js')
 var userFunctions=require('../database-mongo/user-handler.js')
-
+var path=require('path')
 //Home page route.
 Router.route('/')
-.get(util.checkUser,function(req,res){
-  res.send('logged in!')
+.get(function(req,res){
+  console.log('in routes /');
+
 })
 .post(function(req,res){
 
@@ -17,7 +18,10 @@ Router.route('/')
 
 //login route
 Router.route('/login')
-.get()
+.get(function(req,res){
+  res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
+
+})
 .post(function(req,res){
   if(req.body.username && req.body.password){
     var username=req.body.username;
@@ -47,7 +51,10 @@ Router.route('/login')
 
 //signup route.
 Router.route('/signup')
-.get()
+.get(function(req,res){
+  res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
+
+})
 .post(function(req,res){
   if(req.body.username && req.body.password && req.body.email){
 
