@@ -8,9 +8,9 @@ class NavBarComponent extends React.Component {
             <Navbar classNmae="devNav">
             <Navbar.Header>
             <Navbar.Brand >
-               <a className='header'href="#home"><strong>Events</strong></a>
+               <a className='header'href="/"><strong>Events</strong></a>
             </Navbar.Brand>
-          </Navbar.Header>           
+          </Navbar.Header>
             <Nav pullRight className='nav'>
             <NavItem eventKey='logIn' href= "/login"><p>logIn</p></NavItem>
             <NavItem eventKey='signUp' href= "/signup"><p>signUp</p></NavItem>
@@ -18,8 +18,7 @@ class NavBarComponent extends React.Component {
             </Navbar>
 	);
     	}
-        
+
  }
 
 export default NavBarComponent;
- 
