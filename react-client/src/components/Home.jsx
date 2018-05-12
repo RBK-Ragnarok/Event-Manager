@@ -24,17 +24,7 @@ class Home extends Component{
 
 		return (
 			<div>
-				<Navbar className="devNav">
-				<Navbar.Header>
-    				<Navbar.Brand >
-     					<a  className='header'href="#home"><strong>Events</strong></a>
-    				</Navbar.Brand>
-  				</Navbar.Header>
-				<Nav pullRight className='nav'>
-				<NavItem eventKey='logIn'><p>logIn</p></NavItem>
-				<NavItem eventKey='signUp'><p>signUp</p></NavItem>
-				</Nav>
-				</Navbar>
+				
 				<h1 id="h1">Events</h1>
 
 				<div id="Carousel1" className="devImg">
