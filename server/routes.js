@@ -25,6 +25,11 @@ Router.route('/')
 
 })
 
+Router.route('/logout')
+.get(function(req,res){
+  util.logout(req,res);
+})
+
 //login route
 Router.route('/login')
 .get(function(req,res){
@@ -108,7 +113,7 @@ Router.route('/signup')
 })
 
 Router.route('/user')
-.get(function(req,res){userFunctions.retrieveOne(req,res)})
+.get(util.checkUser,function(req,res){userFunctions.retrieveOne(req,res)})
 .post(function(req,res){userFunctions.userSave(req,res)})
 .put(function(req,res){userFunctions.updateOne(req,res)})
 .delete(function(req,res){userFunctions.deleteOne(req,res)})
