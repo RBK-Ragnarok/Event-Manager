@@ -10,61 +10,59 @@ import axios from 'axios';
 class Home extends Component{
   constructor(props) {
     super(props);
-    this.state = { 
+    this.state = {
       items: []
     }
     this.showSignup=this.showSignup.bind(this);
   }
 
   showSignup() {
-  this.setState({
-   dataa:"changed"
- });
+  this.setState();
 }
 
 	render() {
 
 		return (
 			<div>
-				<Navbar classNmae="devNav">
+				<Navbar className="devNav">
 				<Navbar.Header>
     				<Navbar.Brand >
      					<a  className='header'href="#home"><strong>Events</strong></a>
     				</Navbar.Brand>
-  				</Navbar.Header>  			
+  				</Navbar.Header>
 				<Nav pullRight className='nav'>
 				<NavItem eventKey='logIn'><p>logIn</p></NavItem>
 				<NavItem eventKey='signUp'><p>signUp</p></NavItem>
 				</Nav>
 				</Navbar>
 				<h1 id="h1">Events</h1>
-				
+
 				<div id="Carousel1" className="devImg">
 					<Carousel>
 						<Carousel.Item className="img">
 							<img className="img" alt="900x500" src="../photos/bisycle.jpeg" />
-						</Carousel.Item> 
+						</Carousel.Item>
 						<Carousel.Item className="img">
 							<img className="img" alt="900x500" alt="900x500" src="../photos/happy.jpeg" />
-						</Carousel.Item> 
+						</Carousel.Item>
 						<Carousel.Item className="img">
 							<img className="img" alt="900x500" src="../photos/happy1.jpeg" />
-						</Carousel.Item> 
+						</Carousel.Item>
 						<Carousel.Item className="img">
 							<img className="img" alt="900x500" src="../photos/party.jpeg" />
-						</Carousel.Item> 
+						</Carousel.Item>
 						<Carousel.Item className="img">
 							<img className="img" alt="900x500" src="../photos/party1.jpeg" />
-						</Carousel.Item> 
+						</Carousel.Item>
 					</Carousel>
 				</div>
 			<footer className="navbar-fixed-bottom footer">
 				<div className="container">
  					<div className="row">
- 							 <h4> Contact Us :</h4>  
+ 							 <h4> Contact Us :</h4>
                      <SocialIcon url='http://twitter.com'  />
                      <SocialIcon url='http://facebook.com' />
-                     <SocialIcon url='http://slack.com'/> 
+                     <SocialIcon url='http://slack.com'/>
                      <SocialIcon url='http://github.com'  />
 					</div>
 				</div>
@@ -72,5 +70,5 @@ class Home extends Component{
  			</div>
 		)
 	}
-} 
+}
 export default Home;
