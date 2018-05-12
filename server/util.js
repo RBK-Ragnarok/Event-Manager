@@ -19,5 +19,5 @@ exports.checkUser=function(req,res,next){
 exports.createSession=function(req,res,aUser){
   req.session.user=aUser;
   console.log('in create session function:created session and redirected');
-  res.redirect('/')
+  res.send('201')
 }

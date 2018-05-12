@@ -32,11 +32,10 @@ Router.route('/login')
 
 })
 .post(function(req,res){
-  if(req.body.username && req.body.password){
     var username=req.body.username;
     var password=req.body.password;
     console.log(req.body);
-    User.find({username:username},function(err,user){
+    User.findOne({username:username},function(err,user){
       if(!user){
         console.log('User does not exist!');
       }else{
@@ -50,13 +49,13 @@ Router.route('/login')
             util.createSession(req,res,user)
           }else{
             console.log('Wrong username or password!');
-            res.redirect('/login')
+            res.end()
           }
         })
       }
     })
 
-  }
+
 })
 
 //signup route.
@@ -73,7 +72,8 @@ Router.route('/signup')
     var password=req.body.password;
     var email=req.body.email;
 
-    User.find({username:username},function(err,user){
+    User.findOne({username:username},function(err,user){
+      console.log(user);
       if(!user){
         //make him an account
         bcrypt.hash(password,10,function(err,hash){
@@ -81,6 +81,15 @@ Router.route('/signup')
             email:email,
             username:username,
             password:hash
+          })
+
+          user.save(function(err,user){
+            if(err){
+              console.log(err);
+            } else{
+              console.log('saved user in db');
+            }
+
           })
         })
         //create session

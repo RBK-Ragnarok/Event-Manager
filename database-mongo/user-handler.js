@@ -16,8 +16,8 @@ exports.retrieveAll = function (req, res) {
 
 
 exports.retrieveOne = function (req, res) {
-	var userName = req.body.userName;
-	User.findOne({userName:userName}, function (err, found) {
+	var username = req.body.username;
+	User.findOne({username:username}, function (err, found) {
 		if(err){
 	  return res.status(500).json(err.data);
 	}
@@ -32,21 +32,14 @@ exports.retrieveOne = function (req, res) {
 
 
 exports.userSave = function(req, res) {
-  var userName=req.body.userName;
-  var passWord=req.body.passWord;
+  var username=req.body.username;
+  var password=req.body.password;
   var Email=req.body.Email;
-  var Age=req.body.Age;
-  var events=req.body.events;
-  var gender=req.body.gender;
-  var rating=req.body.rating;
+
   var newUser = new User({
-    userName: userName,
-    passWord: passWord,
-    Email:Email,
-    Age:Age,
-    gender:gender,
-    rating:rating,
-    events:events
+    username: username,
+    password: password,
+    Email:Email
   });
 
   newUser.save(function(err,data) {
@@ -74,8 +67,8 @@ exports.deleteUser= function(req, res) {
 
 
 exports.deleteOne = function (req, res) {
-	var userName = req.body.userName;
-	User.findOneAndRemove({userName:userName}, function(err, deleted) {
+	var username = req.body.username;
+	User.findOneAndRemove({username:username}, function(err, deleted) {
 		if (err) {
 			console.log(err);
 		}
@@ -84,23 +77,16 @@ exports.deleteOne = function (req, res) {
 };
 
 exports.updateOne = function (req, res) {
-  var userName=req.body.userName;
-  var passWord=req.body.passWord;
+  var username=req.body.username;
+  var password=req.body.password;
   var Email=req.body.Email;
-  var Age=req.body.Age;
-  var events=req.body.events;
-  var gender=req.body.gender;
-  var rating=req.body.rating;
   var UserObj = {
-	    userName: userName,
-	    passWord: passWord,
-	    Email:Email,
-	    Age:Age,
-	    gender:gender,
-	    rating:rating,
-	    events:events
+	    username: username,
+	    password: password,
+	    email:email
+
 	};
-	User.findOneAndUpdate({userName:userName}, UserObj, function(err, data){
+	User.findOneAndUpdate({username:username}, UserObj, function(err, data){
 		if (err) {
 			console.log (err);
 		}

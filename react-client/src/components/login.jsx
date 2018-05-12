@@ -19,72 +19,66 @@ class login extends React.Component {
 			username: '',
 			password: '',
 			email: '',
-      data:''
-		}
+      loggedIn:false
+    		}
 		this.onChange = this.onChange.bind(this);
 		this.Login = this.Login.bind(this);
 	}
 
 	onChange(e) {
-		var state = this.state;
 		var name = e.target.name;
 		var value = e.target.value;
-		state[name] = value;
-		this.setState({state});
+		this.setState({[name]:value});
 	};
 
 	Login() {
+    var that=this;
+
 	   $.ajax({
 	   url: '/login',
 	   type: 'POST',
 	   data: this.state,
 	   success: (data) => {
-
-	    this.setState({data:data})
-
-	    if(data===""){
-	     alert("incorrect password")
-	   }
-
+       if(data==='201'){
+          that.setState({loggedIn:true})
+          window.location.href = "/"
+       }else{
+         that.setState({loggedIn:false})
+         window.location.href = "/login"
+       }
 	 }
 	});
 	}
 
 render() {
-	if(this.state.data!==""){
-    return (
-      <Router>
 
-      <Route path="/Home" component={Home}/>}/>
+      return (
+        <div id='loginpage' className="container">
+          <div className="wrapper">
 
-      </Router>
-      )
-  }
-	return (
-		<div id='loginpage' className="container">
-        	<div className="wrapper">
-
-		 		<form className="form-signin">
-            	<h3 className="form-signin-heading">
+            <form className="form-signin">
+              <h3 className="form-signin-heading">
                 <b id='b'>Login</b>
-            	</h3>
-		           	<FormControl id='loguser' type="text" className="form-control" name="username" onChange={this.onChange} placeholder="Username" required autoFocus value={this.state.userName} /><br />
-		            <FormControl id='logpass' type="password" className="form-control" name="password" onChange={this.onChange} placeholder="Password" required value={this.state.password}/><br />
-		            <FormControl id='logemail' type="email" className="form-control" name="email" onChange={this.onChange} placeholder="email" required value={this.state.email}/><br />
-		            <Router>
-		           <Link to="/Home" onClick={this.Login}> <button id="logb" className="btn btn-lg btn-primary" type="Submit">Login</button></Link>
-		            </Router>
-        		</form>
-    		</div>
-    		<div >
-			<a href="/Home">Home &rarr;</a>
-		</div>
+              </h3>
+              <FormControl id='loguser' type="text" className="form-control" name="username" onChange={this.onChange} placeholder="Username" required autoFocus value={this.state.username} /><br />
+              <FormControl id='logpass' type="password" className="form-control" name="password" onChange={this.onChange} placeholder="Password" required value={this.state.password}/><br />
+              <FormControl id='logemail' type="email" className="form-control" name="email" onChange={this.onChange} placeholder="email" required value={this.state.email}/><br />
+              <Router>
+                <Link to="/" > <button id="logb" className="btn btn-lg btn-primary" onClick={this.Login} type="Submit">Login</button></Link>
+              </Router>
+            </form>
+          </div>
+          <div >
+            <a href="/Home">Home &rarr;</a>
+          </div>
 
-		</div>
+        </div>
 
 
-		);
+      );
+
+  }
 	}
-}
+
 
 export default login;
