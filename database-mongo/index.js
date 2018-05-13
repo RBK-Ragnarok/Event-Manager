@@ -1,59 +1,55 @@
-var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/test');
+var mongoose = require('mongoose')
+mongoose.connect('mongodb://localhost/test')
 
-var db = mongoose.connection;
+var db = mongoose.connection
 
-db.on('error', function() {
-  console.log('mongoose connection error');
-});
+db.on('error', function () {
+  console.log('mongoose connection error')
+})
 
-db.once('open', function() {
-  console.log('mongoose connected successfully');
-});
+db.once('open', function () {
+  console.log('mongoose connected successfully')
+})
 
 var itemSchema = mongoose.Schema({
   quantity: Number,
   description: String
-});
+})
 
-var Item = mongoose.model('Item', itemSchema);
+var Item = mongoose.model('Item', itemSchema)
 
-var selectAll = function(callback) {
-  Item.find({}, function(err, items) {
-    if(err) {
-      callback(err, null);
+var selectAll = function (callback) {
+  Item.find({}, function (err, items) {
+    if (err) {
+      callback(err, null)
     } else {
-      callback(null, items);
+      callback(null, items)
     }
-  });
-};
-
-var deleteAll = function(callback) {
-  Item.find({}, function(err, items) {
-    if(err) {
-      callback(err, null);
-    } else {
-      callback(null, items);
-    }
-  });
-};
-
-var save = (data) => {
-  
-  var item= new Item({item:data})
-
-    item.save(function(err, data){
-      if(err){
-      console.log(err); 
-      }else{
-    console.log(data)
-      }
-    })
+  })
 }
 
+var deleteAll = function (callback) {
+  Item.find({}, function (err, items) {
+    if (err) {
+      callback(err, null)
+    } else {
+      callback(null, items)
+    }
+  })
+}
 
+var save = (data) => {
+  var item = new Item({item: data})
 
+  item.save(function (err, data) {
+    if (err) {
+      console.log(err)
+    } else {
+      console.log(data)
+    }
+  })
+}
 
-module.exports.selectAll = selectAll;
-module.exports.deleteAll = deleteAll;
-module.exports.save = save;
+module.exports.selectAll = selectAll
+module.exports.deleteAll = deleteAll
+module.exports.save = save

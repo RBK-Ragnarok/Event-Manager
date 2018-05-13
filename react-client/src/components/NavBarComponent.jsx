@@ -1,6 +1,6 @@
-import React from 'react';
-import {NavLink} from 'react-router-dom';
-import {Navbar,Nav,NavItem,Carousel} from 'react-bootstrap';
+import React from 'react'
+import {NavLink} from 'react-router-dom'
+import {Navbar, Nav, NavItem, Carousel} from 'react-bootstrap'
 
 class NavBarComponent extends React.Component {
     render(){
@@ -20,8 +20,8 @@ class NavBarComponent extends React.Component {
             </Nav>
             </Navbar>
 	);
+
     	}
+}
 
- }
-
-export default NavBarComponent;
+export default NavBarComponent

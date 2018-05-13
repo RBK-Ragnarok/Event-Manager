@@ -7,29 +7,14 @@ import Events from '../components/Events.jsx';
 import axios from 'axios';
 import NavBarComponent from '../components/NavBarComponent.jsx';
 
+
 class AppRouter extends React.Component {
-  constructor(props) {
-      super(props);
-      this.state = {
-        session: false
-      }
-
+  constructor (props) {
+    super(props)
+    this.state = {
+      session: false
     }
-
-   componentDidMount() {
-    var that=this;
-axios.get('/logged')
-  .then(response => {
-    const posts = response.data;
-    // console.log(response);
-    that.setState({session:posts});
-     
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
   }
-
       render() {
 
         return (
@@ -48,7 +33,18 @@ axios.get('/logged')
             </div>
         </BrowserRouter>
 
-        )
-    }
-    }
-    export default AppRouter;
+  componentDidMount () {
+    var that = this
+    axios.get('/logged')
+      .then(response => {
+        const posts = response.data
+        // console.log(response);
+        that.setState({session: posts})
+      })
+      .catch(function (error) {
+        console.log(error)
+      })
+  }
+
+}
+export default AppRouter
