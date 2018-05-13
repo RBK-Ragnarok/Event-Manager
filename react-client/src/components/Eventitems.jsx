@@ -5,6 +5,7 @@ import {Navbar,Nav,NavItem,Carousel,Jumbotron,Button} from 'react-bootstrap';
 //import { Link } from 'react-router-dom';
 import Events from './Events.jsx';
 import EventList from './EventList.jsx';
+import AppRouter from '../routes/AppRouter.jsx';
 import {
   Route,
   Link,
