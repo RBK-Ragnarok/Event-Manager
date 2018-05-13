@@ -14,6 +14,9 @@ class NavBarComponent extends React.Component {
             <Nav pullRight className='nav'>
             <NavItem eventKey='logIn' href= "/login"><p>logIn</p></NavItem>
             <NavItem eventKey='signUp' href= "/signup"><p>signUp</p></NavItem>
+            <NavItem eventKey='Home'><p>Home</p></NavItem>
+            <NavItem eventKey='Profile'><p>Profile</p></NavItem>
+            <NavItem eventKey='Logout'><p>Logout</p></NavItem>
             </Nav>
             </Navbar>
 	);
