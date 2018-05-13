@@ -111,6 +111,12 @@ Router.route('/signup')
     res.send('<script>window.location.href="/signup"</script>')
   }
   })
+Router.route('/Events')
+.get(function(req,res){
+  res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
+
+})
+
 
 Router.route('/user')
   .get(util.checkUser, function (req, res) { userFunctions.retrieveOne(req, res) })

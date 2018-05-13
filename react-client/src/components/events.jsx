@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import {Navbar,Nav,NavItem,Carousel} from 'react-bootstrap';
 //import { Link } from 'react-router-dom';
+import EventList from './EventList.jsx';
+import Eventitems from './Eventitems.jsx';
+
 import {
   Route,
   Link,
@@ -11,67 +14,58 @@ import {
   BrowserRouter as Router
 } from "react-router-dom";
 
-class Events extends Component {
+
+ class Events extends Component {
   constructor(props) {
     super(props);
-    this.state = { 
-      events:[]
+    this.state = {
+      term: '',
+      events: [{name:'lena'},{name:'lolo'},{name:'lona'}],
+
     };
-    
-    this.onChange=this.onChange.bind(this);
+    this.onChange = this.onChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
   }
 
-  onChange (e) {
+  onChange(event) {
+    this.setState({ term: event.target.value });
+  }
+
+  onSubmit(event){
+    event.preventDefault();
     this.setState({
-     [e.target.name]: e.target.value 
-   });
+      term: '',
+      events: [...this.state.events, this.state.term]
+    });
   }
-render(){
+  componentDidMount(url) {
+    $.ajax({
+      type: 'GET',
+      url: '/events',
+      success: (data) => {
+        this.setState({
+          events: data
+        })
+      },
+      error: (err) => {
+        console.log('err', err);
+      }
+    });
+      
+  }
 
- return (
-  <div>
- 
-  <Navbar classNmae="devNav">
-        <Navbar.Header>
-            <Navbar.Brand >
-            </Navbar.Brand>
-          </Navbar.Header>        
-        <Nav pullRight className='nav'>
-        <NavItem eventKey='Home'><p>Home</p></NavItem>
-        <NavItem eventKey='Profile'><p>Profile</p></NavItem>
-        <NavItem eventKey='Logout'><p>Logout</p></NavItem>
-        </Nav>
-        </Navbar>
-  
-  )
-  </div>
-   )
-  const List = (props) => (
-  <div>
-    <h4> List Component </h4>
-     { this.props.items.length } 
-    { this.props.items.map(item => <EventsList item={item}/>)}
-  </div>
-)
-   }
+  render() {
+    return (
+      <div>
+        <form className="Events" onSubmit={this.onSubmit}>
+          <input id='input' value={this.state.term} onChange={this.onChange} />
+          <button>Add Events</button>
+        </form>
+        <EventList events={this.state.events} />
+      </div>
+    );
+  }
 }
 
 
-class EventsList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { 
-      content:'',
-      event:[]  
-    };
-}
-render(){
- return (
-  <div> 
-    <h4> Events List </h4>
-  </div>
-   
- )
-   }
-}
 export default Events;
