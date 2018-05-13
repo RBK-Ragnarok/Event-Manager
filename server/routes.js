@@ -106,11 +106,18 @@ Router.route('/signup')
       }
     })
 
+
+Router.route('/Events')
+.get(function(req,res){
+  res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
+
+})
   }else{
     console.log('Missing some data!');
     res.send('<script>window.location.href="/signup"</script>')
   }
   })
+
 
 Router.route('/user')
   .get(util.checkUser, function (req, res) { userFunctions.retrieveOne(req, res) })
