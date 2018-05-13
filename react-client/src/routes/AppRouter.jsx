@@ -38,7 +38,7 @@ class AppRouter extends React.Component {
                 <Route  exact path = "/"  component = {Home}/>
                 <Route  path = "/signup" component = {Signup} />
                 <Route  path = "/login"	component = {login} />
-                <Route  path = "/Events" component = {Events} />
+                <Route  path = "/events" component = {Events} />
 
                 </Switch>
             </div>

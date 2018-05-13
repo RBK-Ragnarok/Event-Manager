@@ -58,23 +58,29 @@ class Signup extends React.Component {
     } else {
       return (
 
-        <div id='SignupPage' className='container'>
-          <div className='wrapper'>
+        <div className='container'>
+        <h3 className="form-Signup-heading"><b>Signup</b></h3>
+        <br/>
+        <br/>
+        <br/>
+          <div className='wrapper col-xs-4 col-xs-offset-4'>
 
             <form className='form-Signup'>
-              <h3 className='form-Signup-heading'>
-                <b id='b'>Signup</b>
-              </h3>
-              <FormControl id='signuser' type='text' className='form-control' name='username' onChange={this.onChange} placeholder='Username' required autoFocus value={this.state.username} /><br />
-              <FormControl id='signpass' type='password' className='form-control' name='password' onChange={this.onChange} placeholder='Password' required value={this.state.password} /><br />
-              <FormControl id='signemail' type='email' className='form-control' name='email' onChange={this.onChange} placeholder='email' required value={this.state.email} /><br />
+              <FormControl type='text' className='form-control' name='username' onChange={this.onChange} placeholder='Username' required autoFocus value={this.state.username} /><br />
+              <FormControl type='password' className='form-control' name='password' onChange={this.onChange} placeholder='Password' required value={this.state.password} /><br />
+              <FormControl type='email' className='form-control' name='email' onChange={this.onChange} placeholder='email' required value={this.state.email} /><br />
               <Router>
-                <Link to='/' ><button id='signb' className='btn btn-lg btn-primary' type='Submit' onClick={this.Signup}>Signup</button></Link>
+                <Link to='/' ><button className='col-xs-4 col-xs-offset-4' type='Submit' onClick={this.Signup}>Signup</button></Link>
               </Router>
             </form>
           </div>
-          <div >
-            <a href='/login'>login &rarr;</a>
+          <br />
+        <br />
+        <br />
+        <div className='wrapper col-xs-4 col-xs-offset-4'>
+        <br />
+          <h5>Do you have Account?</h5>
+            <h5>Login here <a href='/login'>LOGIN &rarr;</a></h5>  
           </div>
         </div>
       )
