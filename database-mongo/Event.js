@@ -1,19 +1,18 @@
-var mongoose=require('mongoose');
-
+var mongoose = require('mongoose')
 
 var EventSchema = mongoose.Schema({
-  name: {type:String,required : false,unique: true},
-  duration: {type:Number,required : false},
-  startDate: {type:Number,required : false},
-  place: {type:String,required : false},
-  eventType: {type:String,required : false},
-  userId: {type:String,required : false},
-  cost: {type:Number,required : false},
-  description: {type:String,required : false}
-});
+  creator:{type: String, required: true, unique: true},
+  attending:{type: Array, required: false, unique: false},
+  eventName: {type: String, required: true, unique: true},
+  duration: {type: Number, required: true},
+  startDate: {type: String, required: true},
+  place: {type: String, required: true},
+  eventType: {type: String, required: true},
+  cost: {type: Number, required: true},
+  description: {type: String, required: true}
+})
 
-var Event = mongoose.model('Event', EventSchema);
+var Event = mongoose.model('Event', EventSchema)
 
-
-// module.exports=Event;
-module.exports.EventSchema=EventSchema;
+module.exports=Event;
+module.exports.EventSchema = EventSchema
