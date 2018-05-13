@@ -38,12 +38,27 @@ import {
       events: [...this.state.events, this.state.term]
     });
   }
+  componentDidMount(url) {
+    $.ajax({
+      type: 'GET',
+      url: '/images',
+      success: (data) => {
+        this.setState({
+          images: data
+        })
+      },
+      error: (err) => {
+        console.log('err', err);
+      }
+    });
+      
+  }
 
   render() {
     return (
       <div>
         <form className="Events" onSubmit={this.onSubmit}>
-          <input value={this.state.term} onChange={this.onChange} />
+          <input id='input' value={this.state.term} onChange={this.onChange} />
           <button>Add Events</button>
         </form>
         <EventList events={this.state.events} />

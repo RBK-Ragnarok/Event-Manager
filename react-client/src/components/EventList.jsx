@@ -30,7 +30,7 @@ class EventList extends Component {
     <ul>
     {
      this.props.events.map((event) => 
-      <Eventitems key={event.name} key={event.description}event={event} />)
+      <Eventitems key={event.name} event={event} />)
      }
    </ul>
    </div>
