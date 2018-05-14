@@ -1,13 +1,7 @@
 import React, {Component} from 'react'
 import { Button, FormGroup, FormControl, ControlLabel } from 'react-bootstrap'
 // import axios from 'axios';
-import {
-  Route,
-  Link,
-  Switch,
-  browserHistory,
-  BrowserRouter as Router
-} from 'react-router-dom'
+import { Route, Link, Switch, browserHistory, BrowserRouter as Router} from 'react-router-dom'
 import $ from 'jquery'
 import Home from './Home.jsx'
 
@@ -51,23 +45,28 @@ class login extends React.Component {
 
   render () {
     return (
-      <div id='loginpage' className='container'>
-        <div className='wrapper'>
+      <div className='container'>
+       <h3 className='form-Signup-heading'><b>Login</b></h3>
+         <br/>
+         <br/>
+         <br/>
+        <div className='wrapper col-xs-4 col-xs-offset-4'>
 
           <form className='form-signin'>
-            <h3 className='form-signin-heading'>
-              <b id='b'>Login</b>
-            </h3>
-            <FormControl id='loguser' type='text' className='form-control' name='username' onChange={this.onChange} placeholder='Username' required autoFocus value={this.state.username} /><br />
-            <FormControl id='logpass' type='password' className='form-control' name='password' onChange={this.onChange} placeholder='Password' required value={this.state.password} /><br />
-            <FormControl id='logemail' type='email' className='form-control' name='email' onChange={this.onChange} placeholder='email' required value={this.state.email} /><br />
+            <FormControl type='text' className='form-control' name='username' onChange={this.onChange} placeholder='Username' required autoFocus value={this.state.username} /><br />
+            <FormControl type='password' className='form-control' name='password' onChange={this.onChange} placeholder='Password' required value={this.state.password} /><br />
             <Router>
-              <Link to='/' > <button id='logb' className='btn btn-lg btn-primary' onClick={this.Login} type='Submit'>Login</button></Link>
+              <Link to='/' > <button className= 'col-xs-4 col-xs-offset-4' onClick={this.Login} type='Submit'>Login</button></Link>
             </Router>
           </form>
         </div>
-        <div >
-          <a href='/Home'>Home &rarr;</a>
+        <br />
+        <br />
+        <br />
+        <div className='wrapper col-xs-4 col-xs-offset-4'>
+        <br />
+          <h5>Dont have an Account?</h5>
+            <h5>Signup here <a href='/signup'>SIGNUP &rarr;</a></h5> 
         </div>
 
       </div>

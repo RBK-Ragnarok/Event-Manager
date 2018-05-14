@@ -5,6 +5,7 @@ import {Navbar, Nav, NavItem, Carousel} from 'react-bootstrap'
 import login from './login.jsx'
 import Signup from './Signup.jsx'
 import axios from 'axios'
+//import CreateEvent from './CreateEvent';
 
 class Home extends Component {
   constructor (props) {
@@ -44,6 +45,12 @@ class Home extends Component {
             </Carousel.Item>
           </Carousel>
         </div>
+        <br/>
+				<br/>
+				<div id="desc">
+					<h2>Description:</h2>
+					<p>hellooooooo</p>
+				</div>
         <footer className='navbar-fixed-bottom footer'>
           <div className='container'>
             <div className='row'>
