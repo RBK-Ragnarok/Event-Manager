@@ -29,6 +29,7 @@ class EventList extends Component {
      this.props.events.map((event) =>
       <Eventitems key={event.name} event={event} />)
      }
+
    </div>
 
        )
