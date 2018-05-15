@@ -30,6 +30,7 @@ class EventList extends Component {
       <Eventitems key={event.name} event={event} />)
      }
 
+
    </div>
 
        )
