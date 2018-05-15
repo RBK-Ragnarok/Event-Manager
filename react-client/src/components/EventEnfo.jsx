@@ -22,30 +22,32 @@ class EventEnfo extends Component {
   this.onChange=this.onChange.bind(this);
   }
 
+
   onChange (e) {
     this.setState({
      [e.target.name]: e.target.value 
    });
   }
-    componentDidMount(more) {
-    $.ajax({
-      type: 'GET',
-      url: '/more',
-      success: (data) => {
-        this.setState({
-          data: data
-        })
-      },
-      error: (err) => {
-        console.log('err', err);
-      }
-    });
+// componentDidMount(info) {
+//     $.ajax({
+//       type: 'GET',
+//       url: '/info',
+//       success: (data) => {
+//         this.setState({
+//           data: data
+//         })
+//       },
+//       error: (err) => {
+//         console.log('err', err);
+//       }
+//     });
       
-  }
-
+//   }
   render(){
   	return (
+  		<div>
   		<h1>lolo</h1>
+  		</div>
   )
   }
 }
