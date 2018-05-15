@@ -23,14 +23,13 @@ class Eventitems extends Component {
       description:'',
       iseventhiddin:true
     };
-  data:'';
   this.onChange=this.onChange.bind(this);
     this.showeventbox=this.showeventbox.bind(this);
   }
 
   onChange (e) {
     this.setState({
-     [e.target.name]: e.target.value 
+     [e.target.name]: e.target.value
    });
   }
 showeventbox(name,description){
@@ -44,8 +43,8 @@ showeventbox(name,description){
 
   render(){
   	return (
-  		<div>   
-   <div>      
+  		<div>
+   <div>
    <h2 onClick={()=> this.showeventbox(this.items)} >{this.items}</h2>
    </div>
  <div className="jumbotron jumbotron-fluid" id="jumbotron">

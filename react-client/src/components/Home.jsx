@@ -5,7 +5,7 @@ import {Navbar, Nav, NavItem, Carousel} from 'react-bootstrap'
 import login from './login.jsx'
 import Signup from './Signup.jsx'
 import axios from 'axios'
-//import CreateEvent from './CreateEvent';
+import CreateEvent from './CreateEvent.jsx';
 
 class Home extends Component {
   constructor (props) {

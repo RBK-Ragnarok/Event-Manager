@@ -17,22 +17,18 @@ class EventList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      events: []
-    };
-  data:'';
+    }
   }
 
 
   render(){
   	return (
-  		
+
   		<div>
-    <ul>
     {
-     this.props.events.map((event) => 
+     this.props.events.map((event) =>
       <Eventitems key={event.name} event={event} />)
      }
-   </ul>
    </div>
 
        )
