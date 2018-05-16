@@ -45,11 +45,11 @@ class AppRouter extends React.Component {
 =======
     var that = this;
     $.ajax({
-      url: 'login',
+      url: '/logged',
       type: 'GET',
       data: that.state,
       success: (data) => {
-        const posts = response.data;
+        var posts = response.data;
         that.setState({session:posts})
       },
       error: (err) => {
