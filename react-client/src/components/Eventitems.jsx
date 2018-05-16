@@ -36,7 +36,8 @@ class Eventitems extends Component {
 
   onChange (e) {
     this.setState({
-     [e.target.name]: e.target.value 
+     [e.target.name]: e.target.value ,
+     [e.target.description]: e.target.value 
    });
   }
 showeventbox(name,description){
@@ -60,31 +61,22 @@ showeventbox(name,description){
     <h1 className="display-3" className="col-*-*">{this.props.event.name}</h1>
     <br></br>
     <p className="lead">Event description :</p>
+    <br></br>
     <table className="table">
-      <th col>Date:</th>
-      <th col>Duration:</th>
-      <th col>Price:</th>
+      <th>Date:</th>
+      <th>Duration:</th>
+      <th>Price:</th>
   </table>
+  <br></br>
+  <br></br>
+  <br></br>
+  <br></br>
   </div>
   <ButtonToolbar>
-<OverlayTrigger trigger="click" placement="left" overlay={<Popover title={this.props.event.name}><strong>Tabs
-Dropdowns
-Accordions
-Convert Weights
-Animated Buttons
-Side Navigation
-Top Navigation
-Modal Boxes
-Progress Bars
-Parallax
-Login Form
-HTML Includes
-Google Maps
-Range Sliders
-Tooltips
-Slideshow
-Filter List
-Sort List</strong></Popover>}>
+<OverlayTrigger trigger="click" placement="left" overlay={<Popover title={this.props.event.name}><Link to='/EventEnfo' ><button  type='Submit'
+ onClick={this.componentDidMount}>Attind</button></Link>
+ <br></br>
+<strong>{this.props.event.name},{this.props.event.description}</strong></Popover>}>
   <Button>More info!</Button>
 </OverlayTrigger>
 </ButtonToolbar>

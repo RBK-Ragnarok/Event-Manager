@@ -21,23 +21,24 @@ import {
     this.state = {
       term: '',
       events: [{name:'lena'},{name:'lolo'},{name:'lona'}],
+      description:'hello world'
 
     };
     this.onChange = this.onChange.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
+    //this.onSubmit = this.onSubmit.bind(this);
   }
 
   onChange(event) {
     this.setState({ term: event.target.value });
   }
 
-  onSubmit(event){
-    event.preventDefault();
-    this.setState({
-      term: '',
-      events: [...this.state.events, this.state.term]
-    });
-  }
+  // onSubmit(event){
+  //   event.preventDefault();
+  //   this.setState({
+  //     term: '',
+  //     events: [...this.state.events, this.state.term]
+  //   });
+  // }
   componentDidMount(url) {
     $.ajax({
       type: 'GET',
@@ -57,10 +58,6 @@ import {
   render() {
     return (
       <div>
-        <form className="Events" onSubmit={this.onSubmit}>
-          <input id='input' value={this.state.term} onChange={this.onChange} />
-          <button>Add Events</button>
-        </form>
         <EventList events={this.state.events} />
       </div>
     );
