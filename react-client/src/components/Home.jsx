@@ -51,7 +51,7 @@ class Home extends Component {
 					<h2>Description:</h2>
 					<p>hellooooooo</p>
 				</div>
-        <footer className='navbar-fixed-bottom footer'>
+        <footer className='navbar-bottom footer'>
           <div className='container'>
             <div className='row'>
               <h4> Contact Us :</h4>
