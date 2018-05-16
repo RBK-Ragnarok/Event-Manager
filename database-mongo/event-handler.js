@@ -69,8 +69,8 @@ exports.findEventByType = function (req, res) {
 // }
 
 exports.deleteOne = function (req, res) {
-  var name = req.params.name
-  Event.findOneAndRemove({name: name}, function (err, deleted) {
+  var name = req.params.eventName
+  Event.findOneAndRemove({eventName: eventName}, function (err, deleted) {
     if (err) {
       console.log(err)
     }
@@ -79,25 +79,25 @@ exports.deleteOne = function (req, res) {
 }
 
 exports.updateOne = function (req, res) {
-  var name = req.body.name
+  var creator=req.body.creator
+  var eventName = req.body.name
   var duration = req.body.duration
   var startDate = req.body.startDate
   var place = req.body.place
   var eventType = req.body.eventType
-  var userId = req.body.userId
   var cost = req.body.cost
   var description = req.body.description
 
   var eventObj = {
-    name: name,
+      eventName:eventName,
+      duration:duration,
 	    startDate: startDate,
 	    place: place,
 	    eventType: eventType,
-	    userId: userId,
 	    cost: cost,
 	    description: description
   }
-  Event.findOneAndUpdate({name: name}, eventObj, function (err, data) {
+  Event.findOneAndUpdate({eventName: eventName}, eventObj, function (err, data) {
     if (err) {
       console.log(err)
     }
