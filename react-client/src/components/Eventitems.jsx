@@ -77,8 +77,8 @@ showeventbox(name,description){
 <Link to='/EventEnfo' ><button  type='Submit'
  onClick={this.componentDidMount}>Attind</button></Link>
  <br></br>
-<strong>EventType : {this.props.event.eventType}<br></br>
-duration : {this.props.event.duration}<br></br>cost : {this.props.event.cost}</strong></Popover>}>
+<strong>EventType : {this.props.event.eventType}<br></br><br></br>
+duration : {this.props.event.duration}<br></br><br></br>cost : {this.props.event.cost}</strong></Popover>}>
   <Button>More info!</Button>
 </OverlayTrigger>
 </ButtonToolbar>

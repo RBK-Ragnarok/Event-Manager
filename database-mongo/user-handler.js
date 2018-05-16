@@ -99,5 +99,5 @@ exports.updateOne = function (req, res) {
 
 exports.addEvent=function(req,res){
   var username=req.session.user.username
-  var event=req.body
+  var event=req.body.
 }
