@@ -2,32 +2,34 @@ var Event = require('./Event')
 var mongoose = require('mongoose')
 
 exports.eventCreate = function (req, res) {
-  // var creator=req.body.user
-  // var eventName = req.body.eventName
-  // var duration = req.body.duration
-  // var startDate = req.body.startDate
-  // var place = req.body.place
-  // var eventType = req.body.eventType
-  // var cost = req.body.cost
-  // var description = req.body.description
-  //
+  // console.log(req.body,req.session.user);
+  var creator=req.session.username
+  var eventName = req.body.eventName
+  var duration = req.body.duration
+  var startDate = req.body.startDate
+  var place = req.body.place
+  var eventType = req.body.eventType
+  var cost = req.body.cost
+  var description = req.body.description
 
-  // var newEvent = new Event({
-  //   name: name,
-  //   startDate: startDate,
-  //   place: place,
-  //   eventType: eventType,
-  //   userId: userId,
-  //   cost: cost,
-  //   description: description
-  // })
 
-  Event.create(req.body,function (err, event) {
-    if (err) {
-      res.status(500).send(err)
-    } else {
-      console.log('saved event')
-      res.send(event)
+  var newEvent = new Event({
+    creator:creator,
+    eventName: eventName,
+    duration:duration,
+    startDate: startDate,
+    place: place,
+    eventType: eventType,
+    cost: cost,
+    description: description
+  })
+  console.log(newEvent);
+
+  newEvent.save(function(err,event){
+    if(err){
+      console.log(err);
+    }else{
+      console.log(event);
     }
   })
 }

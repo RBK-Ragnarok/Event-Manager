@@ -1,7 +1,7 @@
 var mongoose = require('mongoose')
 
 var EventSchema = mongoose.Schema({
-  creator:{type: String, required: false, unique: true},
+  creator:{type: String, required: false, unique: false},
   eventName: {type: String, required: false, unique: true},
   duration: {type: Number, required: false},
   startDate: {type: String, required: false},

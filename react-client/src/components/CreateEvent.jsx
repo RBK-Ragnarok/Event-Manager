@@ -24,8 +24,7 @@ class CreateEvent extends React.Component {
     onChange(e) {
         var name = e.target.name;
         var value = e.target.value;
-        //[name] = value;
-        this.setState({[name]:value});  
+        this.setState({[name]:value});
     }
 
     create() {
@@ -63,7 +62,7 @@ class CreateEvent extends React.Component {
           </Row>
          <div  className="container wrapper well"><br />
          <form >
-         
+
          <Row>
          <Col md={1}>
          </Col>
@@ -98,7 +97,7 @@ class CreateEvent extends React.Component {
          </Col>
          </Row>
          <br />
-         
+
          <Row>
          <Col md={1}>
          </Col>
@@ -126,10 +125,10 @@ class CreateEvent extends React.Component {
          </Col>
         </Row>
          <br />
-    
+
          <Row>
          <Col md={1}>
-         </Col> 
+         </Col>
          <Col md={2}>
          <span id="textcolor">Description</span>
          </Col>
@@ -139,12 +138,12 @@ class CreateEvent extends React.Component {
          </label>
          </Col>
          <Col md={1}>
-         </Col> 
+         </Col>
          </Row><br />
-    
+
          <Row>
          <Col md={1}>
-         </Col> 
+         </Col>
          <Col md={2}>
          <span id="textcolor">From</span>
          </Col>
@@ -172,12 +171,12 @@ class CreateEvent extends React.Component {
              </Button>
              <h3 className="SuccessMessage">{this.state.message}</h3>
          </form>
-         </div> 
-    
+         </div>
+
         </div>
         );
         }
       }
-    
-    
-    export default CreateEvent;    
+
+
+    export default CreateEvent;
