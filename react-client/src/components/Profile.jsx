@@ -32,8 +32,11 @@ class Profile extends React.Component {
   render() {  
 		 return (
 		 	 <div className='container'>
-		 	 	<h4>Profile Page</h4>
+		 	 	<h1>Profile Page</h1>
 		 	 	<br/>
+		 	 	<br/>
+		 	 	<br/>
+		 	 	<p>hellooooo</p>
              </div>
 		 	)
   }
