@@ -35,8 +35,12 @@ class Profile extends React.Component {
 		 	 	<h1>Profile Page</h1>
 		 	 	<br/>
 		 	 	<br/>
-		 	 	<br/>
-		 	 	<p>hellooooo</p>
+		 	 		<div className='row'>
+		 	 		    <div className="col-md-3" style={{'paddingLeft':'20px'}}>
+
+		 	 		    
+		 	 		    </div>
+		 	 		</div>
              </div>
 		 	)
   }
