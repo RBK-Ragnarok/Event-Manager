@@ -111,35 +111,43 @@ Router.route('/signup')
     res.send('<script>window.location.href="/signup"</script>')
   }
   })
-Router.route('/Events')
+  // events page
+Router.route('/events')
 .get(function(req,res){
   res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
-
 })
+// creating event page.
 Router.route('/create')
 .get(function(req,res){
   res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
-
 })
 
+// getting all events from database
+Router.route('/allevents')
+.get(function(req,res){
+ eventFunctions.retrieveAll(req,res)
+})
 
+// creating, retrieving,updating and deleting single event.
+Router.route('/event')
+  .get(function (req, res) {  })
+  .post(function (req, res) {
+    eventFunctions.eventCreate(req,res)
+  })
+  // user info from database.
 Router.route('/user')
-  .get(util.checkUser, function (req, res) { userFunctions.retrieveOne(req, res) })
+  .get( function (req, res) { userFunctions.retrieveOne(req, res) })
   .post(function (req, res) { userFunctions.userSave(req, res) })
   .put(function (req, res) { userFunctions.updateOne(req, res) })
   .delete(function (req, res) { userFunctions.deleteOne(req, res) })
 
-// Users Router to get and modify users info.
+// Users Router to get users info.
 Router.route('/users')
   .get(function (req, res) { userFunctions.retrieveAll(req, res) })
   .post(function (req, res) {
     res.sendStatus(404)
   })
 
-  Router.route('/event')
-    .get(function (req, res) {  })
-    .post(function (req, res) {
-      eventFunctions.eventCreate(req,res)
-    })
+
 
 module.exports = Router
