@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Button, FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
+import { Row, Col, Button, FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
 import {Route, Link, Switch, browserHistory, BrowserRouter as Router} from "react-router-dom";
 import $ from 'jquery';
   
@@ -33,14 +33,16 @@ class Profile extends React.Component {
 		 return (
 		 	 <div className='container'>
 		 	 	<h1>Profile Page</h1>
-		 	 	<br/>
-		 	 	<br/>
-		 	 		<div className='row'>
-		 	 		    <div className="col-md-3" style={{'paddingLeft':'20px'}}>
-
-		 	 		    
-		 	 		    </div>
-		 	 		</div>
+		 	 	<br />
+		 	 	<br />
+		 	 		<Row>
+		 	 		  <Col md={1}>
+		 	 		  </Col>
+		 	 		  <Col md={3}>
+		 	 		  <p>hi qe</p>
+		 	 		  </Col>	 
+		 	 		  
+		 	 		</Row>
              </div>
 		 	)
   }
