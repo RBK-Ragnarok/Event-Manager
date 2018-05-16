@@ -74,11 +74,11 @@ class CreateEvent extends React.Component {
          <div className="form-group">
            <select name = "eventType" className="form-control selectpicker btn btn-default" onChange = {this.onChange}>
              <option value="Select">Select Category</option>
-             <option value="Driver">Wedding</option>
-             <option value="Home Maintenance">Birthdays</option>
-             <option value="Computer Maintenance">bla bla</option>
-             <option value="Babysitting">bla bla</option>
-             <option value="Tutoring">bla bla</option>
+             <option value="Sports">Sports</option>
+             <option value="Social">Social</option>
+             <option value="Political">Political</option>
+             <option value="Educaional">Educaional</option>
+             <option value="Art">Art</option>
            </select>
            </div>
          </label></Col>

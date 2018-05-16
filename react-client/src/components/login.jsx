@@ -11,7 +11,6 @@ class login extends React.Component {
     this.state = {
       username: '',
       password: '',
-      email: '',
       loggedIn: false
     		}
     this.onChange = this.onChange.bind(this)

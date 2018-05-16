@@ -6,6 +6,7 @@ import login from './login.jsx'
 import Signup from './Signup.jsx'
 import axios from 'axios'
 import CreateEvent from './CreateEvent.jsx';
+import AboutUs from './AboutUs.jsx';
 
 class Home extends Component {
   constructor (props) {
