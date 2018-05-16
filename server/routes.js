@@ -116,8 +116,17 @@ Router.route('/events')
 .get(function(req,res){
   res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
 })
+Router.route('/eventinfo')
+.get(function(req,res){
+  res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
+})
 // creating event page.
 Router.route('/create')
+.get(function(req,res){
+  res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
+})
+
+Router.route('/about')
 .get(function(req,res){
   res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
 })
@@ -151,7 +160,7 @@ Router.route('/users')
   Router.route('/profile')
     .get(function (req, res) {
       res.sendFile(path.join(__dirname, '../react-client/dist/index.html'))
-      
+
      })
     .post(function (req, res) {
       res.sendStatus(404)
