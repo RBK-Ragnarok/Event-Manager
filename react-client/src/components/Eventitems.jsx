@@ -75,7 +75,7 @@ showeventbox(name,description){
   <ButtonToolbar>
 <OverlayTrigger trigger="click" placement="left" overlay={<Popover title={this.props.event.eventName}>
 <Link to='/EventEnfo' ><button  type='Submit'
- onClick={this.componentDidMount}>Attind</button></Link>
+ onClick={this.componentDidMount}>Attend</button></Link>
  <br></br>
 <strong>EventType : {this.props.event.eventType}<br></br><br></br>
 duration : {this.props.event.duration}<br></br><br></br>cost : {this.props.event.cost}</strong></Popover>}>
