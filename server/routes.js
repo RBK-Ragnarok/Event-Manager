@@ -148,6 +148,14 @@ Router.route('/users')
     res.sendStatus(404)
   })
 
+  Router.route('/profile')
+    .get(function (req, res) {
+      res.sendFile(path.join(__dirname, '../react-client/dist/index.html'))
+      
+     })
+    .post(function (req, res) {
+      res.sendStatus(404)
+    })
 
 
 module.exports = Router
