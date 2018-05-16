@@ -39,8 +39,9 @@ class Profile extends React.Component {
 		 	 		  <Col md={1}>
 		 	 		  </Col>
 		 	 		  <Col md={3}>
-		 	 		  <p>hi qe</p>
-		 	 		  </Col>	 
+		 	 		  <span id="textcolor" autoFocus required value={this.state.description}>User Name</span>
+		 	 		  </Col>	
+
 		 	 		  
 		 	 		</Row>
              </div>
