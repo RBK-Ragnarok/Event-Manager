@@ -20,11 +20,12 @@ import {
     super(props);
     this.state = {
       term: '',
-      events: [{name:'lena'},{name:'lolo'},{name:'lona'}],
-      description:'hello world'
+      events: [],
+      description:''
 
     };
     this.onChange = this.onChange.bind(this);
+    this.componentDidMount = this.componentDidMount.bind(this);
     //this.onSubmit = this.onSubmit.bind(this);
   }
 
@@ -39,14 +40,14 @@ import {
   //     events: [...this.state.events, this.state.term]
   //   });
   // }
-  componentDidMount(url) {
+  componentDidMount() {
     $.ajax({
       type: 'GET',
-      url: '/events',
+      url: '/allevents',
       success: (data) => {
-        this.setState({
-          events: data
-        })
+        var newData = this.state.events.concat([data]);  
+        this.setState({events: newData})
+        console.log(this.state.events)
       },
       error: (err) => {
         console.log('err', err);

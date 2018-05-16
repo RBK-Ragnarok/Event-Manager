@@ -17,6 +17,7 @@ class EventList extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      events:[]
     }
   }
 
@@ -26,8 +27,14 @@ class EventList extends Component {
 
       <div>
     {
-     this.props.events.map((event) =>
-      <Eventitems key={event.name} event={event} />)
+
+     this.props.events.map(event2=>
+      event2.map(event =>
+      <Eventitems event={event} />))
+
+
+
+
      }
    </div>
 

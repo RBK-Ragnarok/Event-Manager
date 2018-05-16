@@ -23,11 +23,12 @@ class Eventitems extends Component {
       items:'',
       name:'',
       description:'',
-      iseventhiddin:true
+      iseventhiddin:true,
+      data:'',
       //show: false
     };
-  data:'';
-  this.onChange=this.onChange.bind(this);
+  
+    this.onChange=this.onChange.bind(this);
     this.showeventbox=this.showeventbox.bind(this);
     //  this.handleClick = e => {
     //   this.setState({ target: e.target, show: !this.state.show });
@@ -58,14 +59,14 @@ showeventbox(name,description){
    </div>
  <div className="row" className="jumbotron jumbotron-fluid" id='jumbotron'className='col-md-6 col-md-offset-3' >
   <div className="container" className="fixed-bottom">
-    <h1 className="display-3" className="col-*-*">{this.props.event.name}</h1>
+    <h1 className="display-3" className="col-*-*">{this.props.event.eventName}</h1>
     <br></br>
-    <p className="lead">Event description :</p>
+    <p className="lead">Event description :{this.props.event.description}</p>
     <br></br>
     <table className="table">
-      <th>Date:</th>
-      <th>Duration:</th>
-      <th>Price:</th>
+      <th>Date : {this.props.event.startDate}</th>
+      <th>Place : {this.props.event.place}</th>
+      <th>Price : {this.props.event.cost}</th>
   </table>
   <br></br>
   <br></br>
@@ -73,10 +74,10 @@ showeventbox(name,description){
   <br></br>
   </div>
   <ButtonToolbar>
-<OverlayTrigger trigger="click" placement="left" overlay={<Popover title={this.props.event.name}><Link to='/EventEnfo' ><button  type='Submit'
+<OverlayTrigger trigger="click" placement="left" overlay={<Popover title={this.props.event.eventName}><Link to='/EventEnfo' ><button  type='Submit'
  onClick={this.componentDidMount}>Attind</button></Link>
  <br></br>
-<strong>{this.props.event.name},{this.props.event.description}</strong></Popover>}>
+<strong>{this.props.event.eventName},{this.props.event.description}</strong></Popover>}>
   <Button>More info!</Button>
 </OverlayTrigger>
 </ButtonToolbar>
