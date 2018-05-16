@@ -59,25 +59,26 @@ showeventbox(name,description){
    </div>
  <div className="row" className="jumbotron jumbotron-fluid" id='jumbotron'className='col-md-6 col-md-offset-3' >
   <div className="container" className="fixed-bottom">
-    <h1 className="display-3" className="col-*-*">{this.props.event.eventName}</h1>
+    <h1 className="display-3" className="col-*-*" className="glyphicon -globe fa-3x">EventName: {this.props.event.eventName}</h1>
     <br></br>
-    <p className="lead">Event description :{this.props.event.description}</p>
+    <br></br>
+    <p className="fa-2x">Event description :{this.props.event.description}</p>
     <br></br>
     <table className="table">
-      <th>Date : {this.props.event.startDate}</th>
-      <th>Place : {this.props.event.place}</th>
-      <th>Price : {this.props.event.cost}</th>
+      <a className="fa-2x">Date : {this.props.event.startDate}</a>
+      <br></br>
+      <a className="fa-2x">Place : {this.props.event.place}</a>
+      
   </table>
-  <br></br>
-  <br></br>
-  <br></br>
   <br></br>
   </div>
   <ButtonToolbar>
-<OverlayTrigger trigger="click" placement="left" overlay={<Popover title={this.props.event.eventName}><Link to='/EventEnfo' ><button  type='Submit'
+<OverlayTrigger trigger="click" placement="left" overlay={<Popover title={this.props.event.eventName}>
+<Link to='/EventEnfo' ><button  type='Submit'
  onClick={this.componentDidMount}>Attind</button></Link>
  <br></br>
-<strong>{this.props.event.eventName},{this.props.event.description}</strong></Popover>}>
+<strong>EventType : {this.props.event.eventType}<br></br>
+duration : {this.props.event.duration}<br></br>cost : {this.props.event.cost}</strong></Popover>}>
   <Button>More info!</Button>
 </OverlayTrigger>
 </ButtonToolbar>
