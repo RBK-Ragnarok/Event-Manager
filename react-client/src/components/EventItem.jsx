@@ -54,35 +54,34 @@ showeventbox(name,description){
   render(){
   	return (
   		<div>
-   <div className="container" style={{display: 'flex', justifyContent: 'center'}}>
-   <h2 onClick={()=> this.showeventbox(this.items)} >{this.items}</h2>
-   </div>
- <div className="row" className="jumbotron jumbotron-fluid" id='jumbotron'className='col-md-6 col-md-offset-3' >
-  <div className="container" className="fixed-bottom">
-    <h1 className="display-3" className="col-*-*" className="glyphicon -globe fa-3x">EventName: {this.props.event.eventName}</h1>
-    <br></br>
-    <br></br>
-    <p className="fa-2x">Event description :{this.props.event.description}</p>
-    <br></br>
-    <table className="table">
-      <a className="fa-2x">Date : {this.props.event.startDate}</a>
-      <br></br>
-      <a className="fa-2x">Place : {this.props.event.place}</a>
-
-  </table>
-  <br></br>
-  </div>
-  <ButtonToolbar>
-<OverlayTrigger trigger="click" placement="left" overlay={<Popover title={this.props.event.eventName}>
-<Link to={`/eventinfo/${this.props.event._id}`}><button  type='Submit'
- onClick={this.componentDidMount}>Attend</button></Link>
- <br></br>
-<strong>EventType : {this.props.event.eventType}<br></br><br></br>
-duration : {this.props.event.duration}<br></br><br></br>cost : {this.props.event.cost}</strong></Popover>}>
-  <Button>More info!</Button>
-</OverlayTrigger>
-</ButtonToolbar>
-</div>
+        <div className="container" style={{display: 'flex', justifyContent: 'center'}}>
+          <h2 onClick={()=> this.showeventbox(this.items)} >{this.items}</h2>
+        </div>
+        <div className="row" className="jumbotron jumbotron-fluid" id='jumbotron'className='col-md-6 col-md-offset-3' >
+          <div className="container" className="fixed-bottom">
+          <h1 className="display-3" className="col-*-*" className="glyphicon -globe fa-3x">EventName: {this.props.event.eventName}</h1>
+          <br></br>
+          <br></br>
+          <p className="fa-2x">Event description :{this.props.event.description}</p>
+          <br></br>
+          <table className="table">
+          <a className="fa-2x">Date : {this.props.event.startDate}</a>
+          <br></br>
+          <a className="fa-2x">Place : {this.props.event.place}</a>
+          </table>
+          <br></br>
+        </div>
+        <ButtonToolbar>
+          <OverlayTrigger trigger="click" placement="left" overlay={<Popover title={this.props.event.eventName}>
+          <Link to={`/eventinfo/${this.props.event._id}`}><button  type='Submit'
+          onClick={this.componentDidMount}>Attend</button></Link>
+          <br></br>
+          <strong>EventType : {this.props.event.eventType}<br></br><br></br>
+          duration : {this.props.event.duration}<br></br><br></br>cost : {this.props.event.cost}</strong></Popover>}>
+          <Button>More info!</Button>
+          </OverlayTrigger>
+        </ButtonToolbar>
+        </div>
       </div>
        )
   }
