@@ -5,7 +5,7 @@ import {Navbar,Nav,NavItem,Carousel,Modal} from 'react-bootstrap';
 //import { Link } from 'react-router-dom';
 import Events from './Events.jsx';
 import Eventitems from './Eventitems.jsx';
-import Eventinfo from './Eventinfo.jsx';
+import Eventinfo from './EventInfo.jsx';
 
 import {
   Route,

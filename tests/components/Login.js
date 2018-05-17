@@ -1,11 +1,13 @@
-import React from 'react'
-import {expect} from 'chai'
-import {mount,shallow} from 'enzyme'
-import Login from '../../react-client/src/components/login.jsx'
+import React, {Component} from 'react'
+import { expect } from 'chai'
+import { shallow } from 'enzyme';
+import login from '../../react-client/src/components/login.jsx'
+import Adapter from 'enzyme-adapter-react-15';
+Enzyme.configure({ adapter: new Adapter() })
 
-describe("<Login />",function(){
+describe("<login />",function(){
   it('should render Home component',function(){
-    const wrapper=shallow(<Login />)
-    expect(wrapper.find(Login).length).to.equal(1)
+    const wrapper=enzyme.shallow(<login />)
+    expect(wrapper.find(login).length).to.equal(1)
   })
 })

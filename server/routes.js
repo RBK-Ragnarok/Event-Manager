@@ -147,6 +147,10 @@ Router.route('/event')
   .post(function (req, res) {
     eventFunctions.eventCreate(req,res)
   })
+  Router.route('/event/:id')
+    .get(function (req, res) { eventFunctions.getEventById(req,res) })
+    .post(function (req, res) {
+    })
   // user info from database.
 Router.route('/user')
   .get( function (req, res) { userFunctions.retrieveOne(req, res) })
