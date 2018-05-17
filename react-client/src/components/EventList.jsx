@@ -31,8 +31,10 @@ class EventList extends Component {
     {
 
      this.props.events.map(event2=>
-      event2.map(event =>
-      <Eventitems event={event} />))
+      event2.map(event => {
+
+        return <Eventitems event={event} />
+      }))
 
 
 

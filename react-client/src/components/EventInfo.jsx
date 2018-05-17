@@ -1,12 +1,7 @@
 import React, { Component } from "react";
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
-import {Navbar,Nav,NavItem,Carousel,Jumbotron,Button,ButtonToolbar,
-  Overlay,Popover,OverlayTrigger} from 'react-bootstrap';
 //import { Link } from 'react-router-dom';
-import Events from './Events.jsx';
-import EventList from './EventList.jsx';
-import Eventitems from './Eventitems.jsx';
 import AppRouter from '../routes/AppRouter.jsx';
 import {
   Route,
@@ -21,10 +16,17 @@ class EventInfo extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      events:[]
+         eventName: '',
+          duration: '',
+          startDate: '',
+          place:'',
+          eventType: '',
+          cost: '',
+          description: '',
+          message:''
+
     };
   this.onChange=this.onChange.bind(this);
-  this.componentDidMount = this.componentDidMount.bind(this);
   }
 
 
@@ -33,13 +35,25 @@ class EventInfo extends Component {
      [e.target.name]: e.target.value 
    });
   }
-componentDidMount() {
+  componentWillMount(){
+    console.log("hello",this.props.match.params.id)
+  }
+componentDidMount(info) {
     $.ajax({
-      type: 'GET',
-      url: '/allevents',
+      type: 'Post',
+      url: `/EventInfo/${this.props.match.params.id}`,
       success: (data) => {
-        var newData = this.state.events.concat([data]);  
-        this.setState({events: newData})
+        var eventinfo = this.state.events.concat([data]);
+        this.setState({
+          eventName: eventinfo.eventName,
+          duration: eventinfo.duration,
+          startDate: eventinfo.startDate,
+          place:eventinfo.place,
+          eventType: eventinfo.eventType,
+          cost: eventinfo.cost,
+          description: eventinfo.description,
+          message:eventinfo.message
+        })
       },
       error: (err) => {
         console.log('err', err);
@@ -48,11 +62,16 @@ componentDidMount() {
       
   }
   render(){
-    return (
-  		<div>
-      <h1>{this.props.event}</h1>
-      </div>
-      )
+  		return (
+        <div>
+        <h1>{this.state.eventName}</h1>
+        
+          
+            
+            </div>
+ 
+       )   
   }
 }
 export default EventInfo;
+
