@@ -30,19 +30,19 @@ class Home extends Component {
         <div id='Carousel1' className='devImg'>
           <Carousel>
             <Carousel.Item className='img'>
-              <img className='img' alt='900x500' src='../photos/bisycle.jpeg' />
+              <img className='img' alt='900x500' src='../photos/img1.jpg'/>
             </Carousel.Item>
             <Carousel.Item className='img'>
-              <img className='img' alt='900x500' alt='900x500' src='../photos/happy.jpeg' />
+              <img className='img' alt='900x500' src='../photos/img2.jpg' />
             </Carousel.Item>
             <Carousel.Item className='img'>
-              <img className='img' alt='900x500' src='../photos/happy1.jpeg' />
+              <img className='img' alt='900x500' src='../photos/img3.jpg' />
             </Carousel.Item>
             <Carousel.Item className='img'>
-              <img className='img' alt='900x500' src='../photos/party.jpeg' />
+              <img className='img' alt='900x500' src='../photos/img4.jpg' />
             </Carousel.Item>
             <Carousel.Item className='img'>
-              <img className='img' alt='900x500' src='../photos/party1.jpeg' />
+              <img className='img' alt='900x500' src='../photos/img5.jpg' />
             </Carousel.Item>
           </Carousel>
         </div>
