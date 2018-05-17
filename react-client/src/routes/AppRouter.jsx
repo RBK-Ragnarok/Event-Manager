@@ -10,7 +10,7 @@ import axios from 'axios';
 import NavBarComponent from '../components/NavBarComponent.jsx';
 import CreateEvent from '../components/CreateEvent.jsx';
 import EventInfo from '../components/EventInfo.jsx';
-
+import $ from 'jquery';
 class AppRouter extends React.Component {
   constructor (props) {
     super(props)
