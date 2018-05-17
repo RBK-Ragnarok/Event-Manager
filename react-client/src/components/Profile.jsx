@@ -8,7 +8,8 @@ class Profile extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-     data:{}
+     data:{},
+     sata:{}
     }
 
   }
@@ -22,7 +23,6 @@ class Profile extends React.Component {
         that.setState({data:data})
 	 }
     })
-  	
   }	
 
 
@@ -36,16 +36,14 @@ class Profile extends React.Component {
 		 	 		  <Col md={1}>
 		 	 		  </Col>
 		 	 		  <Col md={3}>
-		 	 		  <span id="textcolor" >User Name :</span>
-		 	 		  <a className="fa-2x"> {this.state.data.username}</a>
+		 	 		  	<span id="textcolor" >User Name :</span>
+		 	 		  	<p className="fa-1x"> {this.state.data.username}</p>
 		 	 		  </Col>	
-		 	 		  <br />
-		 	 		  <Col md={5}>
-		 	 		   <span id="textcolor" >Email :</span>
-		 	 		  <a className="fa-2x"> {this.state.data.email}</a>
-		 	 		  </Col>
-		 	 		  
-		 	 		</Row>
+		 	 		  <Col md={3}>
+		 	 		   	<span id="textcolor" >Email :</span>
+		 	 		  	<p className="fa-1x"> {this.state.data.email}</p>
+		 	 		  </Col>	 	 		
+		 	 		</Row> 
              </div>
 		 	)
   }
