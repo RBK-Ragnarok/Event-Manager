@@ -6,7 +6,7 @@ import {Navbar,Nav,NavItem,Carousel,Jumbotron,Button,ButtonToolbar,
 //import { Link } from 'react-router-dom';
 import Events from './Events.jsx';
 import EventList from './EventList.jsx';
-import EventEnfo from './EventEnfo.jsx';
+import EventInfo from './EventInfo.jsx';
 import AppRouter from '../routes/AppRouter.jsx';
 import {
   Route,
@@ -38,7 +38,7 @@ class Eventitems extends Component {
   onChange (e) {
     this.setState({
      [e.target.name]: e.target.value ,
-     [e.target.description]: e.target.value 
+     //[e.target.description]: e.target.value 
    });
   }
 showeventbox(name,description){
@@ -74,7 +74,7 @@ showeventbox(name,description){
   </div>
   <ButtonToolbar>
 <OverlayTrigger trigger="click" placement="left" overlay={<Popover title={this.props.event.eventName}>
-<Link to='/EventEnfo' ><button  type='Submit'
+<Link to='/eventinfo' ><button  type='Submit'
  onClick={this.componentDidMount}>Attend</button></Link>
  <br></br>
 <strong>EventType : {this.props.event.eventType}<br></br><br></br>

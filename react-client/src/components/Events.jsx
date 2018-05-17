@@ -5,7 +5,7 @@ import {Navbar,Nav,NavItem,Carousel} from 'react-bootstrap';
 //import { Link } from 'react-router-dom';
 import EventList from './EventList.jsx';
 import Eventitems from './Eventitems.jsx';
-
+import EventInfo from './EventInfo.jsx';
 import {
   Route,
   Link,
@@ -47,7 +47,6 @@ import {
       success: (data) => {
         var newData = this.state.events.concat([data]);  
         this.setState({events: newData})
-        console.log(this.state.events)
       },
       error: (err) => {
         console.log('err', err);
