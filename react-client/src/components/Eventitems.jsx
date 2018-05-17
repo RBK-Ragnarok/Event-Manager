@@ -27,7 +27,7 @@ class Eventitems extends Component {
       data:'',
       //show: false
     };
-  
+
     this.onChange=this.onChange.bind(this);
     this.showeventbox=this.showeventbox.bind(this);
     //  this.handleClick = e => {
@@ -38,7 +38,7 @@ class Eventitems extends Component {
   onChange (e) {
     this.setState({
      [e.target.name]: e.target.value ,
-     //[e.target.description]: e.target.value 
+     //[e.target.description]: e.target.value
    });
   }
 showeventbox(name,description){
@@ -53,8 +53,8 @@ showeventbox(name,description){
 
   render(){
   	return (
-  		<div>   
-   <div className="container" style={{display: 'flex', justifyContent: 'center'}}>      
+  		<div>
+   <div className="container" style={{display: 'flex', justifyContent: 'center'}}>
    <h2 onClick={()=> this.showeventbox(this.items)} >{this.items}</h2>
    </div>
  <div className="row" className="jumbotron jumbotron-fluid" id='jumbotron'className='col-md-6 col-md-offset-3' >
@@ -68,7 +68,7 @@ showeventbox(name,description){
       <a className="fa-2x">Date : {this.props.event.startDate}</a>
       <br></br>
       <a className="fa-2x">Place : {this.props.event.place}</a>
-      
+
   </table>
   <br></br>
   </div>
