@@ -7,7 +7,7 @@ Enzyme.configure({ adapter: new Adapter() })
 
 describe("<login />",function(){
   it('should render Home component',function(){
-    const wrapper=enzyme.shallow(<login />)
+    const wrapper=mount(<login />)
     expect(wrapper.find(login).length).to.equal(1)
   })
 })

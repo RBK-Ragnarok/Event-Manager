@@ -32,7 +32,7 @@ class EventInfo extends Component {
 
   onChange (e) {
     this.setState({
-     [e.target.name]: e.target.value 
+     [e.target.name]: e.target.value
    });
   }
   componentWillMount(){
@@ -41,38 +41,38 @@ class EventInfo extends Component {
 componentDidMount(info) {
     $.ajax({
       type: 'POST',
-      url: `/events/${this.props.match.params.id}`,
+      url: `/event/${this.props.match.params.id}`,
       success: (data) => {
-        var eventinfo = this.state.events.concat([data]);
+        // var eventinfo = this.state.events.concat([data]);
+        console.log(data);
         this.setState({
-          eventName: eventinfo.eventName,
-          duration: eventinfo.duration,
-          startDate: eventinfo.startDate,
-          place:eventinfo.place,
-          eventType: eventinfo.eventType,
-          cost: eventinfo.cost,
-          description: eventinfo.description,
-          message:eventinfo.message,
-          
+          eventName: data.eventName,
+          duration: data.duration,
+          startDate: data.startDate,
+          place:data.place,
+          eventType: data.eventType,
+          cost: data.cost,
+          description: data.description,
+          message:data.message,
+
         })
       },
       error: (err) => {
         console.log('err', err);
       }
     });
-      
+
   }
   render(){
   		return (
         <div>
         <h1>{this.state.eventName}</h1>
-        
-          
-            
+
+
+
             </div>
- 
-       )   
+
+       )
   }
 }
 export default EventInfo;
-

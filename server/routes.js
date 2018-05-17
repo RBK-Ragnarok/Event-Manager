@@ -148,8 +148,8 @@ Router.route('/event')
     eventFunctions.eventCreate(req,res)
   })
   Router.route('/event/:id')
-    .get(function (req, res) { eventFunctions.getEventById(req,res) })
-    .post(function (req, res) {
+    .get(function (req, res) { })
+    .post(function (req, res) { eventFunctions.getEventById(req,res)
     })
   // user info from database.
 Router.route('/user')

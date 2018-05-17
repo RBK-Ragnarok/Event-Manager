@@ -47,10 +47,11 @@ exports.retrieveAll = function (req, res) {
 }
 
 exports.getEventById = function (req, res) {
-  var id = req.body._id
+  console.log(req.params.id);
+  var id = req.params.id
   Event.findById(id, function (err, event) {
     if (err) {
-      console.log(err);
+      console.log('in findbyid function couldnt find the event',err);
     }
     res.json(event)
   })
