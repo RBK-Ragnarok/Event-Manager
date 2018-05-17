@@ -46,6 +46,16 @@ exports.retrieveAll = function (req, res) {
   })
 }
 
+exports.getEventById = function (req, res) {
+  var id = req.body._id
+  Event.findById(id, function (err, event) {
+    if (err) {
+      console.log(err);
+    }
+    res.json(event)
+  })
+}
+
 exports.findEventByType = function (req, res) {
   var eventType = req.body.eventType
   Event.find({eventType: eventType}, function (err, events) {
