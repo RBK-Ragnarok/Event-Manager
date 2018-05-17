@@ -33,7 +33,8 @@ class NavBarComponent extends React.Component {
           if(this.state.loggedIn){
             return(
 
-            <Navbar className="devNav">
+            <Navbar className="navbar navbar-default">
+            <div class="container-fluid">
               <Navbar.Header>
                 <Navbar.Brand >
                   <a className='header'href="/"><strong>Events</strong></a>
@@ -45,10 +46,12 @@ class NavBarComponent extends React.Component {
                 <NavItem id="nav1" eventKey='events' href= "/events"><p>events</p></NavItem>
                 <NavItem id="nav1" eventKey='logout' href= "/logout"><p>logout</p></NavItem>
               </Nav>
+              </div>
             </Navbar>)
           }else{
             return(
-            <Navbar className="devNav">
+            <Navbar className="navbar navbar-default">
+            <div class="container-fluid">
               <Navbar.Header>
                 <Navbar.Brand >
                   <a className='header'href="/"><strong>Events</strong></a>
@@ -59,6 +62,7 @@ class NavBarComponent extends React.Component {
                 <NavItem id="nav1" eventKey='logIn' href= "/login"><p>LOGIN</p></NavItem>
                 <NavItem id="nav1" eventKey='signUp' href= "/signup"><p>SIGNUP</p></NavItem>
               </Nav>
+              </div>
             </Navbar>
           )
           }
