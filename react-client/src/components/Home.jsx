@@ -6,6 +6,7 @@ import login from './login.jsx'
 import Signup from './Signup.jsx'
 import axios from 'axios'
 import CreateEvent from './CreateEvent.jsx';
+import AboutUs from './AboutUs.jsx';
 
 class Home extends Component {
   constructor (props) {
@@ -22,8 +23,7 @@ class Home extends Component {
 
   render () {
     return (
-      <div>
-
+       <div>
         <h1 id='h1'>Events</h1>
 
         <div id='Carousel1' className='devImg'>
@@ -62,7 +62,7 @@ class Home extends Component {
             </div>
           </div>
         </footer>
-      </div>
+       </div>
     )
   }
 }

@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { Button, FormGroup, FormControl, ControlLabel } from 'react-bootstrap'
+import { Button, FormGroup, FormControl, ControlLabel,Navbar,Nav,NavItem } from 'react-bootstrap'
 // import axios from 'axios';
 import { Route, Link, Switch, browserHistory, BrowserRouter as Router} from 'react-router-dom'
 import $ from 'jquery'
@@ -11,7 +11,6 @@ class login extends React.Component {
     this.state = {
       username: '',
       password: '',
-      email: '',
       loggedIn: false
     		}
     this.onChange = this.onChange.bind(this)
@@ -45,8 +44,8 @@ class login extends React.Component {
 
   render () {
     return (
-      <div className='container'>
-       <h3 className='form-Signup-heading'><b>Login</b></h3>
+        <div className='container'>
+        <h3 className='form-Signup-heading'><b>Login</b></h3>
          <br/>
          <br/>
          <br/>
@@ -70,7 +69,6 @@ class login extends React.Component {
         </div>
 
       </div>
-
     )
   }
 }

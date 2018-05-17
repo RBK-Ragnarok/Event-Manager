@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import { Button, FormGroup, FormControl, ControlLabel,Col, Row,ButtonToolbar } from 'react-bootstrap';
+import { Button, FormGroup, FormControl, ControlLabel,Col, Row,ButtonToolbar,Navbar,Nav,NavItem } from 'react-bootstrap';
 import {  Route,Link,Switch,browserHistory,BrowserRouter as Router} from "react-router-dom";
 import $ from 'jquery';
 import Home from './Home.jsx';
@@ -47,6 +47,19 @@ class CreateEvent extends React.Component {
     render() {
         return (
           <div>
+            {/* <Navbar className="devNav">
+                <Navbar.Header>
+                <Navbar.Brand >
+                   <a className='header'href="/"><strong>Events</strong></a>
+                </Navbar.Brand>
+              </Navbar.Header>
+                <Nav pullRight className='nav'>
+                  <NavItem id="nav1" eventKey='profile' href= "/profile"><p>profile</p></NavItem>
+                <NavItem id="nav1" eventKey='create' href= "/create"><p>Create Event</p></NavItem>
+                <NavItem id="nav1" eventKey='events' href= "/events"><p>events</p></NavItem>
+                  <NavItem id="nav1" eventKey='logout' href= "/logout"><p>logout</p></NavItem>
+                </Nav>
+                </Navbar> */}
           <div>
              <h3 className="form-Signup-heading">
                     <b>create your event</b>
@@ -74,11 +87,11 @@ class CreateEvent extends React.Component {
          <div className="form-group">
            <select name = "eventType" className="form-control selectpicker btn btn-default" onChange = {this.onChange}>
              <option value="Select">Select Category</option>
-             <option value="Driver">Wedding</option>
-             <option value="Home Maintenance">Birthdays</option>
-             <option value="Computer Maintenance">bla bla</option>
-             <option value="Babysitting">bla bla</option>
-             <option value="Tutoring">bla bla</option>
+             <option value="Sports">Sports</option>
+             <option value="Social">Social</option>
+             <option value="Political">Political</option>
+             <option value="Educaional">Educaional</option>
+             <option value="Art">Art</option>
            </select>
            </div>
          </label></Col>
