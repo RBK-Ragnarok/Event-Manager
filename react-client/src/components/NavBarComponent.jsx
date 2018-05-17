@@ -56,7 +56,7 @@ class NavBarComponent extends React.Component {
             <div class="container-fluid">
               <Navbar.Header>
                 <Navbar.Brand >
-                  <a className='header'href="/"><strong>Events</strong></a>
+                  <a className='header'href="/"><strong>Home</strong></a>
                 </Navbar.Brand>
               </Navbar.Header>
               <Nav pullRight className='nav'>
