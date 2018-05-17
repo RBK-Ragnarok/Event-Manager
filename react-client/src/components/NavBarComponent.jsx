@@ -40,11 +40,10 @@ class NavBarComponent extends React.Component {
                 </Navbar.Brand>
               </Navbar.Header>
               <Nav pullRight className='nav'>
-                <NavItem id="nav1" eventKey='logIn' href= "/profile"><p>profile</p></NavItem>
-                <NavItem id="nav1" eventKey='logIn' href= "/create"><p>Create Event</p></NavItem>
-                <NavItem id="nav1" eventKey='signUp' href= "/logout"><p>logout</p></NavItem>
-                <NavItem id="nav1" eventKey='signUp' href= "/events"><p>events</p></NavItem>
-
+                <NavItem id="nav1" eventKey='profile' href= "/profile"><p>profile</p></NavItem>
+                <NavItem id="nav1" eventKey='create' href= "/create"><p>Create Event</p></NavItem>
+                <NavItem id="nav1" eventKey='events' href= "/events"><p>events</p></NavItem>
+                <NavItem id="nav1" eventKey='logout' href= "/logout"><p>logout</p></NavItem>
               </Nav>
             </Navbar>)
           }else{
