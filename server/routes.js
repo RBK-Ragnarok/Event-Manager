@@ -120,6 +120,10 @@ Router.route('/eventinfo')
 .get(function(req,res){
   res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
 })
+Router.route('/logged')
+.get(function(req,res){
+  res.send(req.session)
+})
 // creating event page.
 Router.route('/create')
 .get(function(req,res){
