@@ -8,25 +8,22 @@ class Profile extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-     username:'',
-     email:''
+     data:{}
     }
 
   }
 
   componenetDidMount(){
   	var that= this;
-
  $.ajax({
 	   url: '/user',
 	   type: 'GET',
 	   success: (data) => {
-        that.setState({data})
+        that.setState({data:data})
 	 }
     })
   	
   }	
-
 
 
   render() {  
@@ -39,7 +36,9 @@ class Profile extends React.Component {
 		 	 		  <Col md={1}>
 		 	 		  </Col>
 		 	 		  <Col md={3}>
-		 	 		  <span id="textcolor" autoFocus required value={this.state.description}>User Name</span>
+		 	 		  <span id="textcolor" >User Name :</span>
+		 	 		  <a className="fa-2x"> {this.state.data.username}</a>
+
 		 	 		  </Col>	
 
 		 	 		  
