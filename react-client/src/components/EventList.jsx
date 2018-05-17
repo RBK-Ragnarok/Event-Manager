@@ -4,7 +4,7 @@ import $ from 'jquery';
 import {Navbar,Nav,NavItem,Carousel,Modal} from 'react-bootstrap';
 //import { Link } from 'react-router-dom';
 import Events from './Events.jsx';
-import Eventitems from './Eventitems.jsx';
+import EventItem from './EventItem.jsx';
 import Eventinfo from './EventInfo.jsx';
 
 import {
@@ -33,7 +33,7 @@ class EventList extends Component {
      this.props.events.map(event2=>
       event2.map(event => {
 
-        return <Eventitems event={event} />
+        return <EventItem event={event} />
       }))
 
 

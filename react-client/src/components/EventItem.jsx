@@ -16,7 +16,7 @@ import {
   BrowserRouter as Router
 } from "react-router-dom";
 
-class Eventitems extends Component {
+class EventItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -90,4 +90,4 @@ duration : {this.props.event.duration}<br></br><br></br>cost : {this.props.event
 
  // <Link to='/EventEnfo' ><button className='col-xs-4 col-xs-offset-4' type='Submit' onClick={this.componentDidMount}>More info</button></Link>
 
-export default Eventitems;
+export default EventItem;
