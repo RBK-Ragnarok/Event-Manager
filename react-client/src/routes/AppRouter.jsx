@@ -9,9 +9,8 @@ import Events from '../components/Events.jsx';
 import axios from 'axios';
 import NavBarComponent from '../components/NavBarComponent.jsx';
 import CreateEvent from '../components/CreateEvent.jsx';
-import EventEnfo from '../components/EventEnfo.jsx';
-import $ from 'jquery'
-
+import EventInfo from '../components/EventInfo.jsx';
+import $ from 'jquery';
 class AppRouter extends React.Component {
   constructor (props) {
     super(props)
@@ -50,7 +49,7 @@ class AppRouter extends React.Component {
                 <Route  path = "/login"	component = {login} />
                 <Route  path = "/events" component = {Events} />
                 <Route  path = "/create" component = {CreateEvent} />
-                <Route  path = "/EventEnfo" component = {EventEnfo} />
+                <Route  path = "/EventInfo/:id" component = {EventInfo} />
                 <Route  path = "/profile" component = {Profile} />
 
                 </Switch>
