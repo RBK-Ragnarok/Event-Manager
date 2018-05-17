@@ -13,9 +13,9 @@ class Profile extends React.Component {
 
   }
 
-  componenetDidMount(){
+  componentDidMount(){
   	var that= this;
- $.ajax({
+ 	$.ajax({
 	   url: '/user',
 	   type: 'GET',
 	   success: (data) => {
@@ -38,9 +38,12 @@ class Profile extends React.Component {
 		 	 		  <Col md={3}>
 		 	 		  <span id="textcolor" >User Name :</span>
 		 	 		  <a className="fa-2x"> {this.state.data.username}</a>
-
 		 	 		  </Col>	
-
+		 	 		  <br />
+		 	 		  <Col md={5}>
+		 	 		   <span id="textcolor" >Email :</span>
+		 	 		  <a className="fa-2x"> {this.state.data.email}</a>
+		 	 		  </Col>
 		 	 		  
 		 	 		</Row>
              </div>
