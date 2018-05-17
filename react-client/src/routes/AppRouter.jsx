@@ -10,24 +10,40 @@ import axios from 'axios';
 import NavBarComponent from '../components/NavBarComponent.jsx';
 import CreateEvent from '../components/CreateEvent.jsx';
 import EventEnfo from '../components/EventEnfo.jsx';
+import $ from 'jquery'
 
 class AppRouter extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      session: false
+      loggedIn: false
     }
   }
 
   componentDidMount () {
+    var that = this
 
+	   $.ajax({
+	   url: '/logged',
+	   type: 'GET',
+	   success: (data) => {
+       console.log('getting this data : ',data.user);
+      if(data.user){
+        that.setState({loggedIn:true})
+      }else{
+        that.setState({loggedIn:false})
+      }
+      console.log('logged in state : ',that.state.loggedIn);
+
+	 }
+    })
   }
       render() {
 
         return (
         <BrowserRouter>
             <div id="navbar">
-            <NavBarComponent  session={this.state.session}/><br /><br />
+            <NavBarComponent  loggedIn={this.state.loggedIn}/><br /><br />
                 <Switch>
                 <Route  exact path = "/"  component = {Home}/>
                 <Route  path = "/signup" component = {Signup} />
