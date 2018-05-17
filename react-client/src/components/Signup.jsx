@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Button, FormGroup, FormControl, ControlLabel } from 'react-bootstrap'
+import { Button, FormGroup, FormControl, ControlLabel,Navbar,Nav,NavItem } from 'react-bootstrap'
 import { Route, Link, Switch, browserHistory, BrowserRouter as Router} from 'react-router-dom'
 import $ from 'jquery'
 import login from './login.jsx'
@@ -60,7 +60,6 @@ class Signup extends React.Component {
       )
     } else {
       return (
-
         <div className='container'>
         <h3 className="form-Signup-heading"><b>Signup</b></h3>
         <br/>
@@ -73,8 +72,6 @@ class Signup extends React.Component {
               <FormControl type='password' className='form-control' name='password' onChange={this.onChange} placeholder='Password' required value={this.state.password} /><br />
               <FormControl type='email' className='form-control' name='email' onChange={this.onChange} placeholder='Email' required value={this.state.email} /><br />
               <FormControl type='age' className='form-control' name='age' onChange={this.onChange} placeholder='Age' required value={this.state.age} /><br />
-              
-              <FormControl type='about' className='form-control' name='about' onChange={this.onChange} placeholder='About' required value={this.state.about} /><br />
               <Router>
                 <Link to='/' ><button className='col-xs-4 col-xs-offset-4' type='Submit' onClick={this.Signup}>Signup</button></Link>
               </Router>

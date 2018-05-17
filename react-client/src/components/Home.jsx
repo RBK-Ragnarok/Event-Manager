@@ -23,8 +23,7 @@ class Home extends Component {
 
   render () {
     return (
-      <div>
-
+       <div>
         <h1 id='h1'>Events</h1>
 
         <div id='Carousel1' className='devImg'>
@@ -63,7 +62,7 @@ class Home extends Component {
             </div>
           </div>
         </footer>
-      </div>
+       </div>
     )
   }
 }

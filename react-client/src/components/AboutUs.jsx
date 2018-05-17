@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Home from './Home.jsx';
+import {Navbar,Nav,NavItem} from 'react-bootstrap';
 
 class AboutUs extends React.Component {
     render() {
