@@ -37,14 +37,16 @@ class NavBarComponent extends React.Component {
             <div class="container-fluid">
               <Navbar.Header>
                 <Navbar.Brand >
-                  <a className='header'href="/"><strong>Events</strong></a>
+                  <a className='header'href="/"><strong>Home</strong></a>
                 </Navbar.Brand>
               </Navbar.Header>
-              <Nav pullRight className='nav'>
-                <NavItem id="nav1" eventKey='profile' href= "/profile"><p>profile</p></NavItem>
+              <Nav>
+              <NavItem id="nav1" eventKey='profile' href= "/profile"><p>Profile</p></NavItem>
                 <NavItem id="nav1" eventKey='create' href= "/create"><p>Create Event</p></NavItem>
-                <NavItem id="nav1" eventKey='events' href= "/events"><p>events</p></NavItem>
-                <NavItem id="nav1" eventKey='logout' href= "/logout"><p>logout</p></NavItem>
+                <NavItem id="nav1" eventKey='events' href= "/events"><p>Events</p></NavItem>
+                </Nav>
+              <Nav pullRight className='nav'>
+                <NavItem id="nav1" eventKey='logout' href= "/logout"><p>Logout</p></NavItem>
               </Nav>
               </div>
             </Navbar>)
