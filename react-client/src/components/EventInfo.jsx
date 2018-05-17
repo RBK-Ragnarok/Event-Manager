@@ -40,8 +40,8 @@ class EventInfo extends Component {
   }
 componentDidMount(info) {
     $.ajax({
-      type: 'Post',
-      url: `/EventInfo/${this.props.match.params.id}`,
+      type: 'POST',
+      url: `/events/${this.props.match.params.id}`,
       success: (data) => {
         var eventinfo = this.state.events.concat([data]);
         this.setState({
@@ -52,7 +52,8 @@ componentDidMount(info) {
           eventType: eventinfo.eventType,
           cost: eventinfo.cost,
           description: eventinfo.description,
-          message:eventinfo.message
+          message:eventinfo.message,
+          
         })
       },
       error: (err) => {
