@@ -33,7 +33,7 @@ class NavBarComponent extends React.Component {
           if(this.state.loggedIn){
             return(
 
-            <Navbar className="navbar navbar-default">
+            <Navbar className="navbar navbar-default" >
             <div class="container-fluid">
               <Navbar.Header>
                 <Navbar.Brand >
@@ -52,7 +52,7 @@ class NavBarComponent extends React.Component {
             </Navbar>)
           }else{
             return(
-            <Navbar className="navbar navbar-default">
+            <Navbar className="navbar navbar-default" >
             <div class="container-fluid">
               <Navbar.Header>
                 <Navbar.Brand >

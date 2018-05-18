@@ -63,7 +63,7 @@ class CreateEvent extends React.Component {
           <p>you can create your event here.</p>
           </Col>
           </Row>
-         <div  className="container wrapper well"><br />
+         <div  className="container wrapper well" ><br />
          <form >
 
          <Row>
