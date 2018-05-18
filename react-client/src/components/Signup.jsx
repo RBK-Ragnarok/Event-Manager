@@ -16,7 +16,7 @@ class Signup extends React.Component {
       loggedIn: false,
       age: '',
       gender: '',
-      about: '',
+      about: ''
     }
     this.onChange = this.onChange.bind(this)
     this.Signup = this.Signup.bind(this)
@@ -73,10 +73,15 @@ class Signup extends React.Component {
               <FormControl type='password' className='form-control' name='password' onChange={this.onChange} placeholder='Password' required value={this.state.password} /><br />
               <FormControl type='email' className='form-control' name='email' onChange={this.onChange} placeholder='Email' required value={this.state.email} /><br />
               <FormControl type='age' className='form-control' name='age' onChange={this.onChange} placeholder='Age' required value={this.state.age} /><br />
-              
-              <FormControl type='about' className='form-control' name='about' onChange={this.onChange} placeholder='About' required value={this.state.about} /><br />
+              <FormGroup controlId="formControlsSelect">
+              <FormControl componentClass="select" placeholder="Gender" name="gender" onChange={this.onChange} required value={this.state.gender}>
+                <option hidden>Gender</option>
+                <option value="female">Female</option>
+                <option value="male">Male</option>
+              </FormControl>
+              </FormGroup>
               <Router>
-                <Link to='/' ><button className='col-xs-4 col-xs-offset-4' type='Submit' onClick={this.Signup}>Signup</button></Link>
+              <Link to='/' ><button className='col-xs-4 col-xs-offset-4' type='Submit' onClick={this.Signup}>Signup</button></Link>
               </Router>
             </form>
           </div>

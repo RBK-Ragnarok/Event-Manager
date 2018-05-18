@@ -33,26 +33,30 @@ class NavBarComponent extends React.Component {
           if(this.state.loggedIn){
             return(
 
-            <Navbar className="devNav">
+            <Navbar className="navbar navbar-default" >
+            <div class="container-fluid">
               <Navbar.Header>
                 <Navbar.Brand >
-                  <a className='header'href="/"><strong>Events</strong></a>
+                  <a className='header'href="/"><strong>Home</strong></a>
                 </Navbar.Brand>
               </Navbar.Header>
+              <Nav>
+              <NavItem id="nav1" eventKey='profile' href= "/profile"><p>Profile</p></NavItem>
+                <NavItem id="nav1" eventKey='create' href= "/create"><p>Create Event</p></NavItem>
+                <NavItem id="nav1" eventKey='events' href= "/events"><p>Events</p></NavItem>
+                </Nav>
               <Nav pullRight className='nav'>
-                <NavItem id="nav1" eventKey='logIn' href= "/profile"><p>profile</p></NavItem>
-                <NavItem id="nav1" eventKey='logIn' href= "/create"><p>Create Event</p></NavItem>
-                <NavItem id="nav1" eventKey='signUp' href= "/logout"><p>logout</p></NavItem>
-                <NavItem id="nav1" eventKey='signUp' href= "/events"><p>events</p></NavItem>
-
+                <NavItem id="nav1" eventKey='logout' href= "/logout"><p>Logout</p></NavItem>
               </Nav>
+              </div>
             </Navbar>)
           }else{
             return(
-            <Navbar className="devNav">
+            <Navbar className="navbar navbar-default" >
+            <div class="container-fluid">
               <Navbar.Header>
                 <Navbar.Brand >
-                  <a className='header'href="/"><strong>Events</strong></a>
+                  <a className='header'href="/"><strong>Home</strong></a>
                 </Navbar.Brand>
               </Navbar.Header>
               <Nav pullRight className='nav'>
@@ -60,6 +64,7 @@ class NavBarComponent extends React.Component {
                 <NavItem id="nav1" eventKey='logIn' href= "/login"><p>LOGIN</p></NavItem>
                 <NavItem id="nav1" eventKey='signUp' href= "/signup"><p>SIGNUP</p></NavItem>
               </Nav>
+              </div>
             </Navbar>
           )
           }

@@ -24,8 +24,9 @@ class Home extends Component {
     return (
       <div>
 
-        <h1 id='h1'>Events</h1>
-
+        <h1 id='h1'><b>Welcome to Name of Project</b></h1>
+        <br/>
+        <br/>
         <div id='Carousel1' className='devImg'>
           <Carousel>
             <Carousel.Item className='img'>

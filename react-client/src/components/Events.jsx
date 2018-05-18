@@ -4,7 +4,7 @@ import $ from 'jquery';
 import {Navbar,Nav,NavItem,Carousel} from 'react-bootstrap';
 //import { Link } from 'react-router-dom';
 import EventList from './EventList.jsx';
-import Eventitems from './Eventitems.jsx';
+import EventItem from './EventItem.jsx';
 import EventInfo from './EventInfo.jsx';
 import {
   Route,
