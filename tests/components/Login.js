@@ -19,8 +19,8 @@ describe("<login /> Component",function(){
     expect(wrapper.find('login').length).to.equal(1)
   })
 
-  it('Should have form element',function(){
-    const wrapper=shallow('login')
+  it('Should have container class element',function(){
+    const wrapper=shallow(<login />)
     expect(wrapper.find('.container').length).to.equal(1)
   })
 
