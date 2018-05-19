@@ -2,8 +2,9 @@ import 'jsdom-global/register';
 import React from 'react';
 import { mount,shallow } from 'enzyme';
 import {expect} from 'chai';
-import login from '../../react-client/src/components/login.jsx'
+import EventList from '../../react-client/src/components/EventList.jsx'
 import { Button, FormGroup, FormControl, ControlLabel } from 'react-bootstrap'
+import Eventitems from '../../react-client/src/components/Eventitems.jsx'
 
 
 //
@@ -12,20 +13,20 @@ import { Button, FormGroup, FormControl, ControlLabel } from 'react-bootstrap'
 // global.window = doc.defaultView
 
 
-describe("<login /> Component",function(){
+describe("<EventList /> Component",function(){
 
-  it('Should render Home component',function(){
-    const wrapper=shallow(<login />)
-    expect(wrapper.find('login').length).to.equal(1)
+  it('Should render EventList component',function(){
+    const wrapper=shallow(<EventList />)
+    expect(wrapper.find('EventList').length).to.equal(1)
   })
 
   it('Should have form element',function(){
-    const wrapper=shallow('login')
-    expect(wrapper.find('.container').length).to.equal(1)
+    const wrapper=shallow(<EventList />)
+    expect(wrapper.find(Eventitems)).to.have.length(1);
   })
 
   it('Should have two text input elements',function(){
-    const wrapper=mount(<login />)
+    const wrapper=shallow(<EventList />)
     expect(wrapper.contains('formcontrol').length).to.equal(2)
   })
 })
