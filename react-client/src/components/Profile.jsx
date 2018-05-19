@@ -9,7 +9,7 @@ class Profile extends React.Component {
     super(props);
     this.state = {
      data:{},
-     sata:{}
+     sata:[]
     }
 
   }
@@ -22,6 +22,15 @@ class Profile extends React.Component {
 	   success: (data) => {
         that.setState({data:data})
 	 }
+    })
+
+    $.ajax({
+	   url: '/allevents',
+	   type: 'GET',
+	   success: (e) => {
+        var newData = this.state.sata.concat([e]);  
+        this.setState({sata: newData})
+	 } 
     })
   }	
 
@@ -36,14 +45,23 @@ class Profile extends React.Component {
 		 	 		  <Col md={1}>
 		 	 		  </Col>
 		 	 		  <Col md={3}>
-		 	 		  	<span id="textcolor" >User Name :</span>
+		 	 		  	<span id="textcolor" >User Name: </span>
 		 	 		  	<p className="fa-1x"> {this.state.data.username}</p>
 		 	 		  </Col>	
 		 	 		  <Col md={3}>
-		 	 		   	<span id="textcolor" >Email :</span>
+		 	 		   	<span id="textcolor" >Email: </span>
 		 	 		  	<p className="fa-1x"> {this.state.data.email}</p>
 		 	 		  </Col>	 	 		
 		 	 		</Row> 
+
+		 	 		<Row>
+		 	 		  <Col md={1}>
+		 	 		  </Col>
+		 	 		  <Col md={3}>
+		 	 		  	<span id="textcolor" >Events: </span>
+		 	 		  	<p className="fa-1x"> {this.state.sata}</p>
+		 	 		  </Col>
+		 	 		</Row>  
              </div>
 		 	)
   }
