@@ -96,6 +96,41 @@ exports.updateOne = function (req, res) {
     res.json(data)
   })
 }
+// exports.updateEvent = function(req,res) {
+//  console.log('hhhhhhhh',req.session.user.username)
+//   User.findOne({username:req.session.user.username}, function (err, user) {
+//     if (err){ 
+//       return handleError(err);
+//     }
+//    console.log('hiiiiiiiiii',req.session.user.events)
+//     var eventsArr=user.events
+//     eventsArr.push(req.params._id)
+
+//     User.update({username:req.session.user.username},{events:eventsArr},function(err,user){
+//       if(err){
+//         console.log(err)
+//       }else{
+//         console.log("lolo",user)
+//       }
+//     })
+
+//   });
+// }
+exports.update = function (req, res) {
+  var query = { id: req.params.id };
+  console.log("hhhhhhhh",)
+  var updatedProps = req.body;
+  var options = { new: true };
+  User.findOneAndUpdate(query, updatedProps, options, function (err, response) {
+    if (err) {
+      return res.json(err.message);
+    }
+    if (!response) {
+      return res.sendStatus(404);
+    }
+    res.json(response);
+  });
+};
 
 exports.addEvent=function(req,res){
   var username=req.session.user.username
