@@ -39,7 +39,7 @@ class EventInfo extends Component {
    });
   }
   componentWillMount(){
-    console.log("hello",this.props.match.params.id)
+    //console.log("hello",this.props.match.params.id)
   }
 componentDidMount(info) {
     $.ajax({
@@ -69,7 +69,7 @@ componentDidMount(info) {
 
 add(event){
    var that = this
-   console.log("lolololo",this.state)
+   console.log("lolololo",this.props.match.params.id)
       $.ajax({
         url: `/user/${this.props.match.params.id}`,
         type: 'PUT',

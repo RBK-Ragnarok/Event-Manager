@@ -155,7 +155,7 @@ Router.route('/event')
 Router.route('/user/:id')
   .get( function (req, res) { userFunctions.retrieveOne(req, res) })
   .post(function (req, res) { userFunctions.userSave(req, res) })
-  .put(function (req, res) { userFunctions.update(req, res) })
+  .put(function (req, res) { userFunctions.updateUser(req, res) })
   .delete(function (req, res) { userFunctions.deleteOne(req, res) })
 
 // Users Router to get users info.
