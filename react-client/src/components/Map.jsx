@@ -3,11 +3,39 @@ import { withGoogleMap, GoogleMap } from 'react-google-maps';
 
 
 class Map extends Component {
+//   constructor(props){
+//         super(props)
+//         this.state = {
+//           lat:0,
+//           lng:0,
+//           showingInfoWindow: false,
+//           activeMarker: {},
+//           Place: {}
+//         }
+//       }
+
+// onMarkerClick(props, marker, e){
+//   this.setState({
+//     Place: props,
+//     activeMarker: marker,
+//     showingInfoWindow: true
+//   })};
+
+
+// onMapClicked (props){
+//   if (this.state.showingInfoWindow) {
+//     this.setState({
+//       showingInfoWindow: false,
+//       activeMarker: null
+//     })
+//   }
+// };
+
   render(){
     const GoogleMapExample = withGoogleMap(props => (
       <GoogleMap
         defaultZoom={8}
-       defaultCenter={{ lat: 31.9454, lng: 35.9284 }}>
+        defaultCenter={{ lat: 31.9454, lng: 35.9284 }}>
       </GoogleMap>
    ));
     return(
@@ -16,6 +44,19 @@ class Map extends Component {
           containerElement={ <div style={{ height: `500px`, width: '500px' }} /> }
           mapElement={ <div style={{ height: `100%` }} /> }
         />
+        {/* <Marker position={{lat:this.props.laltitude,lng:this.props.longitude}}
+                 onClick={this.onMarkerClick} name={"Your locatoin"}
+                  />
+             
+               <InfoWindow marker={this.state.activeMarker} 
+                 visible={this.state.showingInfoWindow}> 
+
+               <div>
+                 <h1>{this.state.Place.name}</h1>
+               </div>
+
+             </InfoWindow> */}
+
       </div>
    );
    }
@@ -27,6 +68,41 @@ export default Map;
 
 
 
+// render() {
+//   return (
+//       <div> 
+      
+//         <div>
+//         {this.getLoc()// calling getLoc here will get your location once you open the app
+//         }   
+
+//           <Map style={{width:"60%",height:"30%"}} google={this.props.google} zoom={7}
+//           //the map component which is made thanks to google maps react library 
+//               initialCenter={{  lat:31.963158 ,lng:35.930359}}>
+
+//               <Marker position={{lat:this.props.laltitude,lng:this.props.longitude}}
+//               // a marker on the map that will show you your current location
+//                 onClick={this.onMarkerClick} name={"Your locatoin"}
+//                  />
+             
+
+//               <InfoWindow marker={this.state.activeMarker} 
+//               //infoWindo will be shown once a marker is clicked     
+//                 visible={this.state.showingInfoWindow}> 
+
+//               <div>
+//                 <h1>{this.state.Place.name}</h1>
+//               </div>
+
+//             </InfoWindow>
+
+//           </Map>
+//           </div>
+          
+//       </div>          
+//   );
+// }
+// }
 
 
 
@@ -93,6 +169,21 @@ export default Map;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // import React from 'react';
 // import { compose, withStateHandlers } from "recompose";
 // import { InfoWindow, withGoogleMap, withScriptjs, GoogleMap, Marker } from 'react-google-maps';
@@ -138,13 +229,6 @@ export default Map;
 //         super(props)
 //   }
 
-// /*
-// * Ajax request fetch the nearest three Doctors from  the data base  
-// */
-  
- 
- 
-    
 //     render() {
 //         return (
 //           <div>
@@ -164,6 +248,24 @@ export default Map;
 //         )
 //     }
 // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // import React, { Component } from 'react';
@@ -227,8 +329,6 @@ export default Map;
 //    }
 // };
 // export default Map;
-
-
 
 
 
