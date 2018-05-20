@@ -4,6 +4,7 @@ import { Button, FormGroup, FormControl, ControlLabel,Col, Row,ButtonToolbar } f
 import {  Route,Link,Switch,browserHistory,BrowserRouter as Router} from "react-router-dom";
 import $ from 'jquery';
 import Home from './Home.jsx';
+import Map from './Map.jsx';
 
 class CreateEvent extends React.Component {
     constructor(props) {
@@ -65,7 +66,6 @@ class CreateEvent extends React.Component {
           </Row>
          <div  className="container wrapper well" ><br />
          <form >
-
          <Row>
          <Col md={1}>
          </Col>
@@ -114,7 +114,6 @@ class CreateEvent extends React.Component {
          </Col>
         </Row>
          <br />
-
          <Row>
          <Col md={1}>
          </Col>
@@ -169,6 +168,9 @@ class CreateEvent extends React.Component {
          <FormControl type = "number" name = "duration" onChange = {this.onChange} placeholder = "duration" autoFocus required value={this.state.duration}/>
          </label> </Col>
          </Row><br />
+         <div id = 'map'>
+          <Map/>
+          </div>
              <Button id="jobb" bsStyle="primary" className="col-xs-4 col-xs-offset-4" onClick={this.create} type="submit" bsSize="large" >
                 Create Event
              </Button>

@@ -11,6 +11,7 @@ import NavBarComponent from '../components/NavBarComponent.jsx';
 import CreateEvent from '../components/CreateEvent.jsx';
 import EventInfo from '../components/EventInfo.jsx';
 import $ from 'jquery';
+import Map from '../components/Map.jsx';
 class AppRouter extends React.Component {
   constructor (props) {
     super(props)
