@@ -71,7 +71,7 @@ exports.deleteOne = function (req, res) {
 }
 
 exports.updateOne = function (req, res) {
-  var username = req.sessoin.user.username
+  var username = req.session.user.username
   var password = req.body.password
   var email = req.body.email
   var age=req.body.age
@@ -95,6 +95,28 @@ exports.updateOne = function (req, res) {
     }
     res.json(data)
   })
+}
+exports.updateUser = function (req, res) {
+  console.log("hiiiii",req.params._id)
+    var updateuser={    
+        events: req.params._id
+     }
+    console.log('lolololo',req.session.user.username)
+    User.findOneAndUpdate({username:req.session.user.username},updateuser,function(err,data){
+        if(err){
+            res.json('err');
+        }
+        else{
+             data.save(function(err,data){
+                 if(err){
+                    return handleError(err)
+                 }
+                 else{
+                 res.json(data);
+             }
+          })
+        } 
+    })
 }
 
 exports.addEvent=function(req,res){

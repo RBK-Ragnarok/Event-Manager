@@ -34,7 +34,7 @@ class NavBarComponent extends React.Component {
             return(
 
             <Navbar className="navbar navbar-default" >
-            <div class="container-fluid">
+            <div className="container-fluid">
               <Navbar.Header>
                 <Navbar.Brand >
                   <a className='header'href="/"><strong>Home</strong></a>
@@ -53,7 +53,7 @@ class NavBarComponent extends React.Component {
           }else{
             return(
             <Navbar className="navbar navbar-default" >
-            <div class="container-fluid">
+            <div className="container-fluid">
               <Navbar.Header>
                 <Navbar.Brand >
                   <a className='header'href="/"><strong>Home</strong></a>

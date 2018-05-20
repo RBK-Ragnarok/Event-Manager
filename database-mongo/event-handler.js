@@ -1,4 +1,5 @@
 var Event = require('./Event')
+var User = require('./User')
 var mongoose = require('mongoose')
 
 exports.eventCreate = function (req, res) {
