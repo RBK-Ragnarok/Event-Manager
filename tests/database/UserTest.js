@@ -67,6 +67,49 @@ describe('Database Tests', function() {
      });
 
    });
+   describe('Nested Docs',function(){
+     it('create a nested document inside user model',function(done){
+       var user=new User({
+         username:"Mark zuccer",
+         events:[{
+           creator:"not Mark",
+           eventName: "Hiking",
+           duration: "2",
+           startDate: "someDate",
+           place: "Amman",
+           eventType: "Sports",
+           cost: 50,
+           description: "Fun event"
+         }]
+       })
+
+       user.save(function(err,user){
+         expect(user.events.length).to.equal(1)
+         done()
+       })
+     })
+     it("should be able to push events to a found model",function(done){
+       User.findOne({username:"Mark zuccer"},function(err,foundUser){
+
+         var newEvent={
+           creator:"not zuccer",
+           eventName: "skating",
+           duration: "2",
+           startDate: "someDate",
+           place: "Amman",
+           eventType: "Sports",
+           cost: 50,
+           description: "Fun event"
+         }
+
+         foundUser.events.push(newEvent);
+
+         expect(foundUser.events.length).to.equal(2)
+         done();
+       })
+     })
+   })
+
 
   after(function(done){
     mongoose.connection.db.dropDatabase(function(){

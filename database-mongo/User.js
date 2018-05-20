@@ -1,5 +1,6 @@
 var mongoose = require('mongoose')
-var eventSchema = require('./Event')
+var Event = require('./Event.js')
+var eventSchema = require('./Event.js').EventSchema
 
 var UserSchema = mongoose.Schema({
   username: { type: String, required: false, unique: true},
@@ -9,7 +10,7 @@ var UserSchema = mongoose.Schema({
   gender:String,
   about:String,
   rating:Number,
-  events:{ type: Array, required: false }
+  events:[eventSchema]
 })
 
 var User = mongoose.model('User', UserSchema)
