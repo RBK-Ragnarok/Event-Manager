@@ -149,7 +149,8 @@ Router.route('/event')
   })
   Router.route('/event/:id')
     .get(function (req, res) { })
-    .post(function (req, res) { eventFunctions.getEventById(req,res)
+    .post(function (req, res) {
+       eventFunctions.getEventById(req,res)
     })
   // user info from database.
 Router.route('/user/:id')
@@ -160,7 +161,9 @@ Router.route('/user/:id')
 
 // Users Router to get users info.
 Router.route('/users')
-  .get(function (req, res) { userFunctions.retrieveAll(req, res) })
+  .get(function (req, res) {
+     userFunctions.retrieveAll(req, res)
+    })
   .post(function (req, res) {
     res.sendStatus(404)
   })
