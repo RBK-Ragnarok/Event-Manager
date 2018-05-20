@@ -2,26 +2,28 @@ import 'jsdom-global/register';
 import React from 'react';
 import { mount,shallow } from 'enzyme';
 import {expect} from 'chai';
-import login from '../../react-client/src/components/login.jsx'
-import { Button, FormGroup, FormControl, ControlLabel } from 'react-bootstrap'
+import login from '../../react-client/src/components/login'
+import ShallowRenderer from 'react-test-renderer/shallow';
 
-
-//
-// const doc = jsdom('<!doctype html><html><body></body></html>')
-// global.document = doc
-// global.window = doc.defaultView
 
 
 describe("<login /> Component",function(){
 
-  it('Should render Home component',function(){
+  it('Should render Login component',function(){
     const wrapper=shallow(<login />)
-    expect(wrapper.find('login').length).to.equal(1)
+    // expect(wrapper.find('login').length).to.equal(1)
+expect(React.Component.isPrototypeOf(login)).to.be.true;
   })
 
   it('Should have container class element',function(){
-    const wrapper=shallow(<login />)
-    expect(wrapper.find('.container').length).to.equal(1)
+    const wrapper=shallow(
+      <login>
+      <div className="container"/>
+      </login>
+  )
+    expect(wrapper.contains(<div className="container" />)).to.equal(true)
+
+
   })
 
   it('Should have two text input elements',function(){
