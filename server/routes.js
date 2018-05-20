@@ -149,18 +149,29 @@ Router.route('/event')
   })
   Router.route('/event/:id')
     .get(function (req, res) { })
-    .post(function (req, res) { eventFunctions.getEventById(req,res)
+    .post(function (req, res) {
+       eventFunctions.getEventById(req,res)
     })
   // user info from database.
 Router.route('/user')
-  .get( function (req, res) { userFunctions.retrieveOne(req, res) })
-  .post(function (req, res) { userFunctions.userSave(req, res) })
-  .put(function (req, res) { userFunctions.updateOne(req, res) })
-  .delete(function (req, res) { userFunctions.deleteOne(req, res) })
+  .get( function (req, res) {
+     userFunctions.retrieveOne(req, res)
+   })
+  .post(function (req, res) {
+     userFunctions.userSave(req, res)
+    })
+  .put(function (req, res) {
+     userFunctions.updateOne(req, res)
+    })
+  .delete(function (req, res) {
+     userFunctions.deleteOne(req, res)
+    })
 
 // Users Router to get users info.
 Router.route('/users')
-  .get(function (req, res) { userFunctions.retrieveAll(req, res) })
+  .get(function (req, res) {
+     userFunctions.retrieveAll(req, res)
+    })
   .post(function (req, res) {
     res.sendStatus(404)
   })
