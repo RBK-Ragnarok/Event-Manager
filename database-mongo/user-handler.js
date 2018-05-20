@@ -72,21 +72,14 @@ exports.deleteOne = function (req, res) {
 
 exports.updateOne = function (req, res) {
   var username = req.session.user.username
-  var password = req.body.password
   var email = req.body.email
   var age=req.body.age
-  var about =req.body.about
-  var rating=req.body.rating
+
 
   var UserObj = {
 	    username: username,
-	    password: password,
 	    email: email,
-      age:age,
-      gender:gender,
-      about:about,
-      rating:rating,
-
+      age:age
   }
 
   User.findOneAndUpdate({username: username}, UserObj, function (err, data) {
