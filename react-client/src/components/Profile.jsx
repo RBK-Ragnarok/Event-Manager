@@ -20,7 +20,6 @@ class Profile extends React.Component {
 
     this.edit=this.edit.bind(this);
     this.save=this.save.bind(this);
-    this.handelChange=this.handelChange.bind(this);
     this.handelChange2=this.handelChange2.bind(this);
     this.handelChange3=this.handelChange3.bind(this);
     this.handelChange4=this.handelChange4.bind(this);
@@ -141,13 +140,6 @@ class Profile extends React.Component {
         </div>
         
         <div className='col-md-6'>
-          <FormControl
-            bsSize="large"
-            value={this.state.username}
-            placeholder="Username"
-            onChange={this.handelChange}
-          />
-          <hr></hr>
           <FormControl
             bsSize="large"
             value={this.state.email}
