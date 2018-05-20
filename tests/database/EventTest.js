@@ -5,7 +5,7 @@ var Event = require('../../database-mongo/Event')
 var eventFunctions = require('../../database-mongo/event-handler')
 
 
-describe('Database Tests', function() {
+describe('Creating,Saving and finding a model', function() {
 
   before(function (done) {
     mongoose.connect('mongodb://localhost/testDatabase');
@@ -67,7 +67,7 @@ describe('Database Tests', function() {
      });
 
    });
-
+   
   after(function(done){
     mongoose.connection.db.dropDatabase(function(){
       mongoose.connection.close(done);

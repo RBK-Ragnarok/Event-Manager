@@ -9,7 +9,7 @@ var UserSchema = mongoose.Schema({
   gender:String,
   about:String,
   rating:Number,
-  events:{ type: Array, required: false }
+  events:[eventSchema]
 })
 
 var User = mongoose.model('User', UserSchema)
