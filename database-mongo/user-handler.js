@@ -97,26 +97,30 @@ exports.updateOne = function (req, res) {
   })
 }
 exports.updateUser = function (req, res) {
-  console.log("hiiiii",req.params._id)
-    var updateuser={    
-        events: req.params._id
-     }
-    console.log('lolololo',req.session.user.username)
-    User.findOneAndUpdate({username:req.session.user.username},updateuser,function(err,data){
-        if(err){
-            res.json('err');
-        }
-        else{
-             data.save(function(err,data){
-                 if(err){
-                    return handleError(err)
-                 }
-                 else{
-                 res.json(data);
-             }
-          })
-        } 
+
+  var username=req.session.user.username;
+
+  var newEvent={
+    eventName: req.body.eventName,
+    duration: req.body.duration,
+    startDate: req.body.startDate,
+    place:req.body.place,
+    eventType: req.body.eventType,
+    cost: req.body.cost,
+    description: req.body.description,
+  }
+  User.findOne({username:username},function(err,foundUser){
+
+    foundUser.events.push(newEvent)
+
+    foundUser.save(function(err,savedUser){
+      if(err){
+        console.log(err);
+      }
     })
+
+  })
+
 }
 
 exports.addEvent=function(req,res){

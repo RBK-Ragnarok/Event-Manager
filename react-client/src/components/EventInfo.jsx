@@ -71,12 +71,12 @@ add(event){
    var that = this
    console.log("lolololo",this.props.match.params.id)
       $.ajax({
-        url: `/user/${this.props.match.params.id}`,
+        url: '/user',
         type: 'PUT',
         data:this.state,
         success: (data) => {
           console.log('event added')
-          that.setState({message:'Event Adeed'})
+          that.setState({message:'Event Added'})
         },
         error: (err) => {
           console.log('err', err);

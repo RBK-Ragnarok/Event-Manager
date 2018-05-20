@@ -1,5 +1,6 @@
 var mongoose = require('mongoose')
-var eventSchema = require('./Event')
+var Event = require('./Event.js')
+var eventSchema = require('./Event.js').EventSchema
 
 var UserSchema = mongoose.Schema({
   username: { type: String, required: false, unique: true},
