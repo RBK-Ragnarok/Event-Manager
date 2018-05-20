@@ -2,9 +2,9 @@ var mongoose = require('mongoose')
 var eventSchema = require('./Event')
 
 var UserSchema = mongoose.Schema({
-  username: { type: String, required: false, unique: false},
+  username: { type: String, required: false, unique: true},
   password: { type: String, required: false },
-  email: { type: String, required: false , unique: false},
+  email: { type: String, required: false , unique: true},
   age:Number,
   gender:String,
   about:String,
