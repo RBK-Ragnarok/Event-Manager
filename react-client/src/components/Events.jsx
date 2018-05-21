@@ -6,6 +6,7 @@ import {Navbar,Nav,NavItem,Carousel} from 'react-bootstrap';
 import EventList from './EventList.jsx';
 import EventItem from './EventItem.jsx';
 import EventInfo from './EventInfo.jsx';
+//import SearchCom from './SearchCom.jsx';
 import {
   Route,
   Link,

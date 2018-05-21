@@ -7,6 +7,7 @@ import {Navbar,Nav,NavItem,Carousel,Jumbotron,Button,ButtonToolbar,
 import Events from './Events.jsx';
 import EventList from './EventList.jsx';
 import EventInfo from './EventInfo.jsx';
+//import SearchCom from './SearchCom.jsx';
 import AppRouter from '../routes/AppRouter.jsx';
 import {
   Route,
@@ -57,25 +58,20 @@ showeventbox(name,description){
    <div className="container" style={{display: 'flex', justifyContent: 'center'}}>
    <h2 onClick={()=> this.showeventbox(this.items)} >{this.items}</h2>
    </div>
- <div className="row" className="jumbotron jumbotron-fluid" id='jumbotron'className='col-md-6 col-md-offset-3' >
-  <div className="container" className="fixed-bottom">
-    <h1 className="display-3" className="col-*-*" className="glyphicon -globe fa-3x"><b>EventName: {this.props.event.eventName}</b></h1>
-    <br></br>
-    <br></br>
-    <p className="fa-2x"><b>Event description :</b>{this.props.event.description}</p>
-    <br></br>
-    <table className="table">
-      <a className="fa-2x"><b>Date : </b>{this.props.event.startDate}</a>
-      <br></br>
-      <a className="fa-2x"><b>Place : </b>{this.props.event.place}</a>
-
-  </table>
+<div className="card" style={{width:'400px'}} className='col-xs-3 col-xs-offset-3'>
+  <img  id='jumbotron' className="card-img-top" src="https://images.pexels.com/photos/796606/pexels-photo-796606.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" 
+  alt="Card image"/>
   <br></br>
-  </div>
-<Link to={`/eventinfo/${this.props.event._id}`}><button className='col-xs-3 col-xs-offset-4' type='Submit'
+  <div className="card-body">
+    <h4 className="fa-2x"><b>EventName: {this.props.event.eventName} .</b></h4>
+    <p className="fa-2x"><b>Place : </b>{this.props.event.place} .</p>
+    <p className="fa-2x"><b>Date : </b>{this.props.event.startDate} .</p>
+    <Link to={`/eventinfo/${this.props.event._id}`}><button className='col-xs-4 btn btn-primary col-xs-offset-2' type='Submit'
  onClick={this.componentDidMount}>More Info</button></Link>
+  </div>
 </div>
       </div>
+      
        )
   }
 }
