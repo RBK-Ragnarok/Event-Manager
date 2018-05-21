@@ -17,7 +17,9 @@ class CreateEvent extends React.Component {
           eventType: '',
           cost: '',
           description: '',
-          message:''
+          message:'',
+          location: {lat:0,
+          lng:0}
         }
         this.onChange = this.onChange.bind(this);
         this.create = this.create.bind(this);
@@ -167,10 +169,12 @@ class CreateEvent extends React.Component {
          <label >
          <FormControl type = "number" name = "duration" onChange = {this.onChange} placeholder = "duration" autoFocus required value={this.state.duration}/>
          </label> </Col>
-         </Row><br />
+         <Col md={4}>
          <div id = 'map'>
           <Map/>
           </div>
+          </Col>
+         </Row><br />
              <Button id="jobb" bsStyle="primary" className="col-xs-4 col-xs-offset-4" onClick={this.create} type="submit" bsSize="large" >
                 Create Event
              </Button>
