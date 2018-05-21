@@ -113,11 +113,11 @@ Router.route('/signup')
   })
   // events page
 Router.route('/events')
-.get(function(req,res){
+.get(util.checkUser,function(req,res){
   res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
 })
 Router.route('/eventinfo')
-.get(function(req,res){
+.get(util.checkUser,function(req,res){
   res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
 })
 Router.route('/logged')
@@ -126,51 +126,51 @@ Router.route('/logged')
 })
 // creating event page.
 Router.route('/create')
-.get(function(req,res){
+.get(util.checkUser,function(req,res){
   res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
 })
 
 Router.route('/about')
-.get(function(req,res){
+.get(util.checkUser,function(req,res){
   res.sendFile(path.join(__dirname, '../react-client/dist/index.html'));
 })
 
 // getting all events from database
 Router.route('/allevents')
-.get(function(req,res){
+.get(util.checkUser,function(req,res){
  eventFunctions.retrieveAll(req,res)
 })
 
 // creating, retrieving,updating and deleting single event.
 Router.route('/event')
   .get(function (req, res) {  })
-  .post(function (req, res) {
+  .post(util.checkUser,function (req, res) {
     eventFunctions.eventCreate(req,res)
   })
   Router.route('/event/:id')
-    .get(function (req, res) { })
+    .get(util.checkUser,function (req, res) { })
     .post(function (req, res) {
        eventFunctions.getEventById(req,res)
     })
   // user info from database.
 Router.route('/user')
-  .get( function (req, res) {
+  .get(util.checkUser, function (req, res) {
      userFunctions.retrieveOne(req, res)
    })
-  .post(function (req, res) {
+  .post(util.checkUser,function (req, res) {
      userFunctions.userSave(req, res)
     })
 
-  .put(function (req, res) {
+  .put(util.checkUser,function (req, res) {
      userFunctions.updateOne(req, res)
    })
-  .delete(function (req, res) {
+  .delete(util.checkUser,function (req, res) {
      userFunctions.deleteOne(req, res)
     })
 
 // Users Router to get users info.
 Router.route('/users')
-  .get(function (req, res) {
+  .get(util.checkUser,function (req, res) {
      userFunctions.retrieveAll(req, res)
     })
   .post(function (req, res) {
@@ -178,7 +178,7 @@ Router.route('/users')
   })
 
   Router.route('/profile')
-    .get(function (req, res) {
+    .get(util.checkUser,function (req, res) {
       res.sendFile(path.join(__dirname, '../react-client/dist/index.html'))
 
      })
