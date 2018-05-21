@@ -1,28 +1,34 @@
-import 'jsdom-global/register';
 import React from 'react';
-import { mount,shallow } from 'enzyme';
-import {expect} from 'chai';
-import { chai } from 'chai';
-import Home from '../../react-client/src/components/Home.jsx'
-import { Button, FormGroup, FormControl, ControlLabel } from 'react-bootstrap'
-import jsdom from 'jsdom'
+import Enzyme from 'enzyme';
+import Adapter from 'enzyme-adapter-react-15';
+import { configure } from 'enzyme';
 
-const wrapper=mount(<Home />)
+Enzyme.configure({ adapter: new Adapter() });
+import { expect } from 'chai';
+import { shallow, mount } from 'enzyme';
+
+import Home from '../../react-client/src/components/Home'
 
 describe("<Home /> Component",function(){
 
-  it('Should render Home component',function(){
-    // const wrapper=shallow(<Home />)
-    expect(Home.prototype.componentDidMount.calledOnce).to.equal(true);
+    it('Should render Home component',function(){
+      const wrapper=shallow(<Home />)
+  expect(React.Component.isPrototypeOf(Home)).to.be.true;
+    })
+
+
+  it('Should find a title in Home component',function(){
+    const wrapper=shallow(<Home />)
+    expect(wrapper.find('h1')).to.have.length(1);
   })
 
-  it('Should have form element',function(){
-    // const wrapper=shallow(<form />)
-    expect(wrapper.find('form').length).to.equal(1)
-  })
+  it('renders <Carousel /> component', () => {
+     const wrapper = shallow(<Home />);
+     expect(wrapper.find('Carousel')).to.have.length(1);
+   });
 
-  it('Should have two text input elements',function(){
-    // const wrapper=shallow(<Home />)
-    expect(wrapper.find('formcontrol').length).to.equal(2)
+  it('Should have a footer element',function(){
+    const wrapper=shallow(<Home />)
+    expect(wrapper.find('footer').length).to.equal(1)
   })
 })
