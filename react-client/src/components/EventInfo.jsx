@@ -86,32 +86,75 @@ add(event){
   render(){
   		return (
         <div>
-  <h1 className='col-xs-offset-3' ><b> Event Name : {this.state.eventName}</b></h1>
-  <br></br>
-  <ul>
-  <li className="fa-2x"><p><b>Description : </b>{this.state.description} .</p></li>
-  <br></br>
-  <li className="fa-2x"><p><b> Duration :</b> {this.state.duration} .</p></li>
-  <br></br>
-  <li className="fa-2x"><p><b> Place :</b> {this.state.place} .</p></li>
-  <br></br>
-  <li className="fa-2x"><p><b> EventType :</b> {this.state.eventType} .</p></li>
-  <br></br>
-  <li className="fa-2x"><p><b> StartDate :</b> {this.state.startDate} .</p></li>
-  <br></br>
-  <li className="fa-2x"><p><b> Cost :</b> {this.state.cost} .</p></li>
-  <p>
-  <br></br>
-  <br></br>
-  <br></br>
-  <br></br>
+          <div class="jumbotron" id="jum">
+    <h1> The Full Info </h1>      
+  </div>
+  <div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4"><b> Event Name : {this.state.eventName}</b></h1>
+    <p class="lead"></p>
+  </div>
+</div>
+<div id="jam1"class="jumbotron jumbotron-fluid" className='col-xs-4 btn btbtn-md col-xs-offset-3'>
+  <div class="container">
+    <h1 class="display-4"><b>Description : </b></h1>
+    <p class="lead">{this.state.description} .</p>
+  </div>
+</div>
+<div id="jam1" class="jumbotron jumbotron-fluid" className='col-xs-4 btn btbtn-md col-xs-offset-3 '>
+  <div class="container">
+    <h1 class="display-4"><b> Place :</b> </h1>
+    <p class="lead">{this.state.place} .</p>
+  </div>
+</div>
+<div id="jam1" class="jumbotron jumbotron-fluid" className='col-xs-4 btn btbtn-md col-xs-offset-3 '>
+  <div class="container">
+    <h1 class="display-4"><b> EventType :</b>  </h1>
+    <p class="lead">{this.state.eventType} .</p>
+  </div>
+</div>
+<div id="jam1" class="jumbotron jumbotron-fluid" className='col-xs-4 btn btbtn-md col-xs-offset-3 '>
+  <div class="container">
+    <h1 class="display-4"><b> StartDate :</b> </h1>
+    <p class="lead">{this.state.startDate} .</p>
+  </div>
+</div>
+<div id="jam1" class="jumbotron jumbotron-fluid" className='col-xs-4 btn btbtn-md col-xs-offset-3 '>
+  <div class="container">
+    <h1 class="display-4"><b> Cost :</b> </h1>
+    <p class="lead">{this.state.cost} .</p>
+  </div>
+</div>
+
     <Link to='/Profile'><button className='col-xs-4 btn btn-primary btn-md col-xs-offset-3 ' type='Submit'
  onClick={this.add}>Attend</button></Link>
-  </p>
-  </ul>
+  
             </div>
 
        )
   }
 }
+// <h1 className='col-xs-offset-3' ><b> Event Name : {this.state.eventName}</b></h1>
+//   <br></br>
+//   <ul>
+//   <p className="fa-2x"><b>Description : </b>{this.state.description} .</p>
+//   <br></br>
+//   <p className="fa-2x"><b> Duration :</b> {this.state.duration} .</p>
+//   <br></br>
+//   <p className="fa-2x"><b> Place :</b> {this.state.place} .</p>
+//   <br></br>
+//   <p className="fa-2x"><b> EventType :</b> {this.state.eventType} .</p>
+//   <br></br>
+//   <p className="fa-2x"><b> StartDate :</b> {this.state.startDate} .</p>
+//   <br></br>
+//   <p className="fa-2x"><b> Cost :</b> {this.state.cost} .</p>
+//   <p>
+//   <br></br>
+//   <br></br>
+//   <br></br>
+//   <br></br>
+//</p>
+//  </ul>
+
+
 export default EventInfo;
