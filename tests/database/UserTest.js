@@ -108,6 +108,28 @@ describe('Database Tests', function() {
          done();
        })
      })
+
+     it('should be able to add event within a user document',function(done){
+
+       User.findOne({username:"Mark zuccer"},function(err,foundUser){
+
+                  var brandNewEvent={
+                    creator:"Lawrance",
+                    eventName: "skydiving",
+                    duration: "1",
+                    startDate: "someDate",
+                    place: "Amman",
+                    eventType: "Sports",
+                    cost: 50,
+                    description: "Fun event"
+                  }
+
+                  foundUser.events.push(brandNewEvent);
+
+                  expect(foundUser.events.length).to.equal(2);
+                  done();
+       })
+     })
    })
 
 
