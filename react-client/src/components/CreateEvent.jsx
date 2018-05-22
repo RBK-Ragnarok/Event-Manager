@@ -18,8 +18,7 @@ class CreateEvent extends React.Component {
           cost: '',
           description: '',
           message:'',
-          location: {lat:0,
-          lng:0}
+          
         }
         this.onChange = this.onChange.bind(this);
         this.create = this.create.bind(this);

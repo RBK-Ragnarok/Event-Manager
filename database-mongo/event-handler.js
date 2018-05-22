@@ -4,7 +4,7 @@ var mongoose = require('mongoose')
 
 exports.eventCreate = function (req, res) {
   // console.log(req.body,req.session.user);
-  var creator=req.session.username
+  var creator=req.session.user.username
   var eventName = req.body.eventName
   var duration = req.body.duration
   var startDate = req.body.startDate

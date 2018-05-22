@@ -31,7 +31,7 @@ class EventList extends Component {
   render () {
    var arr = [].concat.apply([], this.props.events);
    var filterd=arr.filter(
-     (event)=>{ 
+     (event)=>{
    console.log('i am hear',arr)
      return event.eventName.toLowerCase().indexOf(this.state.search.
       toLowerCase())!==-1;
@@ -45,11 +45,11 @@ class EventList extends Component {
           onChange={this.updateSearch.bind(this)}
             />
     </form>
-      
+
     {filterd.map(event =>{
-        return <EventItem event={event} />
+        return <EventItem key={event._id} event={event} />
        })
-            
+
         }
       </div>
 
