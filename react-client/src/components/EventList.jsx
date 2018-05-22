@@ -6,7 +6,6 @@ import {Navbar, Nav, NavItem, Carousel, Modal} from 'react-bootstrap'
 import Events from './Events.jsx'
 import EventItem from './EventItem.jsx'
 import Eventinfo from './EventInfo.jsx'
-//import SearchCom from './SearchCom.jsx'
 
 import {
   Route,
@@ -35,10 +34,16 @@ class EventList extends Component {
      return (event.eventName.toLowerCase().indexOf(this.state.search.
       toLowerCase())!==-1
     || event.eventType.toLowerCase().indexOf(this.state.search.
-      toLowerCase())!==-1);
-  }
-   )
-   filterd.reverse();
+    toLowerCase())!==-1);
+   }
+     )
+   //  for(var i=0;i<arr.length;i++){
+   //    if(arr[i]===undefined){
+   //       alert ('not found')
+   //    }
+   // }
+
+    filterd.reverse();
     return (
       <div>
     <form>

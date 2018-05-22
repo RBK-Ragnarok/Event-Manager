@@ -11,6 +11,7 @@ class CreateEvent extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+          creator:'',
           eventName: '',
           duration: '',
           startDate: '',

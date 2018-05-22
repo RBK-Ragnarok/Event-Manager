@@ -63,6 +63,7 @@ showeventbox(name,description){
   alt="Card image"/>
   <br></br>
   <div className="card-body">
+  <h4 className="fa-2x"><b>MyName: {this.props.event.creator} .</b></h4>
     <h4 className="fa-2x"><b>EventName: {this.props.event.eventName}.</b></h4>
     <p className="fa-2x"><b>Place : </b>{this.props.event.place} .</p>
     <p className="fa-2x"><b>Date : </b>{this.props.event.startDate} .</p>
