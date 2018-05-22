@@ -5,6 +5,7 @@ import {  Route,Link,Switch,browserHistory,BrowserRouter as Router} from "react-
 import $ from 'jquery';
 import Home from './Home.jsx';
 import Map from './Map.jsx';
+import Profile from './Profile.jsx';
 
 class CreateEvent extends React.Component {
     constructor(props) {
