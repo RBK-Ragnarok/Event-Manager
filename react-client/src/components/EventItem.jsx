@@ -7,7 +7,7 @@ import {Navbar,Nav,NavItem,Carousel,Jumbotron,Button,ButtonToolbar,
 import Events from './Events.jsx';
 import EventList from './EventList.jsx';
 import EventInfo from './EventInfo.jsx';
-//import SearchCom from './SearchCom.jsx';
+import Profile from './Profile.jsx';
 import AppRouter from '../routes/AppRouter.jsx';
 import {
   Route,
@@ -63,7 +63,7 @@ showeventbox(name,description){
   alt="Card image"/>
   <br></br>
   <div className="card-body">
-    <h4 className="fa-2x"><b>EventName: {this.props.event.eventName} .</b></h4>
+    <h4 className="fa-2x"><b>EventName: {this.props.event.eventName}.</b></h4>
     <p className="fa-2x"><b>Place : </b>{this.props.event.place} .</p>
     <p className="fa-2x"><b>Date : </b>{this.props.event.startDate} .</p>
     <Link to={`/eventinfo/${this.props.event._id}`}><button className='col-xs-4 btn btn-primary col-xs-offset-2' type='Submit'

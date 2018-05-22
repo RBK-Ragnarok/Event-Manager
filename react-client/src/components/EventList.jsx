@@ -31,12 +31,14 @@ class EventList extends Component {
   render () {
    var arr = [].concat.apply([], this.props.events);
    var filterd=arr.filter(
-     (event)=>{
-   console.log('i am hear',arr)
-     return event.eventName.toLowerCase().indexOf(this.state.search.
-      toLowerCase())!==-1;
-    }
+     (event)=>{ 
+     return (event.eventName.toLowerCase().indexOf(this.state.search.
+      toLowerCase())!==-1
+    || event.eventType.toLowerCase().indexOf(this.state.search.
+      toLowerCase())!==-1);
+  }
    )
+   filterd.reverse();
     return (
       <div>
     <form>

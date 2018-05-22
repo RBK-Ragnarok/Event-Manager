@@ -69,7 +69,6 @@ componentDidMount(info) {
 
 add(event){
    var that = this
-   console.log("lolololo",this.props.match.params.id)
       $.ajax({
         url: '/user',
         type: 'PUT',
@@ -145,6 +144,16 @@ add(event){
     <p class="lead">{this.state.cost} .</p>
   </div>
 </div>
+<div className="card" id="center">
+  <img  id='im' className="card-img-top" 
+  src="https://res.cloudinary.com/twenty20/private_images/t_watermark-criss-cross-10/v1500804927000/photosp/c4e88cb6-e6cf-4321-8063-06be8e7ac414/stock-photo-business-antique-office-bokeh-warm-calendar-flip-date-reusable-c4e88cb6-e6cf-4321-8063-06be8e7ac414.jpg" 
+  alt="Card image"/>
+  <br></br>
+  <div className="card-body">
+    <h1 class="display-4"><b> Duration :</b>  </h1>
+    <p class="lead">{this.state.duration} .</p>
+  </div>
+</div>
     <Link to='/Profile'><button className='col-xs-4 btn btn-primary btn-md col-xs-offset-4 ' type='Submit'
  onClick={this.add}>Attend</button></Link>
   
@@ -153,27 +162,6 @@ add(event){
        )
   }
 }
-// <h1 className='col-xs-offset-3' ><b> Event Name : {this.state.eventName}</b></h1>
-//   <br></br>
-//   <ul>
-//   <p className="fa-2x"><b>Description : </b>{this.state.description} .</p>
-//   <br></br>
-//   <p className="fa-2x"><b> Duration :</b> {this.state.duration} .</p>
-//   <br></br>
-//   <p className="fa-2x"><b> Place :</b> {this.state.place} .</p>
-//   <br></br>
-//   <p className="fa-2x"><b> EventType :</b> {this.state.eventType} .</p>
-//   <br></br>
-//   <p className="fa-2x"><b> StartDate :</b> {this.state.startDate} .</p>
-//   <br></br>
-//   <p className="fa-2x"><b> Cost :</b> {this.state.cost} .</p>
-//   <p>
-//   <br></br>
-//   <br></br>
-//   <br></br>
-//   <br></br>
-//</p>
-//  </ul>
 
 
 export default EventInfo;
