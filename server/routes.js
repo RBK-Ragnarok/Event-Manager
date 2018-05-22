@@ -162,7 +162,7 @@ Router.route('/user')
     })
 
   .put(util.checkUser,function (req, res) {
-     userFunctions.updateOne(req, res)
+     userFunctions.updateUser(req, res)
    })
   .delete(util.checkUser,function (req, res) {
      userFunctions.deleteOne(req, res)
