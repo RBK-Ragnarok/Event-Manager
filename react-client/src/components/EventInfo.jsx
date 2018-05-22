@@ -89,44 +89,63 @@ add(event){
           <div class="jumbotron" id="jum">
     <h1> The Full Info </h1>      
   </div>
-  <div class="jumbotron jumbotron-fluid">
+  <div class="jumbotron jumbotron-fluid" id="jam1">
   <div class="container">
     <h1 class="display-4"><b> Event Name : {this.state.eventName}</b></h1>
     <p class="lead"></p>
   </div>
 </div>
-<div id="jam1"class="jumbotron jumbotron-fluid" className='col-xs-4 btn btbtn-md col-xs-offset-3'>
-  <div class="container">
-    <h1 class="display-4"><b>Description : </b></h1>
-    <p class="lead">{this.state.description} .</p>
+  <div className="card" id="imginfo" id="center">
+  <img  id='im' className="card-img-top"
+   src="https://images.pexels.com/photos/415068/pexels-photo-415068.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" 
+  alt="Card image"/>
+  <br></br>
+  <div className="card-body">
+   <h1 class="display-4"><b>Description : </b></h1>
+  <p class="lead">{this.state.description} .</p>
   </div>
 </div>
-<div id="jam1" class="jumbotron jumbotron-fluid" className='col-xs-4 btn btbtn-md col-xs-offset-3 '>
-  <div class="container">
+<div className="card" id="center">
+  <img  id='im' className="card-img-top" 
+  src="https://images.pexels.com/photos/52526/sign-places-travel-information-52526.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" 
+  alt="Card image"/>
+  <br></br>
+  <div className="card-body">
     <h1 class="display-4"><b> Place :</b> </h1>
     <p class="lead">{this.state.place} .</p>
   </div>
 </div>
-<div id="jam1" class="jumbotron jumbotron-fluid" className='col-xs-4 btn btbtn-md col-xs-offset-3 '>
-  <div class="container">
+<div className="card" id="center">
+  <img  id='im' className="card-img-top" 
+  src="https://images.pexels.com/photos/167587/pexels-photo-167587.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" 
+  alt="Card image"/>
+  <br></br>
+  <div className="card-body">
     <h1 class="display-4"><b> EventType :</b>  </h1>
     <p class="lead">{this.state.eventType} .</p>
   </div>
 </div>
-<div id="jam1" class="jumbotron jumbotron-fluid" className='col-xs-4 btn btbtn-md col-xs-offset-3 '>
-  <div class="container">
+<div className="card" id="center">
+  <img  id='im' className="card-img-top" 
+  src="https://images.pexels.com/photos/1020323/pexels-photo-1020323.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" 
+  alt="Card image"/>
+  <br></br>
+  <div className="card-body">
     <h1 class="display-4"><b> StartDate :</b> </h1>
     <p class="lead">{this.state.startDate} .</p>
   </div>
 </div>
-<div id="jam1" class="jumbotron jumbotron-fluid" className='col-xs-4 btn btbtn-md col-xs-offset-3 '>
-  <div class="container">
+<div className="card" id="center">
+  <img  id='im' className="card-img-top" 
+  src="https://res.cloudinary.com/twenty20/private_images/t_watermark-criss-cross-10/v1442096675000/photosp/14ec9380-b0c9-427a-bf0b-04c3b7a366b7/stock-photo-money-currency-paper-coins-savings-cost-expense-cash-postit-14ec9380-b0c9-427a-bf0b-04c3b7a366b7.jpg" 
+  alt="Card image"/>
+  <br></br>
+  <div className="card-body">
     <h1 class="display-4"><b> Cost :</b> </h1>
     <p class="lead">{this.state.cost} .</p>
   </div>
 </div>
-
-    <Link to='/Profile'><button className='col-xs-4 btn btn-primary btn-md col-xs-offset-3 ' type='Submit'
+    <Link to='/Profile'><button className='col-xs-4 btn btn-primary btn-md col-xs-offset-4 ' type='Submit'
  onClick={this.add}>Attend</button></Link>
   
             </div>
