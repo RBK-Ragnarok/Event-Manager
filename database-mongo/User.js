@@ -11,6 +11,8 @@ var UserSchema = mongoose.Schema({
   about:String,
   rating:Number,
   events:[eventSchema]
+},{
+  usePushEach: true
 })
 
 var User = mongoose.model('User', UserSchema)
