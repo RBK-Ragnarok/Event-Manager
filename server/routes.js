@@ -185,6 +185,9 @@ Router.route('/users')
     .post(function (req, res) {
       res.sendStatus(404)
     })
+    .put(util.checkUser,function(req,res){
+      userFunctions.updateOne(req,res)
+    })
 
 
 module.exports = Router
