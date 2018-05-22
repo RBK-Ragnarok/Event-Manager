@@ -58,6 +58,7 @@ class EventList extends Component {
        })
 
         }
+        <h1 id="h1">Not Found</h1>
       </div>
 
     )

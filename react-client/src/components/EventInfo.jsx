@@ -85,75 +85,41 @@ add(event){
   render(){
   		return (
         <div>
-          <div class="jumbotron" id="jum">
-    <h1> The Full Info </h1>      
-  </div>
-  <div class="jumbotron jumbotron-fluid" id="jam1">
-  <div class="container">
-    <h1 class="display-4"><b> Event Name : {this.state.eventName}</b></h1>
-    <p class="lead"></p>
+<div className="jumbotron">
+  <div className="container text-center">
+    <h1><b> Event Name : {this.state.eventName}</b></h1>      
   </div>
 </div>
-  <div className="card" id="imginfo" id="center">
-  <img  id='im' className="card-img-top"
-   src="https://images.pexels.com/photos/415068/pexels-photo-415068.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" 
-  alt="Card image"/>
+<div className="container-fluid bg-3 text-center" id="div">    
+  <h3 className="fa-2x"><b>Description : </b></h3>
+  <p className="lead" className="fa-2x">{this.state.description} .</p>
   <br></br>
-  <div className="card-body">
-   <h1 class="display-4"><b>Description : </b></h1>
-  <p class="lead">{this.state.description} .</p>
-  </div>
-</div>
-<div className="card" id="center">
-  <img  id='im' className="card-img-top" 
-  src="https://images.pexels.com/photos/52526/sign-places-travel-information-52526.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" 
-  alt="Card image"/>
   <br></br>
-  <div className="card-body">
-    <h1 class="display-4"><b> Place :</b> </h1>
-    <p class="lead">{this.state.place} .</p>
+  <div className="row">
+    <div className="col-sm-3">
+      <p className="fa-2x" ><b> Place :</b></p>
+      <p className="lead" className="fa-2x">{this.state.place} .</p>
+    </div>
+    <div className="col-sm-3"> 
+      <p className="fa-2x"><b> StartDate :</b> </p>
+      <p className="lead" className="fa-2x">{this.state.startDate} .</p>
+    </div>
+    <div className="col-sm-3"> 
+      <p className="fa-2x"><b> Cost :</b></p>
+      <p className="lead" className="fa-2x">{this.state.cost} .</p>
+    </div>
+    <div className="col-sm-3">
+      <p className="fa-2x"><b> Duration :</b></p>
+      <p className="lead" className="fa-2x">{this.state.duration} .</p>
+    </div>
   </div>
 </div>
-<div className="card" id="center">
-  <img  id='im' className="card-img-top" 
-  src="https://images.pexels.com/photos/167587/pexels-photo-167587.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" 
-  alt="Card image"/>
-  <br></br>
-  <div className="card-body">
-    <h1 class="display-4"><b> EventType :</b>  </h1>
-    <p class="lead">{this.state.eventType} .</p>
-  </div>
-</div>
-<div className="card" id="center">
-  <img  id='im' className="card-img-top" 
-  src="https://images.pexels.com/photos/1020323/pexels-photo-1020323.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" 
-  alt="Card image"/>
-  <br></br>
-  <div className="card-body">
-    <h1 class="display-4"><b> StartDate :</b> </h1>
-    <p class="lead">{this.state.startDate} .</p>
-  </div>
-</div>
-<div className="card" id="center">
-  <img  id='im' className="card-img-top" 
-  src="https://res.cloudinary.com/twenty20/private_images/t_watermark-criss-cross-10/v1442096675000/photosp/14ec9380-b0c9-427a-bf0b-04c3b7a366b7/stock-photo-money-currency-paper-coins-savings-cost-expense-cash-postit-14ec9380-b0c9-427a-bf0b-04c3b7a366b7.jpg" 
-  alt="Card image"/>
-  <br></br>
-  <div className="card-body">
-    <h1 class="display-4"><b> Cost :</b> </h1>
-    <p class="lead">{this.state.cost} .</p>
-  </div>
-</div>
-<div className="card" id="center">
-  <img  id='im' className="card-img-top" 
-  src="https://res.cloudinary.com/twenty20/private_images/t_watermark-criss-cross-10/v1500804927000/photosp/c4e88cb6-e6cf-4321-8063-06be8e7ac414/stock-photo-business-antique-office-bokeh-warm-calendar-flip-date-reusable-c4e88cb6-e6cf-4321-8063-06be8e7ac414.jpg" 
-  alt="Card image"/>
-  <br></br>
-  <div className="card-body">
-    <h1 class="display-4"><b> Duration :</b>  </h1>
-    <p class="lead">{this.state.duration} .</p>
-  </div>
-</div>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
     <Link to='/Profile'><button className='col-xs-4 btn btn-primary btn-md col-xs-offset-4 ' type='Submit'
  onClick={this.add}>Attend</button></Link>
   

@@ -55,27 +55,28 @@ showeventbox(name,description){
   render(){
   	return (
       <div>
-   <div className="container" style={{display: 'flex', justifyContent: 'center'}}>
+<div className="container" style={{display: 'flex', justifyContent: 'center'}}>
    <h2 onClick={()=> this.showeventbox(this.items)} >{this.items}</h2>
-   </div>
-<div className="card" style={{width:'400px'}} className='col-xs-3 col-xs-offset-3'>
+  </div>
+<div className="card" style={{width:'400px'}} className='col-xs-4 col-xs-offset-4'>
   <img  id='jumbotron' className="card-img-top" src="https://images.pexels.com/photos/796606/pexels-photo-796606.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" 
   alt="Card image"/>
   <br></br>
   <div className="card-body">
-  <h4 className="fa-2x"><b>MyName: {this.props.event.creator} .</b></h4>
+    <h4 className="fa-2x"><b>MyName: {this.props.event.creator} .</b></h4>
     <h4 className="fa-2x"><b>EventName: {this.props.event.eventName}.</b></h4>
     <p className="fa-2x"><b>Place : </b>{this.props.event.place} .</p>
-    <p className="fa-2x"><b>Date : </b>{this.props.event.startDate} .</p>
     <Link to={`/eventinfo/${this.props.event._id}`}><button className='col-xs-4 btn btn-primary col-xs-offset-2' type='Submit'
  onClick={this.componentDidMount}>More Info</button></Link>
-  </div>
 </div>
+</div>
+
       </div>
       
        )
   }
 }
+
 
  // <Link to='/EventEnfo' ><button className='col-xs-4 col-xs-offset-4' type='Submit' onClick={this.componentDidMount}>More info</button></Link>
 
