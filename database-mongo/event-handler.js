@@ -4,7 +4,7 @@ var mongoose = require('mongoose')
 
 exports.eventCreate = function (req, res) {
   // console.log(req.body,req.session.user);
-  var creator=req.session.user.username
+  var creator = req.session.user.username
   var eventName = req.body.eventName
   var duration = req.body.duration
   var startDate = req.body.startDate
@@ -13,24 +13,23 @@ exports.eventCreate = function (req, res) {
   var cost = req.body.cost
   var description = req.body.description
 
-
   var newEvent = new Event({
-    creator:creator,
+    creator: creator,
     eventName: eventName,
-    duration:duration,
+    duration: duration,
     startDate: startDate,
     place: place,
     eventType: eventType,
     cost: cost,
     description: description
   })
-  console.log(newEvent);
+  console.log(newEvent)
 
-  newEvent.save(function(err,event){
-    if(err){
-      console.log(err);
-    }else{
-      console.log(event);
+  newEvent.save(function (err, event) {
+    if (err) {
+      console.log(err)
+    } else {
+      console.log(event)
     }
   })
 }
@@ -38,7 +37,7 @@ exports.eventCreate = function (req, res) {
 exports.retrieveAll = function (req, res) {
   Event.find({}, function (err, events) {
     if (err) {
-      console.log(err);
+      console.log(err)
     }
     if (events.length === 0) {
       return res.sendStatus(404)
@@ -48,11 +47,11 @@ exports.retrieveAll = function (req, res) {
 }
 
 exports.getEventById = function (req, res) {
-  console.log(req.params.id);
+  console.log(req.params.id)
   var id = req.params.id
   Event.findById(id, function (err, event) {
     if (err) {
-      console.log('in findbyid function couldnt find the event',err);
+      console.log('in findbyid function couldnt find the event', err)
     }
     res.json(event)
   })
@@ -93,7 +92,7 @@ exports.deleteOne = function (req, res) {
 }
 
 exports.updateOne = function (req, res) {
-  var creator=req.body.creator
+  var creator = req.body.creator
   var eventName = req.body.name
   var duration = req.body.duration
   var startDate = req.body.startDate
@@ -103,8 +102,8 @@ exports.updateOne = function (req, res) {
   var description = req.body.description
 
   var eventObj = {
-      eventName:eventName,
-      duration:duration,
+    eventName: eventName,
+    duration: duration,
 	    startDate: startDate,
 	    place: place,
 	    eventType: eventType,

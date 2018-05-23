@@ -2,11 +2,11 @@ var User = require('./User.js')
 var mongoose = require('mongoose')
 
 exports.retrieveOne = function (req, res) {
-  console.log(req.session.user);
+  console.log(req.session.user)
   var username = req.session.user.username
-  var id=req.session.user._id
-  User.findById({_id:id}, function (err, found) {
-    console.log(found);
+  var id = req.session.user._id
+  User.findById({_id: id}, function (err, found) {
+    console.log(found)
     if (err) {
 	  return res.status(500).json(err.data)
     }
@@ -29,7 +29,6 @@ exports.retrieveAll = function (req, res) {
   })
 }
 
-
 exports.userSave = function (req, res) {
   // var username = req.body.username
   // var password = req.body.password
@@ -50,14 +49,14 @@ exports.userSave = function (req, res) {
   //   }
   // })
 
-    User.create(req.body,function (err, user) {
-      if (err) {
-        res.status(500).send(err)
-      } else {
-        console.log('saved user')
-        res.send(user)
-      }
-    })
+  User.create(req.body, function (err, user) {
+    if (err) {
+      res.status(500).send(err)
+    } else {
+      console.log('saved user')
+      res.send(user)
+    }
+  })
 }
 
 exports.deleteOne = function (req, res) {
@@ -73,13 +72,12 @@ exports.deleteOne = function (req, res) {
 exports.updateOne = function (req, res) {
   var username = req.session.user.username
   var email = req.body.email
-  var age=req.body.age
-
+  var age = req.body.age
 
   var UserObj = {
 	    username: username,
 	    email: email,
-      age:age
+    age: age
   }
 
   User.findOneAndUpdate({username: username}, UserObj, function (err, data) {
@@ -90,33 +88,29 @@ exports.updateOne = function (req, res) {
   })
 }
 exports.updateUser = function (req, res) {
+  var username = req.session.user.username
 
-  var username=req.session.user.username;
-
-  var newEvent={
+  var newEvent = {
     eventName: req.body.eventName,
     duration: req.body.duration,
     startDate: req.body.startDate,
-    place:req.body.place,
+    place: req.body.place,
     eventType: req.body.eventType,
     cost: req.body.cost,
-    description: req.body.description,
+    description: req.body.description
   }
-  User.findOne({username:username},function(err,foundUser){
-
+  User.findOne({username: username}, function (err, foundUser) {
     foundUser.events.push(newEvent)
 
-    foundUser.save(function(err,savedUser){
-      if(err){
-        console.log(err);
+    foundUser.save(function (err, savedUser) {
+      if (err) {
+        console.log(err)
       }
     })
-
   })
-
 }
 
-exports.addEvent=function(req,res){
-  var username=req.session.user.username
-  var event=req.body
+exports.addEvent = function (req, res) {
+  var username = req.session.user.username
+  var event = req.body
 }

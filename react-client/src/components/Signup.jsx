@@ -62,10 +62,10 @@ class Signup extends React.Component {
       return (
 
         <div className='container'>
-        <h3 className="form-Signup-heading"><b>Signup</b></h3>
-        <br/>
-        <br/>
-        <br/>
+          <h3 className='form-Signup-heading'><b>Signup</b></h3>
+          <br />
+          <br />
+          <br />
           <div className='wrapper col-xs-4 col-xs-offset-4'>
 
             <form className='form-Signup'>
@@ -73,25 +73,25 @@ class Signup extends React.Component {
               <FormControl type='password' className='form-control' name='password' onChange={this.onChange} placeholder='Password' required value={this.state.password} /><br />
               <FormControl type='email' className='form-control' name='email' onChange={this.onChange} placeholder='Email' required value={this.state.email} /><br />
               <FormControl type='age' className='form-control' name='age' onChange={this.onChange} placeholder='Age' required value={this.state.age} /><br />
-              <FormGroup controlId="formControlsSelect">
-              <FormControl componentClass="select" placeholder="Gender" name="gender" onChange={this.onChange} required value={this.state.gender}>
-                <option hidden>Gender</option>
-                <option value="female">Female</option>
-                <option value="male">Male</option>
-              </FormControl>
+              <FormGroup controlId='formControlsSelect'>
+                <FormControl componentClass='select' placeholder='Gender' name='gender' onChange={this.onChange} required value={this.state.gender}>
+                  <option hidden>Gender</option>
+                  <option value='female'>Female</option>
+                  <option value='male'>Male</option>
+                </FormControl>
               </FormGroup>
               <Router>
-              <Link to='/' ><button className='col-xs-4 col-xs-offset-4' type='Submit' onClick={this.Signup}>Signup</button></Link>
+                <Link to='/' ><button className='col-xs-4 col-xs-offset-4' type='Submit' onClick={this.Signup}>Signup</button></Link>
               </Router>
             </form>
           </div>
           <br />
-        <br />
-        <br />
-        <div className='wrapper col-xs-4 col-xs-offset-4'>
-        <br />
-          <h5>Do you have Account?</h5>
-            <h5>Login here <a href='/login'>LOGIN &rarr;</a></h5>  
+          <br />
+          <br />
+          <div className='wrapper col-xs-4 col-xs-offset-4'>
+            <br />
+            <h5>Do you have Account?</h5>
+            <h5>Login here <a href='/login'>LOGIN &rarr;</a></h5>
           </div>
         </div>
       )
