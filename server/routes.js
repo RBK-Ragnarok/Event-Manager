@@ -77,6 +77,8 @@ Router.route('/signup')
     var username = req.body.username
     var password = req.body.password
     var email = req.body.email
+    var age=req.body.age
+    var gender=req.body.gender
 
     User.findOne({username: username}, function (err, user) {
       console.log(user)
@@ -86,6 +88,8 @@ Router.route('/signup')
           var user = new User({
             email: email,
             username: username,
+            age:age,
+            gender:gender,
             password: hash
           })
 
