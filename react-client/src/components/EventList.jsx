@@ -6,7 +6,6 @@ import {Navbar, Nav, NavItem, Carousel, Modal} from 'react-bootstrap'
 import Events from './Events.jsx'
 import EventItem from './EventItem.jsx'
 import Eventinfo from './EventInfo.jsx'
-//import SearchCom from './SearchCom.jsx'
 
 import {
   Route,
@@ -31,12 +30,20 @@ class EventList extends Component {
   render () {
    var arr = [].concat.apply([], this.props.events);
    var filterd=arr.filter(
-     (event)=>{
-   console.log('i am hear',arr)
-     return event.eventName.toLowerCase().indexOf(this.state.search.
-      toLowerCase())!==-1;
-    }
-   )
+     (event)=>{ 
+     return (event.eventName.toLowerCase().indexOf(this.state.search.
+      toLowerCase())!==-1
+    || event.eventType.toLowerCase().indexOf(this.state.search.
+    toLowerCase())!==-1);
+   }
+     )
+   //  for(var i=0;i<arr.length;i++){
+   //    if(arr[i]===undefined){
+   //       alert ('not found')
+   //    }
+   // }
+
+    filterd.reverse();
     return (
       <div>
     <form>
@@ -51,6 +58,7 @@ class EventList extends Component {
        })
 
         }
+        <h1 id="h1">Not Found</h1>
       </div>
 
     )

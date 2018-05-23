@@ -5,11 +5,13 @@ import {  Route,Link,Switch,browserHistory,BrowserRouter as Router} from "react-
 import $ from 'jquery';
 import Home from './Home.jsx';
 import Map from './Map.jsx';
+import Profile from './Profile.jsx';
 
 class CreateEvent extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+          creator:'',
           eventName: '',
           duration: '',
           startDate: '',
@@ -50,7 +52,7 @@ class CreateEvent extends React.Component {
         return (
           <div>
             <div>
-              <img id="img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBClfUbH7jP7JIwiuZ4PqQQ-tbjm9bIMwuMa-dkrpKIK9ZReJH" />
+              <img id="img" src="https://images.pexels.com/photos/3863/firework-new-year-s-eve-december-31-fireworks.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" />
             </div>
           <div>
              <h3 className="form-Signup-heading">

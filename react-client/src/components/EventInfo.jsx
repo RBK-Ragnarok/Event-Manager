@@ -69,7 +69,6 @@ componentDidMount(info) {
 
 add(event){
    var that = this
-   console.log("lolololo",this.props.match.params.id)
       $.ajax({
         url: '/user',
         type: 'PUT',
@@ -86,47 +85,42 @@ add(event){
   render(){
   		return (
         <div>
-          <div class="jumbotron" id="jum">
-    <h1> The Full Info </h1>      
-  </div>
-  <div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h1 class="display-4"><b> Event Name : {this.state.eventName}</b></h1>
-    <p class="lead"></p>
+<div className="jumbotron">
+  <div className="container text-center">
+    <h1><b> Event Name : {this.state.eventName}</b></h1>      
   </div>
 </div>
-<div id="jam1"class="jumbotron jumbotron-fluid" className='col-xs-4 btn btbtn-md col-xs-offset-3'>
-  <div class="container">
-    <h1 class="display-4"><b>Description : </b></h1>
-    <p class="lead">{this.state.description} .</p>
+<div className="container-fluid bg-3 text-center" id="div">    
+  <h3 className="fa-2x"><b>Description : </b></h3>
+  <p className="lead" className="fa-2x">{this.state.description} .</p>
+  <br></br>
+  <br></br>
+  <div className="row">
+    <div className="col-sm-3">
+      <p className="fa-2x" ><b> Place :</b></p>
+      <p className="lead" className="fa-2x">{this.state.place} .</p>
+    </div>
+    <div className="col-sm-3"> 
+      <p className="fa-2x"><b> StartDate :</b> </p>
+      <p className="lead" className="fa-2x">{this.state.startDate} .</p>
+    </div>
+    <div className="col-sm-3"> 
+      <p className="fa-2x"><b> Cost :</b></p>
+      <p className="lead" className="fa-2x">{this.state.cost} .</p>
+    </div>
+    <div className="col-sm-3">
+      <p className="fa-2x"><b> Duration :</b></p>
+      <p className="lead" className="fa-2x">{this.state.duration} .</p>
+    </div>
   </div>
 </div>
-<div id="jam1" class="jumbotron jumbotron-fluid" className='col-xs-4 btn btbtn-md col-xs-offset-3 '>
-  <div class="container">
-    <h1 class="display-4"><b> Place :</b> </h1>
-    <p class="lead">{this.state.place} .</p>
-  </div>
-</div>
-<div id="jam1" class="jumbotron jumbotron-fluid" className='col-xs-4 btn btbtn-md col-xs-offset-3 '>
-  <div class="container">
-    <h1 class="display-4"><b> EventType :</b>  </h1>
-    <p class="lead">{this.state.eventType} .</p>
-  </div>
-</div>
-<div id="jam1" class="jumbotron jumbotron-fluid" className='col-xs-4 btn btbtn-md col-xs-offset-3 '>
-  <div class="container">
-    <h1 class="display-4"><b> StartDate :</b> </h1>
-    <p class="lead">{this.state.startDate} .</p>
-  </div>
-</div>
-<div id="jam1" class="jumbotron jumbotron-fluid" className='col-xs-4 btn btbtn-md col-xs-offset-3 '>
-  <div class="container">
-    <h1 class="display-4"><b> Cost :</b> </h1>
-    <p class="lead">{this.state.cost} .</p>
-  </div>
-</div>
-
-    <Link to='/Profile'><button className='col-xs-4 btn btn-primary btn-md col-xs-offset-3 ' type='Submit'
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+    <Link to='/Profile'><button className='col-xs-4 btn btn-primary btn-md col-xs-offset-4 ' type='Submit'
  onClick={this.add}>Attend</button></Link>
   
             </div>
@@ -134,27 +128,6 @@ add(event){
        )
   }
 }
-// <h1 className='col-xs-offset-3' ><b> Event Name : {this.state.eventName}</b></h1>
-//   <br></br>
-//   <ul>
-//   <p className="fa-2x"><b>Description : </b>{this.state.description} .</p>
-//   <br></br>
-//   <p className="fa-2x"><b> Duration :</b> {this.state.duration} .</p>
-//   <br></br>
-//   <p className="fa-2x"><b> Place :</b> {this.state.place} .</p>
-//   <br></br>
-//   <p className="fa-2x"><b> EventType :</b> {this.state.eventType} .</p>
-//   <br></br>
-//   <p className="fa-2x"><b> StartDate :</b> {this.state.startDate} .</p>
-//   <br></br>
-//   <p className="fa-2x"><b> Cost :</b> {this.state.cost} .</p>
-//   <p>
-//   <br></br>
-//   <br></br>
-//   <br></br>
-//   <br></br>
-//</p>
-//  </ul>
 
 
 export default EventInfo;
