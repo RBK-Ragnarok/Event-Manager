@@ -1,57 +1,55 @@
-import React, { Component } from 'react';
-import { InfoWindow, withGoogleMap, withScriptjs, GoogleMap, Marker } from 'react-google-maps';
-import { compose, withStateHandlers } from "recompose";
-import $ from 'jquery';
-import ReactDOM from 'react-dom';
+import React, { Component } from 'react'
+import { InfoWindow, withGoogleMap, withScriptjs, GoogleMap, Marker } from 'react-google-maps'
+import { compose, withStateHandlers } from 'recompose'
+import $ from 'jquery'
+import ReactDOM from 'react-dom'
 
 const Map = compose(
   withStateHandlers(() => ({
-      isMarkerShown: false,
-      markerPosition: null,        
-    }), {
-      onMapClick: ({ isMarkerShown }) => (e) => ({
-        markerPosition: e.latLng,
-        isMarkerShown:true,
-      
+    isMarkerShown: false,
+    markerPosition: null
+  }), {
+    onMapClick: ({ isMarkerShown }) => (e) => ({
+      markerPosition: e.latLng,
+      isMarkerShown: true
+
     })
-    }
-    ),
+  }
+  ),
   withScriptjs,
   withGoogleMap
-  )
-  (props =>
-  <div >    
+)
+(props =>
+  <div >
     <GoogleMap
       defaultZoom={8}
       defaultCenter={{ lat: 31.9454, lng: 35.9284 }}
       onClick={props.onMapClick} >
-      {props.isMarkerShown && <Marker position={props.markerPosition}/> }
+      {props.isMarkerShown && <Marker position={props.markerPosition} /> }
     </GoogleMap>
   </div>
-  )
+)
 
 export default class MapContainer extends React.Component {
+  constructor (props) {
+    super(props)
+  }
 
-  constructor(props) {
-      super(props)
-}
+  render () {
+    return (
+      <div>
+        <div className='map' >
 
-  render() {
-      return (
-        <div>
-        <div className="map" >
-        
-            
-              <Map 
-                  googleMapURL="https:maps.googleapis.com/maps/api/js?key=AIzaSyCraOU8nyaSGWghFudXj_yWBSsFVkSD68g"
-                  loadingElement={<div style={{ height: `300px` }} />}
-                  containerElement={<div style={{ height: `300px` }} />}
-                  mapElement={<div style={{ height: `300px` }} />}
-              />         
-      
-            </div>
-            </div>
-      )
+          <Map
+            googleMapURL='https:maps.googleapis.com/maps/api/js?key=AIzaSyCraOU8nyaSGWghFudXj_yWBSsFVkSD68g'
+            loadingElement={<div style={{ height: `300px` }} />}
+            containerElement={<div style={{ height: `300px` }} />}
+            mapElement={<div style={{ height: `300px` }} />}
+          />
+
+        </div>
+      </div>
+    )
   }
 }
 

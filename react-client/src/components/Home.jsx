@@ -5,7 +5,7 @@ import {Navbar, Nav, NavItem, Carousel} from 'react-bootstrap'
 import login from './login.jsx'
 import Signup from './Signup.jsx'
 import axios from 'axios'
-import CreateEvent from './CreateEvent.jsx';
+import CreateEvent from './CreateEvent.jsx'
 
 class Home extends Component {
   constructor (props) {
@@ -25,12 +25,12 @@ class Home extends Component {
       <div>
 
         <h1 id='h1'><b>Welcome to Name of Project</b></h1>
-        <br/>
-        <br/>
+        <br />
+        <br />
         <div id='Carousel1' className='devImg'>
           <Carousel>
             <Carousel.Item className='img'>
-              <img className='img' alt='900x500' src='../photos/img1.jpg'/>
+              <img className='img' alt='900x500' src='../photos/img1.jpg' />
             </Carousel.Item>
             <Carousel.Item className='img'>
               <img className='img' alt='900x500' src='../photos/img2.jpg' />
@@ -46,12 +46,12 @@ class Home extends Component {
             </Carousel.Item>
           </Carousel>
         </div>
-        <br/>
-				<br/>
-				<div id="desc">
-					<h2>Description:</h2>
-					<p>hellooooooo</p>
-				</div>
+        <br />
+        <br />
+        <div id='desc'>
+          <h2>Description:</h2>
+          <p>hellooooooo</p>
+        </div>
         <footer className='navbar-bottom footer'>
           <div className='container'>
             <div className='row'>
