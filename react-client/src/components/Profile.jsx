@@ -9,7 +9,6 @@ class Profile extends React.Component {
 	    super(props);
 	    this.state = {
 	    data:{},
-	    sata:{},
 	    username:'',
 	    email:'',
 	    age:'',
@@ -37,13 +36,6 @@ class Profile extends React.Component {
         		that.setState({data:data})
 	 		}
     	})
-		$.ajax({
-			url: '/allevents',
-			type: 'GET',
-			success: (sata) => {
-				that.setState({sata:sata})       
-			} 
-		})
   	}	
  
 	edit(){
@@ -59,7 +51,7 @@ class Profile extends React.Component {
 	    this.state.data.about=this.state.about;
 	    var user=this.state.data.username;
 	    $.ajax({
-	      url: '/user',
+	      url: '/profile',
 	      type: 'PUT',    
 	      data: this.state,
 		  	success: function(result) {
@@ -89,11 +81,22 @@ class Profile extends React.Component {
     	})
   	}
 
+  
+
   	renderStart(){
   		const divStyle = {
   			margin: '40px',
   			border: '5px solid black'
-  		};	
+  		};
+  		if(this.state.data.events === undefined){
+  			return (<h1>test</h1>)
+  		}
+  		console.log('aaaaaaaa',this.state.data)	
+  		var arr = []
+  		this.state.data.events.forEach(function(elem){
+  			console.log(elem);
+  			arr.push(<li>{elem.eventName}</li>)
+  		})
  		return (
 		 	<div className='container' style={divStyle}>
  		 	 	<h1>Profile Page</h1>
@@ -114,15 +117,29 @@ class Profile extends React.Component {
 		 	 		<Col md={2}>
 		 	 			<span id="textcolor" >Age: <p className="fa-1x"> {this.state.data.age}</p></span>
  		 	 		</Col>
-		 	 	</Row>  
 
+ 		 	 		<Col md={2}>
+		 	 			<Button bsStyle="success" onClick={this.edit}>Edit</Button> 
+		 	 		</Col>	
+		 	 	</Row>  
+		 	 	
 		 	 	<Col md={2}>
-		 	 		<Button bsStyle="success" onClick={this.edit}>Edit</Button> 
-		 	 	</Col>	 		
+		 	 		<span id="textcolor" >Events:</span>
+		 	 		<ul>
+		 	 		{arr}
+		 	 		</ul>
+ 		 	 	</Col> 		
             </div>
  		)
 
-  	}
+  	}	
+
+  	// {	if (this.state.data.events){this.state.data.events.map(event =>{
+   //      	return <p key={event._id} event={event} />
+   //     		})
+
+   //      }
+   //  }
 
   	renderedit(){
 	    var user = this.state.data;
