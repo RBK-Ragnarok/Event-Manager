@@ -6,6 +6,7 @@ import AppRouter from '../routes/AppRouter.jsx'
 import {Navbar, Nav, NavItem, Carousel, Jumbotron, Button, ButtonToolbar,
   Overlay, Popover, OverlayTrigger, FormControl} from 'react-bootstrap'
 import EventList from './Profile.jsx'
+import Comment from './Comment.jsx'
 import {
   Route,
   Link,
@@ -26,7 +27,9 @@ class EventInfo extends Component {
       cost: '',
       description: '',
       message: '',
-      comment: []
+      commentText: '',
+      comments: [],
+      date: ''
     }
     this.onChange = this.onChange.bind(this)
     this.add = this.add.bind(this)
@@ -56,8 +59,7 @@ class EventInfo extends Component {
           eventType: data.eventType,
           cost: data.cost,
           description: data.description,
-          message: data.message,
-          comment: data.target.value
+          comments: data.comments
 
         })
       },
@@ -69,6 +71,7 @@ class EventInfo extends Component {
 
   add (event) {
     var that = this
+
     $.ajax({
       url: '/user',
       type: 'PUT',
@@ -83,32 +86,39 @@ class EventInfo extends Component {
     })
   }
 
-  addComment(com) {
-    var that = this;
+  addComment () {
+    var that = this
+    //
+    // that.setState({date:new Date().toString()})
+
     $.ajax({
-      url: `/comment/${this.props.match.params.id}`,
-        type: 'POST',
-        data:this.state,
-        success: (data) => {
-          console.log('comment sended')
-          that.setState({message:'Send comment'})
-        },
-        error: (err) => {
-          console.log('err', err);
-        }
+      url: `/comment`,
+      type: 'POST',
+      data: this.state,
+      success: (data) => {
+        console.log('comment sent')
+        that.setState({message: 'Send comment'})
+      },
+      error: (err) => {
+        console.log('err', err)
+      }
     })
 
     $.ajax({
-      url: '/comment',
-        type: 'GET',
-        data:this.props.username,
-        success: (data) => {
-          that.setState({message:'update'})
-          console.log('comment added')
-        },
-        error: (err) => {
-          console.log('err', err);
-        }
+      type: 'POST',
+      url: `/event/${this.props.match.params.id}`,
+      success: (data) => {
+        console.log(data)
+        this.setState({
+
+          comments: (data.comments).reverse()
+
+        })
+        console.log(this.state.comments)
+      },
+      error: (err) => {
+        console.log('err', err)
+      }
     })
   }
   render () {
@@ -151,11 +161,13 @@ class EventInfo extends Component {
       <br />
       <Link to='/Profile'><button className='col-xs-4 btn btn-primary btn-md col-xs-offset-4 ' type='Submit'
           onClick={this.add}>Attend</button></Link>
-        <div>
-          <span><FormControl id="inp"	className="Sform-control"	type="text"	placeholder="Write Comment" value={this.state.value}/>
-          <button onClick={this.addComment}>Add Comment</button>
-          </span>
+      <div>
+          <span><FormControl id='inp' name='commentText' onChange={this.onChange} className='Sform-control'	type='text'	placeholder='Write a comment' />
+          <button onClick={this.addComment} >Add Comment</button>
+        </span>
         </div>
+
+      {(this.state.comments).map(comment => <Comment key={comment._id} comment={comment} />)}
     </div>
 
     )

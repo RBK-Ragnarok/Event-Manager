@@ -117,3 +117,26 @@ exports.updateOne = function (req, res) {
     res.json(data)
   })
 }
+
+exports.updateEventWithComment = function (req, res) {
+  console.log(req.body)
+  var eventName = req.body.eventName
+
+  var newComment = {
+    sender: req.session.user.username,
+    text: req.body.commentText,
+    date: new Date().toString()
+  }
+  Event.findOne({eventName: eventName}, function (err, foundEvent) {
+    foundEvent.comments.push(newComment)
+
+    foundEvent.save(function (err, savedEvent) {
+      if (err) {
+        console.log(err)
+        res.send(err)
+      } else {
+        res.end()
+      }
+    })
+  })
+}
