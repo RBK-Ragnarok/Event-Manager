@@ -49,10 +49,10 @@ class EventItem extends Component {
       name: name,
       description: description
     })
-     [e.target.name]: e.target.value ,
+     //[e.target.name]: e.target.value ,
     // [e.target.description]: e.target.value
-   });
-  }
+   };
+  
 
   render(){
     var data = this.props.event;
