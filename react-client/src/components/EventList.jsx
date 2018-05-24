@@ -47,7 +47,7 @@ class EventList extends Component {
     return (
       <div>
     <form>
-      <input id="inp" type='text' className="col-xs-offset-7 fa fa-check-circle col-xs-4" placeholder="Search.."
+      <input placeholder="Search.." id="inp" type='text' className="col-xs-offset-7 fa fa-check-circle col-xs-4"
           value={this.state.search}
           onChange={this.updateSearch.bind(this)}
             />

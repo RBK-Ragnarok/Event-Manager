@@ -21,13 +21,14 @@ class EventItem extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      items: '',
-      name: '',
-      description: '',
-      iseventhiddin: true,
-      data: ''
-      // show: false
-    }
+      items:'',
+      name:'',
+      description:'',
+      iseventhiddin:true,
+      img:'',
+      data:'',
+      //show: false
+    };
 
     this.onChange = this.onChange.bind(this)
     this.showeventbox = this.showeventbox.bind(this)
@@ -48,17 +49,45 @@ class EventItem extends Component {
       name: name,
       description: description
     })
+     [e.target.name]: e.target.value ,
+    // [e.target.description]: e.target.value
+   });
   }
 
-  render () {
+  render(){
+    var data = this.props.event;
+    for(var key in data){
+      if(data[key] === 'Sports'){
+        var url="https://images.pexels.com/photos/848618/pexels-photo-848618.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940";
+      this.state.img=url;
+      }
+      if(data[key]==='Art'){
+        var url2="https://images.pexels.com/photos/395074/pexels-photo-395074.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940";
+        this.state.img=url2;
+      }
+      if(data[key]==='Social'){
+        var url3="https://images.pexels.com/photos/207896/pexels-photo-207896.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940";
+        this.state.img=url3;
+      }
+      if(data[key]==='Educational'){
+        var url4="https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940";
+        this.state.img=url4;
+    }
+    if(data[key]==='Political'){
+        var url5="https://images.pexels.com/photos/159775/library-la-trobe-study-students-159775.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940";
+        this.state.img=url5;
+    }
+    }
+
   	return (
       <div>
+      <div className="container-fluid stylish-form">
 <div className="container" style={{display: 'flex', justifyContent: 'center'}}>
    <h2 onClick={()=> this.showeventbox(this.items)} >{this.items}</h2>
   </div>
    <div id="jumbotron" className="col-xs-3 col-xs-offset-4">
     <div>
-      <img id="lolo"src="https://images.pexels.com/photos/434302/pexels-photo-434302.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="John"/>
+      <img id="lolo" src={this.state.img} alt="lolo"/>
       <h1><b>MyName: {this.props.event.creator} .</b></h1>
       <h2 className="w3-opacity"><b>EventName: {this.props.event.eventName}.</b></h2>
       <h3><b>Place : </b>{this.props.event.place} .</h3>
@@ -67,7 +96,7 @@ class EventItem extends Component {
     </div>
     </div>
 </div>
-      
+      </div>
        )
   }
 }

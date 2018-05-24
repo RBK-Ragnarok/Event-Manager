@@ -22,14 +22,14 @@ class Home extends Component {
 
   render () {
     return (
-      <div>
-        <h1 id='h1'><b>Welcome to Name of Project</b></h1>
-        <br />
-        <br />
+      <div className="container-fluid stylish-form">
+      <h1 id='cint'><b>Welcome to My of Events</b></h1>
+        <br/>
+        <br/>
         <div id='Carousel1' className='devImg'>
           <Carousel>
             <Carousel.Item className='img'>
-              <img className='img' alt='900x500' src='../photos/img1.jpg' />
+              <img className='img' alt='900x500' src='../photos/img1.jpg'/>
             </Carousel.Item>
             <Carousel.Item className='img'>
               <img className='img' alt='900x500' src='../photos/img2.jpg' />
@@ -45,9 +45,9 @@ class Home extends Component {
             </Carousel.Item>
           </Carousel>
         </div>
-        <br />
-        <br />
-        <div id='desc'>
+        <br/>
+        <br/>
+        <div id="desc">
           <h2>Description:</h2>
           <p>hellooooooo</p>
         </div>
@@ -62,16 +62,7 @@ class Home extends Component {
             </div>
           </div>
         </footer>
-</section>
-<footer>
-    <div className="container">
-        <div className="col-md-10 col-md-offset-1 text-center">
-            
-            <h6>Coded with <i className="fa fa-heart red"></i> by <a href="http://www.nabeel.co.in" target="_blank">Nabeel Kondotty</a></h6>
-        </div>   
-    </div>
-</footer>
-</div>
+      </div>
     )
   }
 }
