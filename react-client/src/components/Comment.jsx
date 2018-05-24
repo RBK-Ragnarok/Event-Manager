@@ -1,7 +1,6 @@
 import React from 'react'
 
-function Comment(props){
-
+function Comment (props) {
   return (
     <div>
       <h3>{props.comment.sender}</h3>

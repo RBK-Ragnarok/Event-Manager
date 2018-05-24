@@ -28,8 +28,8 @@ class EventInfo extends Component {
       description: '',
       message: '',
       commentText: '',
-      comments:[],
-      date:''
+      comments: [],
+      date: ''
     }
     this.onChange = this.onChange.bind(this)
     this.add = this.add.bind(this)
@@ -86,37 +86,35 @@ class EventInfo extends Component {
     })
   }
 
-
-  addComment() {
-    var that = this;
+  addComment () {
+    var that = this
     //
     // that.setState({date:new Date().toString()})
 
     $.ajax({
       url: `/comment`,
-        type: 'POST',
-        data:this.state,
-        success: (data) => {
-          console.log('comment sent')
-          that.setState({message:'Send comment'})
-        },
-        error: (err) => {
-          console.log('err', err);
-        }
+      type: 'POST',
+      data: this.state,
+      success: (data) => {
+        console.log('comment sent')
+        that.setState({message: 'Send comment'})
+      },
+      error: (err) => {
+        console.log('err', err)
+      }
     })
 
     $.ajax({
       type: 'POST',
       url: `/event/${this.props.match.params.id}`,
       success: (data) => {
-        console.log(data);
+        console.log(data)
         this.setState({
 
           comments: (data.comments).reverse()
 
         })
         console.log(this.state.comments)
-
       },
       error: (err) => {
         console.log('err', err)
@@ -163,14 +161,13 @@ class EventInfo extends Component {
       <br />
       <Link to='/Profile'><button className='col-xs-4 btn btn-primary btn-md col-xs-offset-4 ' type='Submit'
           onClick={this.add}>Attend</button></Link>
-        <div>
-          <span><FormControl id="inp" name="commentText" onChange={this.onChange} className="Sform-control"	type="text"	placeholder="Write a comment" />
+      <div>
+          <span><FormControl id='inp' name='commentText' onChange={this.onChange} className='Sform-control'	type='text'	placeholder='Write a comment' />
           <button onClick={this.addComment} >Add Comment</button>
-          </span>
+        </span>
         </div>
 
-
-          {(this.state.comments).map(comment =>  <Comment key={comment._id} comment={comment} />)}
+      {(this.state.comments).map(comment => <Comment key={comment._id} comment={comment} />)}
     </div>
 
     )

@@ -119,7 +119,7 @@ exports.updateOne = function (req, res) {
 }
 
 exports.updateEventWithComment = function (req, res) {
-  console.log(req.body);
+  console.log(req.body)
   var eventName = req.body.eventName
 
   var newComment = {
@@ -134,7 +134,7 @@ exports.updateEventWithComment = function (req, res) {
       if (err) {
         console.log(err)
         res.send(err)
-      }else{
+      } else {
         res.end()
       }
     })
