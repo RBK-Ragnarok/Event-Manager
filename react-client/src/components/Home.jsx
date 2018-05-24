@@ -23,7 +23,6 @@ class Home extends Component {
   render () {
     return (
       <div>
-
         <h1 id='h1'><b>Welcome to Name of Project</b></h1>
         <br />
         <br />
@@ -63,7 +62,16 @@ class Home extends Component {
             </div>
           </div>
         </footer>
-      </div>
+</section>
+<footer>
+    <div className="container">
+        <div className="col-md-10 col-md-offset-1 text-center">
+            
+            <h6>Coded with <i className="fa fa-heart red"></i> by <a href="http://www.nabeel.co.in" target="_blank">Nabeel Kondotty</a></h6>
+        </div>   
+    </div>
+</footer>
+</div>
     )
   }
 }

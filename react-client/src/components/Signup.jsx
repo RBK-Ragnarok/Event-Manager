@@ -60,40 +60,68 @@ class Signup extends React.Component {
       )
     } else {
       return (
-
-        <div className='container'>
-          <h3 className='form-Signup-heading'><b>Signup</b></h3>
-          <br />
-          <br />
-          <br />
-          <div className='wrapper col-xs-4 col-xs-offset-4'>
-
-            <form className='form-Signup'>
-              <FormControl type='text' className='form-control' name='username' onChange={this.onChange} placeholder='Username' required autoFocus value={this.state.username} /><br />
-              <FormControl type='password' className='form-control' name='password' onChange={this.onChange} placeholder='Password' required value={this.state.password} /><br />
-              <FormControl type='email' className='form-control' name='email' onChange={this.onChange} placeholder='Email' required value={this.state.email} /><br />
-              <FormControl type='age' className='form-control' name='age' onChange={this.onChange} placeholder='Age' required value={this.state.age} /><br />
-              <FormGroup controlId='formControlsSelect'>
-                <FormControl componentClass='select' placeholder='Gender' name='gender' onChange={this.onChange} required value={this.state.gender}>
-                  <option hidden>Gender</option>
-                  <option value='female'>Female</option>
-                  <option value='male'>Male</option>
-                </FormControl>
+        <div className="container-fluid stylish-form">
+      <h2 className="text-center">Thank You For Visiting Us</h2>
+      <div className="row mar20" >
+        <div className="col-md-12 col-sm-12 col-xs-12">
+          <div className="inner-section">
+            <form method="POST" action="https://google.co.in">
+              <div className="mar20 inside-form">
+                <h2 className="font_white text-center">SIGN UP</h2>
+                <ul>
+                  <li className="icon-holder dsp-flex">
+                    <i className="fa fa-facebook "></i>
+                  </li>
+                  <li className="icon-holder dsp-flex">
+                    <i className="fa fa-twitter "></i>
+                  </li>
+                  <li className="icon-holder dsp-flex">
+                    <i className="fa fa-instagram "></i>
+                  </li>
+                </ul>
+                <div className="input-group">
+                  <span className="input-group-addon"><i className="fa fa-pencil "></i></span>
+                  <input type="text" className="form-control" placeholder="User Name..."name='username' onChange={this.onChange} placeholder='Username...' 
+                  required autoFocus value={this.state.username}/>
+                </div>
+                <div className="input-group">
+                  <span className="input-group-addon"><i className="fa fa-envelope "></i></span>
+                  <input type="email" className="form-control" name='email' onChange={this.onChange} placeholder='Email...' 
+                  required value={this.state.email}/>
+                </div>
+                <div className="input-group">
+                  <span className="input-group-addon"><i className="fa fa-lock "></i></span>
+                  <input type="password" className="form-control" name='password' onChange={this.onChange} placeholder='Password...' 
+                  required value={this.state.password}/>
+                </div>
+                  <div className="input-group">
+                  <span className="input-group-addon"><i className="fa fa-child "></i></span>
+                  <input type="age" className="form-control" name='age' onChange={this.onChange} placeholder='Age...' 
+                  required value={this.state.age}/>
+                </div>
+                 <FormGroup controlId="formControlsSelect">
+              <FormControl componentClass="select" placeholder="Gender" name="gender" onChange={this.onChange} required value={this.state.gender}>
+                <option hidden>Gender</option>
+                <option value="female">Female</option>
+                <option value="male">Male</option>
+              </FormControl>
               </FormGroup>
-              <Router>
-                <Link to='/' ><button className='col-xs-4 col-xs-offset-4' type='Submit' onClick={this.Signup}>Signup</button></Link>
+                <div className="footer text-center">
+                  <Router>
+              <Link to='/' ><button className='col-xs-4 col-xs-offset-4' type='Submit' onClick={this.Signup}>Signup</button></Link>
               </Router>
+                </div>
+              </div>
             </form>
           </div>
-          <br />
-          <br />
-          <br />
           <div className='wrapper col-xs-4 col-xs-offset-4'>
-            <br />
-            <h5>Do you have Account?</h5>
-            <h5>Login here <a href='/login'>LOGIN &rarr;</a></h5>
+        <br />
+          <h5>Do you have Account?</h5>
+            <h5>Login here <a href='/login'>LOGIN &rarr;</a></h5>  
           </div>
         </div>
+      </div>
+    </div>
       )
     }
   }

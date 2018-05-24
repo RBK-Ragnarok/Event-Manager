@@ -53,25 +53,22 @@ class EventItem extends Component {
   render () {
   	return (
       <div>
-      <div className='container' style={{display: 'flex', justifyContent: 'center'}}>
-          <h2 onClick={() => this.showeventbox(this.items)} >{this.items}</h2>
-        </div>
-      <div className='card' style={{width: '400px'}} className='col-xs-4 col-xs-offset-4'>
-          <img id='jumbotron' className='card-img-top' src='https://images.pexels.com/photos/796606/pexels-photo-796606.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
-          alt='Card image' />
-          <br />
-          <div className='card-body'>
-          <h4 className='fa-2x'><b>MyName: {this.props.event.creator} .</b></h4>
-          <h4 className='fa-2x'><b>EventName: {this.props.event.eventName}.</b></h4>
-          <p className='fa-2x'><b>Place : </b>{this.props.event.place} .</p>
-          <Link to={`/eventinfo/${this.props.event._id}`}><button className='col-xs-4 btn btn-primary col-xs-offset-2' type='Submit'
-              onClick={this.componentDidMount}>More Info</button></Link>
-        </div>
-        </div>
-
+<div className="container" style={{display: 'flex', justifyContent: 'center'}}>
+   <h2 onClick={()=> this.showeventbox(this.items)} >{this.items}</h2>
+  </div>
+   <div id="jumbotron" className="col-xs-3 col-xs-offset-4">
+    <div>
+      <img id="lolo"src="https://images.pexels.com/photos/434302/pexels-photo-434302.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="John"/>
+      <h1><b>MyName: {this.props.event.creator} .</b></h1>
+      <h2 className="w3-opacity"><b>EventName: {this.props.event.eventName}.</b></h2>
+      <h3><b>Place : </b>{this.props.event.place} .</h3>
+      <p><Link to={`/eventinfo/${this.props.event._id}`}><button className="w3-button w3-light-grey btn btn-primary w3-block"
+       onClick={this.componentDidMount}>More Info</button> </Link></p>
     </div>
-
-    )
+    </div>
+</div>
+      
+       )
   }
 }
 
