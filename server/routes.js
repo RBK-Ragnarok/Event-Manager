@@ -190,4 +190,21 @@ Router.route('/profile')
     userFunctions.updateOne(req, res)
   })
 
+  Router.route('/comment')
+    .get(util.checkUser, function (req, res) {
+      res.end()
+    })
+    .post(function (req, res) {
+      eventFunctions.updateEventWithComment(req,res)
+    })
+
+    Router.route('/comments')
+      .get(util.checkUser, function (req, res) {
+        userFunctions.retrieveAll(req, res)
+      })
+      .post(function (req, res) {
+        res.sendStatus(404)
+      })
+
+
 module.exports = Router

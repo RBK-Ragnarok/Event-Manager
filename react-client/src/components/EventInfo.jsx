@@ -26,11 +26,14 @@ class EventInfo extends Component {
       cost: '',
       description: '',
       message: '',
-      comment: []
+      commentText: '',
+      commentsArray:[],
+      // date:''
     }
     this.onChange = this.onChange.bind(this)
     this.add = this.add.bind(this)
     this.addComment = this.addComment.bind(this)
+    this.saveDate = this.saveDate.bind(this)
   }
 
   onChange (e) {
@@ -56,8 +59,7 @@ class EventInfo extends Component {
           eventType: data.eventType,
           cost: data.cost,
           description: data.description,
-          message: data.message,
-          comment: data.target.value
+          comments: data.comments
 
         })
       },
@@ -69,6 +71,7 @@ class EventInfo extends Component {
 
   add (event) {
     var that = this
+
     $.ajax({
       url: '/user',
       type: 'PUT',
@@ -83,14 +86,21 @@ class EventInfo extends Component {
     })
   }
 
-  addComment(com) {
+  saveDate(){
+
+
+  }
+  addComment() {
     var that = this;
+    //
+    // that.setState({date:new Date().toString()})
+
     $.ajax({
-      url: `/comment/${this.props.match.params.id}`,
+      url: `/comment`,
         type: 'POST',
         data:this.state,
         success: (data) => {
-          console.log('comment sended')
+          console.log('comment sent')
           that.setState({message:'Send comment'})
         },
         error: (err) => {
@@ -101,9 +111,9 @@ class EventInfo extends Component {
     $.ajax({
       url: '/comment',
         type: 'GET',
-        data:this.props.username,
+
         success: (data) => {
-          that.setState({message:'update'})
+          that.setState({comments:data.comments})
           console.log('comment added')
         },
         error: (err) => {
@@ -152,8 +162,8 @@ class EventInfo extends Component {
       <Link to='/Profile'><button className='col-xs-4 btn btn-primary btn-md col-xs-offset-4 ' type='Submit'
           onClick={this.add}>Attend</button></Link>
         <div>
-          <span><FormControl id="inp"	className="Sform-control"	type="text"	placeholder="Write Comment" value={this.state.value}/>
-          <button onClick={this.addComment}>Add Comment</button>
+          <span><FormControl id="inp" name="commentText" onChange={this.onChange} className="Sform-control"	type="text"	placeholder="Write a comment" />
+          <button onClick={this.addComment} >Add Comment</button>
           </span>
         </div>
     </div>
