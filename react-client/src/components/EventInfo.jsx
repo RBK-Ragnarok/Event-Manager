@@ -4,7 +4,7 @@ import $ from 'jquery'
 // import { Link } from 'react-router-dom';
 import AppRouter from '../routes/AppRouter.jsx'
 import {Navbar, Nav, NavItem, Carousel, Jumbotron, Button, ButtonToolbar,
-  Overlay, Popover, OverlayTrigger} from 'react-bootstrap'
+  Overlay, Popover, OverlayTrigger, FormControl} from 'react-bootstrap'
 import EventList from './Profile.jsx'
 import {
   Route,
@@ -25,10 +25,12 @@ class EventInfo extends Component {
       eventType: '',
       cost: '',
       description: '',
-      message: ''
+      message: '',
+      comment: []
     }
     this.onChange = this.onChange.bind(this)
     this.add = this.add.bind(this)
+    this.addComment = this.addComment.bind(this)
   }
 
   onChange (e) {
@@ -54,7 +56,8 @@ class EventInfo extends Component {
           eventType: data.eventType,
           cost: data.cost,
           description: data.description,
-          message: data.message
+          message: data.message,
+          comment: data.target.value
 
         })
       },
@@ -77,6 +80,35 @@ class EventInfo extends Component {
       error: (err) => {
         console.log('err', err)
       }
+    })
+  }
+
+  addComment(com) {
+    var that = this;
+    $.ajax({
+      url: `/comment/${this.props.match.params.id}`,
+        type: 'POST',
+        data:this.state,
+        success: (data) => {
+          console.log('comment sended')
+          that.setState({message:'Send comment'})
+        },
+        error: (err) => {
+          console.log('err', err);
+        }
+    })
+
+    $.ajax({
+      url: '/comment',
+        type: 'GET',
+        data:this.props.username,
+        success: (data) => {
+          that.setState({message:'update'})
+          console.log('comment added')
+        },
+        error: (err) => {
+          console.log('err', err);
+        }
     })
   }
   render () {
@@ -119,7 +151,11 @@ class EventInfo extends Component {
       <br />
       <Link to='/Profile'><button className='col-xs-4 btn btn-primary btn-md col-xs-offset-4 ' type='Submit'
           onClick={this.add}>Attend</button></Link>
-
+        <div>
+          <span><FormControl id="inp"	className="Sform-control"	type="text"	placeholder="Write Comment" value={this.state.value}/>
+          <button onClick={this.addComment}>Add Comment</button>
+          </span>
+        </div>
     </div>
 
     )
