@@ -6,6 +6,7 @@ import AppRouter from '../routes/AppRouter.jsx'
 import {Navbar, Nav, NavItem, Carousel, Jumbotron, Button, ButtonToolbar,
   Overlay, Popover, OverlayTrigger, FormControl} from 'react-bootstrap'
 import EventList from './Profile.jsx'
+import Comment from './Comment.jsx'
 import {
   Route,
   Link,
@@ -27,13 +28,12 @@ class EventInfo extends Component {
       description: '',
       message: '',
       commentText: '',
-      commentsArray:[],
-      // date:''
+      comments:[],
+      date:''
     }
     this.onChange = this.onChange.bind(this)
     this.add = this.add.bind(this)
     this.addComment = this.addComment.bind(this)
-    this.saveDate = this.saveDate.bind(this)
   }
 
   onChange (e) {
@@ -86,10 +86,7 @@ class EventInfo extends Component {
     })
   }
 
-  saveDate(){
 
-
-  }
   addComment() {
     var that = this;
     //
@@ -109,16 +106,21 @@ class EventInfo extends Component {
     })
 
     $.ajax({
-      url: '/comment',
-        type: 'GET',
+      type: 'POST',
+      url: `/event/${this.props.match.params.id}`,
+      success: (data) => {
+        console.log(data);
+        this.setState({
 
-        success: (data) => {
-          that.setState({comments:data.comments})
-          console.log('comment added')
-        },
-        error: (err) => {
-          console.log('err', err);
-        }
+          comments: (data.comments).reverse()
+
+        })
+        console.log(this.state.comments)
+
+      },
+      error: (err) => {
+        console.log('err', err)
+      }
     })
   }
   render () {
@@ -166,6 +168,9 @@ class EventInfo extends Component {
           <button onClick={this.addComment} >Add Comment</button>
           </span>
         </div>
+
+
+          {(this.state.comments).map(comment =>  <Comment key={comment._id} comment={comment} />)}
     </div>
 
     )

@@ -133,6 +133,9 @@ exports.updateEventWithComment = function (req, res) {
     foundEvent.save(function (err, savedEvent) {
       if (err) {
         console.log(err)
+        res.send(err)
+      }else{
+        res.end()
       }
     })
   })

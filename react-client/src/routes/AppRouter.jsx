@@ -48,7 +48,7 @@ class AppRouter extends React.Component {
             <Route path='/login'	component={login} />
             <Route path='/events' component={Events} />
             <Route path='/create' component={CreateEvent} />
-            <Route path='/EventInfo/:id' component={EventInfo} />
+            <Route path='/eventinfo/:id' component={EventInfo} />
             <Route path='/profile' component={Profile} />
           </Switch>
         </div>
