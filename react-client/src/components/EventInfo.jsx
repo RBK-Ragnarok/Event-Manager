@@ -124,52 +124,56 @@ class EventInfo extends Component {
   render () {
   		return (
         <div>
-<div className="jumbotron">
-  <div className="container text-center">
-    <h1><b> Event Name : {this.state.eventName}</b></h1>      
-  </div>
-</div>
-<div className="container-fluid bg-3 text-center" id="div">    
-  <h3 className="fa-2x"><b>Description : </b></h3>
-  <p className="lead" className="fa-2x">{this.state.description} .</p>
-  <br></br>
-  <br></br>
-  <div className="row">
-    <div className="col-sm-3">
-      <p className="fa-2x" ><b> Place :</b></p>
-      <p className="lead" className="fa-2x">{this.state.place} .</p>
-    </div>
-    <div className="col-sm-3"> 
-      <p className="fa-2x"><b> StartDate :</b> </p>
-      <p className="lead" className="fa-2x">{this.state.startDate} .</p>
-    </div>
-    <div className="col-sm-3"> 
-      <p className="fa-2x"><b> Cost :</b></p>
-      <p className="lead" className="fa-2x">{this.state.cost} .</p>
-    </div>
-    <div className="col-sm-3">
-      <p className="fa-2x"><b> Duration :</b></p>
-      <p className="lead" className="fa-2x">{this.state.duration} .</p>
-    </div>
-    <div className="col-sm-3">
-      <p className="fa-2x"><b> Type :</b></p>
-      <p className="lead" className="fa-2x">{this.state.eventType} .</p>
-    </div>
-  </div>
-</div>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-<br></br>
-    <Link to='/Profile'><button className='col-xs-4 btn btn-primary btn-md col-xs-offset-4 ' type='Submit'
- onClick={this.add}>Attend</button></Link>
-      <div>
-          <span><FormControl id='inp' name='commentText' onChange={this.onChange} className='Sform-control'	type='text'	placeholder='Write a comment' />
-          <button onClick={this.addComment} >Add Comment</button>
-        </span>
-        </div>
+        <section id="contact">
+      <div className="section-content">
+        <h1 className="section-header">Get in <span className="content-header wow fadeIn " data-wow-delay="0.2s" data-wow-duration="2s"> Touch with us</span></h1>
+        <h3><b id="lable"> Event Name : {this.state.eventName}</b></h3>
+      </div>
+      <div className="contact-section">
+      <div className="container">
+        <form>
+          <div className="col-md-6 form-line">
+              <div className="form-group">
+                <label for="exampleInputUsername"><b id="lable">Description : </b></label>
+                <p className="lead" className="fa-2x">{this.state.description} .</p>
+              </div>
+              <div className="form-group">
+                <label for="exampleInputEmail"><b id="lable"> Place :</b></label>
+                <p className="lead" className="fa-2x">{this.state.place} .</p>
+              </div>  
+              <div className="form-group">
+                <label for="telephone"><b id="lable"> StartDate :</b></label>
+                <p className="lead" className="fa-2x">{this.state.startDate} .</p>
+              </div>
+            </div>
+            <div className="col-md-6">
+            <div className="form-group">
+                <label for="telephone"><b id="lable"> Cost :</b></label>
+               <p className="lead" className="fa-2x">{this.state.cost} .</p>
+              </div>
+            <div className="form-group">
+                <label for="telephone"><b id="lable"> Duration :</b></label>
+                <p className="lead" className="fa-2x">{this.state.duration} .</p>
+              </div>
+              <div className="form-group">
+                <label for="telephone"><b id="lable"> Type :</b></label>
+                <p className="lead" className="fa-2x">{this.state.eventType} .</p>
+              </div>
+              <div className="form-group">
+                <label for ="description" id="lable"> Add Comment </label>
+                <textarea  className="form-control" id="description" placeholder="Enter Your Comment" name='commentText' onChange={this.onChange}></textarea>
+              </div>
+              <div>
+                <Link to='/Profile'><button type="button" className="btn btn-default submit" onClick={this.add}> Attend</button></Link>
+              </div> 
+              <div>
+                <button type="button" className="btn btn-default submit" onClick={this.addComment}> Send Message</button>
+              </div>
+          </div>
+        </form>
+      </div>
+      </div>
+    </section>
 
       {(this.state.comments).map(comment => <Comment key={comment._id} comment={comment} />)}
     </div>

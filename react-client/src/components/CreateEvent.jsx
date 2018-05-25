@@ -50,31 +50,14 @@ class CreateEvent extends React.Component {
 
   render () {
     return (
-      <div>
-        <div>
-          <img id='img' src='https://images.pexels.com/photos/3863/firework-new-year-s-eve-december-31-fireworks.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940' />
-        </div>
-        <div>
-          <h3 className='form-Signup-heading'>
-            <b>create your event</b>
-          </h3>
-        </div>
-        <br />
-        <Row>
-          <Col md={1} />
-          <Col md={3}>
-            <p>you can create your event here.</p>
-          </Col>
-        </Row>
-        <div className='container wrapper well' ><br />
-          <form >
-            <Row>
-              <Col md={1} />
-              <Col md={2}>
-                <span id='textcolor'>Category</span>
-              </Col>
-              <Col md={3}>
-                <label>
+    <div>
+    <div className="container-fluid stylish-form">
+      <div className="container">
+      <div className="row main">
+        <div className="main-login main-center">
+        <h5>Creat your Event here</h5>
+          <form className="" method="post" action="#">
+          <label>
                   <div className='form-group'>
                     <select name='eventType' className='form-control selectpicker btn btn-default' onChange={this.onChange}>
                       <option value='Select'>Select Category</option>
@@ -85,95 +68,79 @@ class CreateEvent extends React.Component {
                       <option value='Art'>Art</option>
                     </select>
                   </div>
-                </label></Col>
-            </Row>
-            <br />
-            <Row>
-              <Col md={1} />
-              <Col md={2}>
-                <span id='textcolor'>Event Name</span>
-              </Col>
-              <Col md={3}>
-                <label >
-                  <FormControl maxLength={20} type='text' name='eventName' onChange={this.onChange} placeholder='event Name' autoFocus required value={this.state.eventName} />
                 </label>
-              </Col>
-            </Row>
-            <br />
-
-            <Row>
-              <Col md={1} />
-              <Col md={2}>
-                <span id='textcolor'>Place</span>
-              </Col>
-              <Col md={3}>
-                <label >
-                  <FormControl maxLength={20} type='text' name='place' onChange={this.onChange} placeholder='Place' autoFocus required value={this.state.place} />
-                </label>
-              </Col>
-            </Row>
-            <br />
-            <Row>
-              <Col md={1} />
-              <Col md={2}>
-                <span id='textcolor'>Cost</span>
-              </Col>
-              <Col md={3}>
-                <label >
-                  <FormControl maxLength={20} type='text' name='cost' onChange={this.onChange} placeholder='Cost' autoFocus required value={this.state.cost} />
-                </label>
-              </Col>
-            </Row>
-            <br />
-
-            <Row>
-              <Col md={1} />
-              <Col md={2}>
-                <span id='textcolor'>Description</span>
-              </Col>
-              <Col md={8}>
-                <label >
-                  <FormControl id='txtArea' componentClass='textarea' maxLength={150} name='description' onChange={this.onChange} placeholder='Description' autoFocus required value={this.state.description} />
-                </label>
-              </Col>
-              <Col md={1} />
-            </Row><br />
-
-            <Row>
-              <Col md={1} />
-              <Col md={2}>
-                <span id='textcolor'>From</span>
-              </Col>
-              <Col md={3}>
-                <label >
-                  <FormControl type='date' name='startDate' onChange={this.onChange} placeholder='Start Date' autoFocus required value={this.state.startDate} />
-                </label>
-              </Col>
-              <Col md={1} />
-            </Row><br /><br />
-            <Row>
-              <Col md={1} id='textcolor' />
-              <Col md={2}>
-                <span id='textcolor'>Duration by days:</span>
-              </Col>
-              <Col md={3}>
-                <label >
-                  <FormControl type='number' name='duration' onChange={this.onChange} placeholder='duration' autoFocus required value={this.state.duration} />
-                </label> </Col>
-              <Col md={4}>
-                <div id='map'>
-                  <Map />
+            
+            <div className="form-group">
+              <label for="name" className="cols-sm-2 control-label">Event Name</label>
+              <div className="cols-sm-10">
+                <div className="input-group">
+                  <span className="input-group-addon"><i className="fa fa-tree" aria-hidden="true"></i></span>
+                  <input type="text" className="form-control" name="eventName"   placeholder="Enter your eventName" onChange={this.onChange} value={this.state.eventName}/>
                 </div>
-              </Col>
-            </Row><br />
-            <Button id='jobb' bsStyle='primary' className='col-xs-4 col-xs-offset-4' onClick={this.create} type='submit' bsSize='large' >
-                Create Event
-            </Button>
-            <h3 className='SuccessMessage'>{this.state.message}</h3>
-          </form>
-        </div>
+              </div>
+            </div>
 
+            <div className="form-group">
+              <label for="email" className="cols-sm-2 control-label">Place</label>
+              <div className="cols-sm-10">
+                <div className="input-group">
+                  <span className="input-group-addon"><i className="fa fa-building" aria-hidden="true"></i></span>
+                  <input type="text" className="form-control" name="place"  placeholder="Enter your place" onChange={this.onChange} value={this.state.place}/>
+                </div>
+              </div>
+            </div>
+
+            <div className="form-group">
+              <label for="username" className="cols-sm-2 control-label">Cost</label>
+              <div className="cols-sm-10">
+                <div className="input-group">
+                  <span className="input-group-addon"><i className="  fa fa-copyright" aria-hidden="true"></i></span>
+                  <input type="text" className="form-control" name="cost"   placeholder="Enter the cost" onChange={this.onChange} value={this.state.cost}/>
+                </div>
+              </div>
+            </div>
+
+            <div className="form-group">
+              <label for="password" className="cols-sm-2 control-label">Description</label>
+              <div className="cols-sm-10">
+                <div className="input-group">
+                  <span className="input-group-addon"><i className="fa fa-pencil-square" aria-hidden="true"></i></span>
+                  <input  className="form-control" name="description"  placeholder="Enter your event description" onChange={this.onChange} value={this.state.description}/>
+                </div>
+              </div>
+            </div>
+
+            <div className="form-group">
+              <label for="confirm" className="cols-sm-2 control-label">From</label>
+              <div className="cols-sm-10">
+                <div className="input-group">
+                  <span className="input-group-addon"><i className="fa fa-history" aria-hidden="true"></i></span>
+                  <input  className="form-control" name="startDate"  placeholder="Confirm your startDate" onChange={this.onChange} value={this.state.startDate}/>
+                </div>
+              </div>
+            </div>
+
+              <div className="form-group">
+              <label for="confirm" className="cols-sm-2 control-label">Duration by days:</label>
+              <div className="cols-sm-10">
+                <div className="input-group">
+                  <span className="input-group-addon"><i className="fa fa-clock-o" aria-hidden="true"></i></span>
+                  <input  className="form-control" name="duration"  placeholder="Confirm your duration" onChange={this.onChange} value={this.state.duration}/>
+                </div>
+              </div>
+            </div>
+          </form>
+          <div id='map'>
+             <Map />
+          </div>
+        </div>
       </div>
+      <Button id='jobb' bsStyle='primary' className='col-xs-4 col-xs-offset-4' onClick={this.create} type='submit' bsSize='large' >
+                Create Event
+     </Button>
+    </div>
+    </div>
+    </div>
     )
   }
 }

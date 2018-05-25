@@ -81,7 +81,6 @@ class EventItem extends Component {
 
   	return (
       <div>
-      <div className="container-fluid stylish-form">
 <div className="container" style={{display: 'flex', justifyContent: 'center'}}>
    <h2 onClick={()=> this.showeventbox(this.items)} >{this.items}</h2>
   </div>
@@ -96,7 +95,6 @@ class EventItem extends Component {
     </div>
     </div>
 </div>
-      </div>
        )
   }
 }
