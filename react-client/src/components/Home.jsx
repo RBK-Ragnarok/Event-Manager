@@ -22,8 +22,9 @@ class Home extends Component {
 
   render () {
     return (
+      <div>
         <h1 id='h1'><b>Welcome to Slab</b></h1>
-        <div id='Carousel1' className='devImg'>
+        <div id='Carousel1' className='devImg'>      
           <Carousel>
             <Carousel.Item className='img'>
               <img className='img' alt='900x500' src='../photos/img1.jpg' />
@@ -44,6 +45,7 @@ class Home extends Component {
         </div>
         <br />
         <br />
+
         <div id='desc'>
           <h2>Description:</h2>
           <p> Connect with friends and the world around you with Slab. 
@@ -64,6 +66,7 @@ class Home extends Component {
             </div>
           </div>
         </footer>
+      </div>  
     )
   }
 }
