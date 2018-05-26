@@ -123,7 +123,9 @@ class CreateEvent extends React.Component {
               <div className="form-group">
               <label for="confirm" className="cols-sm-2 control-label">Duration by days:</label>
               <div className="cols-sm-10">
+
                 <div className="input-group">
+                
                   <span className="input-group-addon"><i className="fa fa-clock-o" aria-hidden="true"></i></span>
                   <input  className="form-control" name="duration"  placeholder="Confirm your duration" onChange={this.onChange} value={this.state.duration}/>
                 </div>
