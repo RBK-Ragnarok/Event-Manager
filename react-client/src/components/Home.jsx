@@ -22,14 +22,12 @@ class Home extends Component {
 
   render () {
     return (
-      <div className="container-fluid stylish-form">
-      <h1 id='cint'><b>Welcome to My of Events</b></h1>
-        <br/>
-        <br/>
+      <div>
+        <h1 id='h1'><b>Welcome to Slab</b></h1>
         <div id='Carousel1' className='devImg'>
           <Carousel>
             <Carousel.Item className='img'>
-              <img className='img' alt='900x500' src='../photos/img1.jpg'/>
+              <img className='img' alt='900x500' src='../photos/img1.jpg' />
             </Carousel.Item>
             <Carousel.Item className='img'>
               <img className='img' alt='900x500' src='../photos/img2.jpg' />
@@ -45,11 +43,16 @@ class Home extends Component {
             </Carousel.Item>
           </Carousel>
         </div>
-        <br/>
-        <br/>
-        <div id="desc">
+        <br />
+        <br />
+        <div id='desc'>
           <h2>Description:</h2>
-          <p>hellooooooo</p>
+          <p> Connect with friends and the world around you with Slab. 
+          You can create events or attend as many as you want, meet new people and learn new things.
+
+          	The name SLAB is a combination of the  first letter of each team member and it is used
+          as an attend button in the events page. press Slab on an event and count youself in.
+          </p>
         </div>
         <footer className='navbar-bottom footer'>
           <div className='container'>
