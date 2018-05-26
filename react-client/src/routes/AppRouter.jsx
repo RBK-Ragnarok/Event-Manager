@@ -10,6 +10,7 @@ import axios from 'axios'
 import NavBarComponent from '../components/NavBarComponent.jsx'
 import CreateEvent from '../components/CreateEvent.jsx'
 import EventInfo from '../components/EventInfo.jsx'
+import EventTimer from '../components/EventTimer.jsx'
 import $ from 'jquery'
 import Map from '../components/Map.jsx'
 import About from '../components/About.jsx'
@@ -53,7 +54,7 @@ class AppRouter extends React.Component {
             <Route path='/eventinfo/:id' component={EventInfo} />
             <Route path='/profile' component={Profile} />
             <Route path='/about' component={About} />
-
+             <Route path='/EventTimer' component={EventTimer} />
           </Switch>
         </div>
       </BrowserRouter>
