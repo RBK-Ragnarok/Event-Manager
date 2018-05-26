@@ -22,46 +22,9 @@ class Home extends Component {
 
   render () {
     return (
-      <div className="container-fluid stylish-form">
-      <h1 id='cint'><b>Welcome to My of Events</b></h1>
-        <br/>
-        <br/>
-        <div id='Carousel1' className='devImg'>
-          <Carousel>
-            <Carousel.Item className='img'>
-              <img className='img' alt='900x500' src='../photos/img1.jpg'/>
-            </Carousel.Item>
-            <Carousel.Item className='img'>
-              <img className='img' alt='900x500' src='../photos/img2.jpg' />
-            </Carousel.Item>
-            <Carousel.Item className='img'>
-              <img className='img' alt='900x500' src='../photos/img3.jpg' />
-            </Carousel.Item>
-            <Carousel.Item className='img'>
-              <img className='img' alt='900x500' src='../photos/img4.jpg' />
-            </Carousel.Item>
-            <Carousel.Item className='img'>
-              <img className='img' alt='900x500' src='../photos/img5.jpg' />
-            </Carousel.Item>
-          </Carousel>
-        </div>
-        <br/>
-        <br/>
-        <div id="desc">
-          <h2>Description:</h2>
-          <p>hellooooooo</p>
-        </div>
-        <footer className='navbar-bottom footer'>
-          <div className='container'>
-            <div className='row'>
-              <h4> Contact Us :</h4>
-              <SocialIcon url='http://twitter.com' />
-              <SocialIcon url='http://facebook.com' />
-              <SocialIcon url='http://slack.com' />
-              <SocialIcon url='http://github.com' />
-            </div>
-          </div>
-        </footer>
+     
+      <div>
+        
       </div>
     )
   }

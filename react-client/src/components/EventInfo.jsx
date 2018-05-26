@@ -134,10 +134,6 @@ class EventInfo extends Component {
         <form>
           <div className="col-md-6 form-line">
               <div className="form-group">
-                <label for="exampleInputUsername"><b id="lable">Description : </b></label>
-                <p className="lead" className="fa-2x">{this.state.description} .</p>
-              </div>
-              <div className="form-group">
                 <label for="exampleInputEmail"><b id="lable"> Place :</b></label>
                 <p className="lead" className="fa-2x">{this.state.place} .</p>
               </div>  
@@ -145,9 +141,7 @@ class EventInfo extends Component {
                 <label for="telephone"><b id="lable"> StartDate :</b></label>
                 <p className="lead" className="fa-2x">{this.state.startDate} .</p>
               </div>
-            </div>
-            <div className="col-md-6">
-            <div className="form-group">
+              <div className="form-group">
                 <label for="telephone"><b id="lable"> Cost :</b></label>
                <p className="lead" className="fa-2x">{this.state.cost} .</p>
               </div>
@@ -160,22 +154,27 @@ class EventInfo extends Component {
                 <p className="lead" className="fa-2x">{this.state.eventType} .</p>
               </div>
               <div className="form-group">
+                <label for="exampleInputUsername"><b id="lable">Description : </b></label>
+                <p className="lead" className="fa-2x">{this.state.description} .</p>
+              </div>
+            </div>
+            <div className="col-md-6">
+              <div className="form-group">
                 <label for ="description" id="lable"> Add Comment </label>
                 <textarea  className="form-control" id="description" placeholder="Enter Your Comment" name='commentText' onChange={this.onChange}></textarea>
               </div>
+              <p>{(this.state.comments).map(comment => <Comment key={comment._id} comment={comment} />)}</p>
               <div>
                 <Link to='/Profile'><button type="button" className="btn btn-default submit" onClick={this.add}> Attend</button></Link>
               </div> 
               <div>
-                <button type="button" className="btn btn-default submit" onClick={this.addComment}> Send Message</button>
+                <button type="button" className="btn btn-default submit" onClick={this.addComment}> Add Comment</button>
               </div>
           </div>
         </form>
       </div>
       </div>
     </section>
-
-      {(this.state.comments).map(comment => <Comment key={comment._id} comment={comment} />)}
     </div>
 
     )
