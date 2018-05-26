@@ -189,6 +189,7 @@ class Profile extends React.Component {
 		            onChange={this.handelChange3}
 		          	/>
 		          	<hr></hr>
+		          	
 		          	<FormControl componentClass="select" placeholder="Gender" name="gender" onChange={this.handelChange4} required value={this.state.gender}>
                 		<option hidden>Gender</option>
               		    <option value="female">Female</option>
