@@ -115,7 +115,7 @@ class CreateEvent extends React.Component {
               <div className="cols-sm-10">
                 <div className="input-group">
                   <span className="input-group-addon"><i className="fa fa-history" aria-hidden="true"></i></span>
-                  <input  className="form-control" name="startDate"  placeholder="Confirm your startDate" onChange={this.onChange} value={this.state.startDate}/>
+                 <FormControl type='date' name='startDate' onChange={this.onChange} placeholder='Start Date' autoFocus required value={this.state.startDate} />
                 </div>
               </div>
             </div>

@@ -135,27 +135,27 @@ class EventInfo extends Component {
           <div className="col-md-6 form-line">
               <div className="form-group">
                 <label for="exampleInputEmail"><b id="lable"> Place :</b></label>
-                <p className="lead" className="fa-2x">{this.state.place} .</p>
+                <p className="lead" className="fa-2x">{this.state.place} </p>
               </div>  
               <div className="form-group">
                 <label for="telephone"><b id="lable"> StartDate :</b></label>
-                <p className="lead" className="fa-2x">{this.state.startDate} .</p>
+                <p className="lead" className="fa-2x">{this.state.startDate} </p>
               </div>
               <div className="form-group">
                 <label for="telephone"><b id="lable"> Cost :</b></label>
-               <p className="lead" className="fa-2x">{this.state.cost} .</p>
+               <p className="lead" className="fa-2x">{this.state.cost} </p>
               </div>
             <div className="form-group">
                 <label for="telephone"><b id="lable"> Duration :</b></label>
-                <p className="lead" className="fa-2x">{this.state.duration} .</p>
+                <p className="lead" className="fa-2x">{this.state.duration} </p>
               </div>
               <div className="form-group">
                 <label for="telephone"><b id="lable"> Type :</b></label>
-                <p className="lead" className="fa-2x">{this.state.eventType} .</p>
+                <p className="lead" className="fa-2x">{this.state.eventType} </p>
               </div>
               <div className="form-group">
                 <label for="exampleInputUsername"><b id="lable">Description : </b></label>
-                <p className="lead" className="fa-2x">{this.state.description} .</p>
+                <p className="lead" className="fa-2x">{this.state.description} </p>
               </div>
             </div>
             <div className="col-md-6">

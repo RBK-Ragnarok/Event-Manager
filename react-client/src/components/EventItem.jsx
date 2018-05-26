@@ -8,6 +8,7 @@ import Events from './Events.jsx'
 import EventList from './EventList.jsx'
 import EventInfo from './EventInfo.jsx'
 import Profile from './Profile.jsx'
+import EventTimer from './EventTimer.jsx'
 import AppRouter from '../routes/AppRouter.jsx'
 import {
   Route,
@@ -27,6 +28,8 @@ class EventItem extends Component {
       iseventhiddin:true,
       img:'',
       data:'',
+      deadline:this.props.event.startDate,
+      newDeadline:''
       //show: false
     };
 
@@ -52,7 +55,6 @@ class EventItem extends Component {
      //[e.target.name]: e.target.value ,
     // [e.target.description]: e.target.value
    };
-  
 
   render(){
     var data = this.props.event;
@@ -85,8 +87,10 @@ class EventItem extends Component {
    <h2 onClick={()=> this.showeventbox(this.items)} >{this.items}</h2>
   </div>
    <div id="jumbotron" className="col-xs-3 col-xs-offset-4">
-    <div>
+   <div>
       <img id="lolo" src={this.state.img} alt="lolo"/>
+      Countdown to {this.state.deadline}
+       <EventTimer deadline={this.state.deadline}/>
       <h1><b>MyName: {this.props.event.creator} .</b></h1>
       <h2 className="w3-opacity"><b>EventName: {this.props.event.eventName}.</b></h2>
       <h3><b>Place : </b>{this.props.event.place} .</h3>
