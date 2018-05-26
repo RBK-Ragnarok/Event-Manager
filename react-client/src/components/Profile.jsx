@@ -133,14 +133,7 @@ class Profile extends React.Component {
  		)
 
   	}	
-
-  	// {	if (this.state.data.events){this.state.data.events.map(event =>{
-   //      	return <p key={event._id} event={event} />
-   //     		})
-
-   //      }
-   //  }
-
+  	
   	renderedit(){
 	    var user = this.state.data;
 	    //var imgUrl = user.imgUrl;
