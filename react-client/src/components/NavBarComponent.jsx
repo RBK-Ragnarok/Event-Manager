@@ -45,6 +45,7 @@ class NavBarComponent extends React.Component {
             </Nav>
             <Nav pullRight className='nav'>
               <NavItem id='nav1' eventKey='logout' href='/logout'><p>Logout</p></NavItem>
+              <NavItem id='nav1' eventKey='about' href='/about'><p>About Us</p></NavItem>
             </Nav>
           </div>
         </Navbar>)
@@ -61,6 +62,7 @@ class NavBarComponent extends React.Component {
 
               <NavItem id='nav1' eventKey='logIn' href='/login'><p>LOGIN</p></NavItem>
               <NavItem id='nav1' eventKey='signUp' href='/signup'><p>SIGNUP</p></NavItem>
+              <NavItem id='nav1' eventKey='about' href='/about'><p>About Us</p></NavItem>
             </Nav>
           </div>
         </Navbar>
