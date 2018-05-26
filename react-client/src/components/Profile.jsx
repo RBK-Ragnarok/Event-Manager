@@ -91,12 +91,12 @@ class Profile extends React.Component {
   		if(this.state.data.events === undefined){
   			return (<h1>test</h1>)
   		}
-  		console.log('aaaaaaaa',this.state.data)	
-  		var arr = []
+  		var arr = [];
   		this.state.data.events.forEach(function(elem){
   			console.log(elem);
   			arr.push(<li>{elem.eventName}</li>)
   		})
+  		
  		return (
 		 	<div className='container' style={divStyle}>
  		 	 	<h1>Profile Page</h1>
@@ -124,11 +124,17 @@ class Profile extends React.Component {
 		 	 	</Row>  
 		 	 	
 		 	 	<Col md={2}>
-		 	 		<span id="textcolor" >Events:</span>
+		 	 		<span id="textcolor" >Attended Events:</span>
 		 	 		<ul>
 		 	 		{arr}
 		 	 		</ul>
- 		 	 	</Col> 		
+ 		 	 	</Col> 
+ 		 	 	<Col md={2}>
+ 		 	 		<span id="textcolor" >Created Events:</span>
+ 		 	 		<ul>
+		 	 		{arr2}
+		 	 		</ul>
+ 		 	 	</Col>		
             </div>
  		)
 

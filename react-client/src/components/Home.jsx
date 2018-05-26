@@ -50,7 +50,7 @@ class Home extends Component {
           You can create events or attend as many as you want, meet new people and learn new things.
 
           	The name SLAB is a combination of the  first letter of each team member and it is used
-          as an attend button in the events page. press Slab on an event and count youself in.
+          as an attend button in the events page. press Slab on an event and count yourself in.
           </p>
         </div>
         <footer className='navbar-bottom footer'>
