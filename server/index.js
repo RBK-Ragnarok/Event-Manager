@@ -14,6 +14,11 @@ app.use(session({
 app.use('/', Router)
 app.use(express.static(__dirname + '/../react-client/dist'))
 
-app.listen(3000, function () {
-  console.log('listening on port 3000!')
-})
+if(!module.parent){
+  app.listen(3000, function () {
+    console.log('listening on port 3000!')
+  })
+}
+
+
+module.exports=app;

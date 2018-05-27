@@ -53,7 +53,7 @@ Router.route('/login')
               util.createSession(req, res, user)
             } else {
               console.log('Wrong username or password!')
-              res.end()
+              res.sendStatus(404)
             }
           })
         }

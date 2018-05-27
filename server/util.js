@@ -27,5 +27,5 @@ exports.createSession = function (req, res, aUser) {
 
 exports.logout = function (req, res) {
   req.session.destroy()
-  res.send('<script>window.location.href="/"</script>')
+  res.status(200).send('<script>window.location.href="/"</script>')
 }
