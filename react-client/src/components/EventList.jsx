@@ -43,7 +43,7 @@ class EventList extends Component {
     //    }
     // }
 
-    filterd.reverse()
+    filterd.reverse();
     return (
       <div>
     <form>
