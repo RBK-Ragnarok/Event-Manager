@@ -6,6 +6,7 @@ import login from './login.jsx'
 import Signup from './Signup.jsx'
 import axios from 'axios'
 import CreateEvent from './CreateEvent.jsx'
+import About from './About.jsx'
 
 class Home extends Component {
   constructor (props) {
@@ -48,7 +49,7 @@ class Home extends Component {
 
         <div id='desc'>
           <h2>Description:</h2>
-          <p> Connect with friends and the world around you with Slab. 
+          <p> Connect with friends and the world around you with Slab.
           You can create events or attend as many as you want, meet new people and learn new things.
 
           	The name SLAB is a combination of the  first letter of each team member and it is used
@@ -66,7 +67,9 @@ class Home extends Component {
             </div>
           </div>
         </footer>
+
       </div>  
+
     )
   }
 }

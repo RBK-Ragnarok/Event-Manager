@@ -12,6 +12,8 @@ import CreateEvent from '../components/CreateEvent.jsx'
 import EventInfo from '../components/EventInfo.jsx'
 import $ from 'jquery'
 import Map from '../components/Map.jsx'
+import About from '../components/About.jsx'
+
 class AppRouter extends React.Component {
   constructor (props) {
     super(props)
@@ -50,6 +52,8 @@ class AppRouter extends React.Component {
             <Route path='/create' component={CreateEvent} />
             <Route path='/eventinfo/:id' component={EventInfo} />
             <Route path='/profile' component={Profile} />
+            <Route path='/about' component={About} />
+
           </Switch>
         </div>
       </BrowserRouter>
