@@ -9,11 +9,10 @@ class Profile extends React.Component {
 	    super(props);
 	    this.state = {
 	    data:{},
-	    username:'',
+	    sata:{},
 	    email:'',
 	    age:'',
 	    gender:'',
-	    about:'',
 	    editing:false
     	}
  
@@ -22,7 +21,6 @@ class Profile extends React.Component {
 	    this.handelChange2=this.handelChange2.bind(this);
 	    this.handelChange3=this.handelChange3.bind(this);
 	    this.handelChange4=this.handelChange4.bind(this);
-	    this.handelChange5=this.handelChange5.bind(this);
 	    this.renderStart=this.renderStart.bind(this);
 	    this.renderedit=this.renderedit.bind(this);
     }
@@ -34,6 +32,16 @@ class Profile extends React.Component {
 	   		type: 'GET',
 	   		success: (data) => {
         		that.setState({data:data})
+        		console.log('bbbbbbbbbbbbbbbbbbb',data)
+	 		}
+    	})
+
+    	$.ajax({
+	   		url: '/allevents',
+	   		type: 'GET',
+	   		success: (sata) => {
+        		that.setState({sata:sata})
+        		console.log('dddddddddddddddddd',sata)
 	 		}
     	})
   	}	
@@ -48,7 +56,6 @@ class Profile extends React.Component {
 	    this.state.data.email=this.state.email;
 	    this.state.data.age=this.state.age;
 	    this.state.data.gender=this.state.gender;
-	    this.state.data.about=this.state.about;
 	    var user=this.state.data.username;
 	    $.ajax({
 	      url: '/profile',
@@ -75,11 +82,6 @@ class Profile extends React.Component {
       		gender:e.target.value
     	})
   	}
-  	handelChange5(e){
-    	this.setState({
-      		about:e.target.value
-    	})
-  	}
 
   
 
@@ -88,17 +90,31 @@ class Profile extends React.Component {
   			margin: '40px',
   			border: '5px solid black'
   		};
+
   		if(this.state.data.events === undefined){
-  			return (<h1>test</h1>)
+  			return (<h1>Error Loading</h1>)
   		}
-  		console.log('aaaaaaaa',this.state.data)	
-  		var arr = []
+
+  		var arr = [];
+  		var use=this.state.data.username
   		this.state.data.events.forEach(function(elem){
-  			console.log(elem);
   			arr.push(<li>{elem.eventName}</li>)
+
   		})
+
+  		if(this.state.sata === undefined){
+  			return (<h1>Error Loading 2</h1>)
+  		}
+
+  		var rra = [];
+  		this.state.sata.forEach(function(element){
+  				if(element.creator === use){
+  					rra.push(<li>{element.eventName}</li>)
+  				}
+  		})
+  		
  		return (
-		 	<div className='container' style={divStyle}>
+		 	<div className='container'>
  		 	 	<h1>Profile Page</h1>
  		 	 	<br />
  		 	 	<br />
@@ -114,21 +130,33 @@ class Profile extends React.Component {
 		 	 		   	<span id="textcolor" >Email: <p className="fa-1x"> {this.state.data.email}</p></span>
 		 	 		</Col>
 
-		 	 		<Col md={2}>
+		 	 		<Col md={1}>
 		 	 			<span id="textcolor" >Age: <p className="fa-1x"> {this.state.data.age}</p></span>
  		 	 		</Col>
 
- 		 	 		<Col md={2}>
+ 		 	 		<Col md={1}>
+		 	 			<span id="textcolor" >Gender: <p className="fa-1x"> {this.state.data.gender}</p></span>
+ 		 	 		</Col>
+
+ 		 	 		<Col md={1}>
 		 	 			<Button bsStyle="success" onClick={this.edit}>Edit</Button> 
 		 	 		</Col>	
 		 	 	</Row>  
-		 	 	
+		 	 	<br />
+		 	 	<Col md={4}>
+		 	 		</Col>
 		 	 	<Col md={2}>
-		 	 		<span id="textcolor" >Events:</span>
+		 	 		<span id="textcolor" >Attended Events:</span>
 		 	 		<ul>
 		 	 		{arr}
 		 	 		</ul>
- 		 	 	</Col> 		
+ 		 	 	</Col> 
+ 		 	 	<Col md={2}>
+ 		 	 		<span id="textcolor" >Created Events:</span>
+ 		 	 		<ul>
+ 		 	 		{rra}
+		 	 		</ul>
+ 		 	 	</Col>		
             </div>
  		)
 
@@ -161,20 +189,13 @@ class Profile extends React.Component {
 		            onChange={this.handelChange3}
 		          	/>
 		          	<hr></hr>
-		          	<FormControl
-		            bsSize="large"
-		            value={this.state.gender}
-		            placeholder="Gender"
-		            onChange={this.handelChange4}
-		          	/>
+		          	
+		          	<FormControl componentClass="select" placeholder="Gender" name="gender" onChange={this.handelChange4} required value={this.state.gender}>
+                		<option hidden>Gender</option>
+              		    <option value="female">Female</option>
+               		    <option value="male">Male</option>
+             		</FormControl>
 		          	<hr></hr>
-		          	<FormControl
-		            bsSize="large"
-		            value={this.state.about}
-		            placeholder="About"
-		            onChange={this.handelChange5}
-		         	/>
-	          		<hr></hr>
 	          		<Button bsStyle="success" onClick={this.save}>Save</Button>
 	        	</div>
 			</div>
@@ -196,3 +217,4 @@ class Profile extends React.Component {
 }
    
 export default Profile;
+
