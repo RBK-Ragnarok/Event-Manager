@@ -53,7 +53,7 @@ Router.route('/login')
               util.createSession(req, res, user)
             } else {
               console.log('Wrong username or password!')
-              res.end()
+              res.sendStatus(404)
             }
           })
         }
@@ -133,7 +133,7 @@ Router.route('/create')
   })
 
 Router.route('/about')
-  .get(util.checkUser, function (req, res) {
+  .get(function (req, res) {
     res.sendFile(path.join(__dirname, '../react-client/dist/index.html'))
   })
 

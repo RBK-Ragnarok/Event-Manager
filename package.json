@@ -9,10 +9,9 @@
     "server-dev": "node server/index.js",
     "server": "nodemon server/index.js",
     "dev": "concurrently --kill-others \"npm run server\" \"npm run react-dev\"",
-    "s":"standard --fix"
+    "s": "standard --fix"
   },
-  "pre-commit":"s",
-
+  "pre-commit": "s",
   "author": "Ragnarok",
   "license": "ISC",
   "devDependencies": {
@@ -29,6 +28,7 @@
     "pre-commit": "^1.2.2",
     "react-google-maps": "^9.4.5",
     "standard": "^11.0.1",
+    "supertest": "^3.1.0",
     "webpack": "^2.2.1"
   },
   "dependencies": {
