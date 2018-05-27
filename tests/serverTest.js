@@ -56,4 +56,11 @@ describe('App',function(){
             .end(done)
   });
 
+  it('should respond to GET on events path', function (done) {
+     request(app)
+            .get('/events')
+            .expect(200)
+            .end(done)
+  });
+
 })
