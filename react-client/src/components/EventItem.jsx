@@ -28,11 +28,7 @@ class EventItem extends Component {
       iseventhiddin:true,
       img:'',
       data:'',
-<<<<<<< HEAD
       deadline:this.props.event.startDate,
-=======
-      deadline:'December 25,2017',
->>>>>>> EventTimer page
       newDeadline:''
       //show: false
     };
@@ -100,15 +96,8 @@ class EventItem extends Component {
       <img id="lolo" src={this.state.img} alt="lolo"/>
       Countdown to {this.state.deadline}
        <EventTimer deadline={this.state.deadline}/>
-<<<<<<< HEAD
-=======
        <div>
-    <input placeholder="new date"
-    onChange={data => this.setState({newDeadline:data.target.value})}
-    />
-    <button onClick={()=>this.changeDeadline()}>Submit</button>
     </div>
->>>>>>> EventTimer page
       <h1><b>MyName: {this.props.event.creator} .</b></h1>
       <h2 className="w3-opacity"><b>EventName: {this.props.event.eventName}.</b></h2>
       <h3><b>Place : </b>{this.props.event.place} .</h3>

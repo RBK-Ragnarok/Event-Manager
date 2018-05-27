@@ -7,6 +7,7 @@ import {Navbar, Nav, NavItem, Carousel, Jumbotron, Button, ButtonToolbar,
   Overlay, Popover, OverlayTrigger, FormControl} from 'react-bootstrap'
 import EventList from './Profile.jsx'
 import Comment from './Comment.jsx'
+import EventTimer from './EventTimer.jsx'
 import {
   Route,
   Link,
@@ -126,7 +127,6 @@ class EventInfo extends Component {
         <div>
         <section id="contact">
       <div className="section-content">
-        <h1 className="section-header">Get in <span className="content-header wow fadeIn " data-wow-delay="0.2s" data-wow-duration="2s"> Touch with us</span></h1>
         <h3><b id="lable"> Event Name : {this.state.eventName}</b></h3>
       </div>
       <div className="contact-section">
