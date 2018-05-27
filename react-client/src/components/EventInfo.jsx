@@ -100,27 +100,31 @@ class EventInfo extends Component {
         console.log('comment sent')
         that.setState({message: 'Send comment'})
       },
-      error: (err) => {
-        console.log('err', err)
-      }
-    })
+      complete:()=>{
 
-    $.ajax({
-      type: 'POST',
-      url: `/event/${this.props.match.params.id}`,
-      success: (data) => {
-        console.log(data)
-        this.setState({
+        $.ajax({
+          type: 'POST',
+          url: `/event/${this.props.match.params.id}`,
+          success: (data) => {
+            console.log(data)
+            this.setState({
 
-          comments: (data.comments).reverse()
+              comments: (data.comments).reverse()
 
+            })
+            console.log(this.state.comments)
+          },
+          error: (err) => {
+            console.log('err', err)
+          }
         })
-        console.log(this.state.comments)
       },
       error: (err) => {
         console.log('err', err)
       }
     })
+
+
   }
   render () {
   		return (
@@ -135,8 +139,13 @@ class EventInfo extends Component {
           <div className="col-md-6 form-line">
               <div className="form-group">
                 <label for="exampleInputEmail"><b id="lable"> Place :</b></label>
+<<<<<<< HEAD
                 <p className="lead" className="fa-2x">{this.state.place} </p>
               </div>  
+=======
+                <p className="lead" className="fa-2x">{this.state.place} .</p>
+              </div>
+>>>>>>> comments are now updated after clicking the button
               <div className="form-group">
                 <label for="telephone"><b id="lable"> StartDate :</b></label>
                 <p className="lead" className="fa-2x">{this.state.startDate} </p>
@@ -157,19 +166,21 @@ class EventInfo extends Component {
                 <label for="exampleInputUsername"><b id="lable">Description : </b></label>
                 <p className="lead" className="fa-2x">{this.state.description} </p>
               </div>
+              <div>
+                <Link to='/Profile'><button type="button" className="btn btn-default submit block-center" onClick={this.add}> Attend</button></Link>
+              </div>
             </div>
             <div className="col-md-6">
               <div className="form-group">
                 <label for ="description" id="lable"> Add Comment </label>
                 <textarea  className="form-control" id="description" placeholder="Enter Your Comment" name='commentText' onChange={this.onChange}></textarea>
               </div>
-              <p>{(this.state.comments).map(comment => <Comment key={comment._id} comment={comment} />)}</p>
-              <div>
-                <Link to='/Profile'><button type="button" className="btn btn-default submit" onClick={this.add}> Attend</button></Link>
-              </div> 
               <div>
                 <button type="button" className="btn btn-default submit" onClick={this.addComment}> Add Comment</button>
               </div>
+            {(this.state.comments).map(comment => <Comment key={comment._id} comment={comment} />)}
+
+
           </div>
         </form>
       </div>
