@@ -1,9 +1,10 @@
 var mongoose = require('mongoose')
 
 var MessageSchema = mongoose.Schema({
-  username: String,
-  email: String,
-  message: String
+  to: String,
+  from:String,
+  text: String,
+  date:String
 })
 
 var Message = mongoose.model('Message', MessageSchema)

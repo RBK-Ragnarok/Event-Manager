@@ -5,6 +5,7 @@ var User = require('../database-mongo/User')
 var Event = require('../database-mongo/Event')
 var eventFunctions = require('../database-mongo/event-handler.js')
 var userFunctions = require('../database-mongo/user-handler.js')
+var messageFunctions = require('../database-mongo/message-handler.js')
 var bodyParser = require('body-parser')
 var path = require('path')
 var mongooes = require('mongoose')
@@ -206,4 +207,13 @@ Router.route('/comments')
     res.sendStatus(404)
   })
 
+
+  Router.route('/messages')
+    .get(util.checkUser, function (req, res) {
+      messageFunctions.getAllMessages(req, res)
+    })
+    .post(function (req, res) {
+      messageFunctions.saveMessage(req, res)
+
+    })
 module.exports = Router
