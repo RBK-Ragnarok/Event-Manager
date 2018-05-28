@@ -14,6 +14,7 @@ import EventTimer from '../components/EventTimer.jsx'
 import $ from 'jquery'
 import Map from '../components/Map.jsx'
 import About from '../components/About.jsx'
+import Mail from '../components/Mail.jsx'
 
 class AppRouter extends React.Component {
   constructor (props) {
@@ -53,7 +54,8 @@ class AppRouter extends React.Component {
             <Route path='/create' component={CreateEvent} />
             <Route path='/eventinfo/:id' component={EventInfo} />
             <Route path='/profile' component={Profile} />
-            <Route path='/about' component={About} />
+              <Route path='/about' component={About} />
+            <Route path='/mail' component={Mail} />
              <Route path='/EventTimer' component={EventTimer} />
           </Switch>
         </div>

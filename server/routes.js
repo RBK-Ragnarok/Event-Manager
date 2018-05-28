@@ -216,4 +216,9 @@ Router.route('/comments')
       messageFunctions.saveMessage(req, res)
 
     })
+      Router.route('/mail')
+        .get(util.checkUser, function (req, res) {
+          res.sendFile(path.join(__dirname, '../react-client/dist/index.html'))
+        })
+
 module.exports = Router
