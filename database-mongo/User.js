@@ -10,7 +10,8 @@ var UserSchema = mongoose.Schema({
   gender: String,
   about: String,
   rating: Number,
-  events: [eventSchema]
+  events: [eventSchema],
+  imgsrc:String
 }, {
   usePushEach: true
 })

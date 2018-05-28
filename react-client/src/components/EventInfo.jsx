@@ -139,13 +139,8 @@ class EventInfo extends Component {
           <div className="col-md-6 form-line">
               <div className="form-group">
                 <label for="exampleInputEmail"><b id="lable"> Place :</b></label>
-<<<<<<< HEAD
                 <p className="lead" className="fa-2x">{this.state.place} </p>
-              </div>  
-=======
-                <p className="lead" className="fa-2x">{this.state.place} .</p>
               </div>
->>>>>>> comments are now updated after clicking the button
               <div className="form-group">
                 <label for="telephone"><b id="lable"> StartDate :</b></label>
                 <p className="lead" className="fa-2x">{this.state.startDate} </p>
