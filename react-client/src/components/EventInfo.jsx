@@ -177,7 +177,7 @@ class EventInfo extends Component {
             </div>
           </div>
         </section>
-        
+
       </div>
 
     )
