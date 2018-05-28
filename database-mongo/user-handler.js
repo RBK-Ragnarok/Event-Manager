@@ -78,8 +78,8 @@ exports.updateOne = function (req, res) {
   var UserObj = {
 	    username: username,
 	    email: email,
-    age: age,
-    imgsrc:imgsrc
+      age: age,
+      imgsrc:imgsrc
   }
 
   User.findOneAndUpdate({username: username}, UserObj, function (err, data) {
@@ -99,7 +99,7 @@ exports.updateUser = function (req, res) {
     place: req.body.place,
     eventType: req.body.eventType,
     cost: req.body.cost,
-    description: req.body.description
+    description: req.body.description,
     imgsrc:req.body.imgsrc
   }
   User.findOne({username: username}, function (err, foundUser) {
