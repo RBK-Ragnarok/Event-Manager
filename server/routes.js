@@ -207,11 +207,16 @@ Router.route('/comments')
     res.sendStatus(404)
   })
 
-Router.route('/messages')
-  .get(util.checkUser, function (req, res) {
-    messageFunctions.getAllMessages(req, res)
-  })
-  .post(function (req, res) {
-    messageFunctions.saveMessage(req, res)
-  })
+  Router.route('/messages')
+    .get(util.checkUser, function (req, res) {
+      messageFunctions.getAllMessages(req, res)
+    })
+    .post(function (req, res) {
+      messageFunctions.saveMessage(req, res)
+
+    })
+      Router.route('/mail')
+        .get(util.checkUser, function (req, res) {
+          res.sendFile(path.join(__dirname, '../react-client/dist/index.html'))
+        })
 module.exports = Router
