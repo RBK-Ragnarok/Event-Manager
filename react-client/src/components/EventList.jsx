@@ -43,15 +43,15 @@ class EventList extends Component {
     //    }
     // }
 
-    filterd.reverse();
+    filterd.reverse()
     return (
       <div>
-    <form>
-      <input placeholder="Search.." id="inp" type='text' className="col-xs-offset-7 fa fa-check-circle col-xs-4"
-          value={this.state.search}
-          onChange={this.updateSearch.bind(this)}
-            />
-    </form>
+        <form>
+          <input placeholder='Search..' id='inp' type='text' className='col-xs-offset-7 fa fa-check-circle col-xs-4'
+            value={this.state.search}
+            onChange={this.updateSearch.bind(this)}
+          />
+        </form>
         {filterd.map(event => {
           return <EventItem key={event._id} event={event} />
         })

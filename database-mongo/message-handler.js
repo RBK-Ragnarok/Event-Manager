@@ -1,9 +1,7 @@
-var Message=require('./Message.js')
+var Message = require('./Message.js')
 var mongoose = require('mongoose')
 
-
 exports.saveMessage = function (req, res) {
-
   var to = req.session.user.username
   var from = req.body.from
   var text = req.body.text
@@ -12,7 +10,7 @@ exports.saveMessage = function (req, res) {
     to: to,
     from: from,
     text: text,
-    date:new Date().toString()
+    date: new Date().toString()
   })
   console.log(newMessage)
 
@@ -26,9 +24,9 @@ exports.saveMessage = function (req, res) {
 }
 
 exports.getAllMessages = function (req, res) {
-  var to=req.body.to;
+  var to = req.body.to
 
-  Event.find({to:to}, function (err, messages) {
+  Event.find({to: to}, function (err, messages) {
     if (err) {
       console.log(err)
     }
