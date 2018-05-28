@@ -207,7 +207,6 @@ Router.route('/comments')
     res.sendStatus(404)
   })
 
-
   Router.route('/messages')
     .get(util.checkUser, function (req, res) {
       messageFunctions.getAllMessages(req, res)
@@ -220,5 +219,4 @@ Router.route('/comments')
         .get(util.checkUser, function (req, res) {
           res.sendFile(path.join(__dirname, '../react-client/dist/index.html'))
         })
-
 module.exports = Router
