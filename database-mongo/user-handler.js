@@ -73,13 +73,13 @@ exports.updateOne = function (req, res) {
   var username = req.session.user.username
   var email = req.body.email
   var age = req.body.age
-  var imgsrc=req.body.imgsrc
+  var imgsrc = req.body.imgsrc
 
   var UserObj = {
 	    username: username,
 	    email: email,
-      age: age,
-      imgsrc:imgsrc
+    age: age,
+    imgsrc: imgsrc
   }
 
   User.findOneAndUpdate({username: username}, UserObj, function (err, data) {
@@ -100,7 +100,7 @@ exports.updateUser = function (req, res) {
     eventType: req.body.eventType,
     cost: req.body.cost,
     description: req.body.description,
-    imgsrc:req.body.imgsrc
+    imgsrc: req.body.imgsrc
   }
   User.findOne({username: username}, function (err, foundUser) {
     foundUser.events.push(newEvent)

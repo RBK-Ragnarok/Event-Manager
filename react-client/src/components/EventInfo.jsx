@@ -100,8 +100,7 @@ class EventInfo extends Component {
         console.log('comment sent')
         that.setState({message: 'Send comment'})
       },
-      complete:()=>{
-
+      complete: () => {
         $.ajax({
           type: 'POST',
           url: `/event/${this.props.match.params.id}`,
@@ -123,65 +122,63 @@ class EventInfo extends Component {
         console.log('err', err)
       }
     })
-
-
   }
   render () {
-  		return (
-        <div>
-        <section id="contact">
-      <div className="section-content">
-        <h3><b id="lable"> Event Name : {this.state.eventName}</b></h3>
-      </div>
-      <div className="contact-section">
-      <div className="container">
-        <form>
-          <div className="col-md-6 form-line">
-              <div className="form-group">
-                <label for="exampleInputEmail"><b id="lable"> Place :</b></label>
-                <p className="lead" className="fa-2x">{this.state.place} </p>
-              </div>
-              <div className="form-group">
-                <label for="telephone"><b id="lable"> StartDate :</b></label>
-                <p className="lead" className="fa-2x">{this.state.startDate} </p>
-              </div>
-              <div className="form-group">
-                <label for="telephone"><b id="lable"> Cost :</b></label>
-               <p className="lead" className="fa-2x">{this.state.cost} </p>
-              </div>
-            <div className="form-group">
-                <label for="telephone"><b id="lable"> Duration :</b></label>
-                <p className="lead" className="fa-2x">{this.state.duration} </p>
-              </div>
-              <div className="form-group">
-                <label for="telephone"><b id="lable"> Type :</b></label>
-                <p className="lead" className="fa-2x">{this.state.eventType} </p>
-              </div>
-              <div className="form-group">
-                <label for="exampleInputUsername"><b id="lable">Description : </b></label>
-                <p className="lead" className="fa-2x">{this.state.description} </p>
-              </div>
-              <div>
-                <Link to='/Profile'><button type="button" className="btn btn-default submit block-center" onClick={this.add}> Attend</button></Link>
-              </div>
-            </div>
-            <div className="col-md-6">
-              <div className="form-group">
-                <label for ="description" id="lable"> Add Comment </label>
-                <textarea  className="form-control" id="description" placeholder="Enter Your Comment" name='commentText' onChange={this.onChange}></textarea>
-              </div>
-              <div>
-                <button type="button" className="btn btn-default submit" onClick={this.addComment}> Add Comment</button>
-              </div>
-            {(this.state.comments).map(comment => <Comment key={comment._id} comment={comment} />)}
-
-
+    return (
+      <div>
+        <section id='contact'>
+          <div className='section-content'>
+            <h3><b id='lable'> Event Name : {this.state.eventName}</b></h3>
           </div>
-        </form>
+          <div className='contact-section'>
+            <div className='container'>
+              <form>
+                <div className='col-md-6 form-line'>
+                  <div className='form-group'>
+                    <label for='exampleInputEmail'><b id='lable'> Place :</b></label>
+                    <p className='lead' className='fa-2x'>{this.state.place} </p>
+                  </div>
+                  <div className='form-group'>
+                    <label for='telephone'><b id='lable'> StartDate :</b></label>
+                    <p className='lead' className='fa-2x'>{this.state.startDate} </p>
+                  </div>
+                  <div className='form-group'>
+                    <label for='telephone'><b id='lable'> Cost :</b></label>
+                    <p className='lead' className='fa-2x'>{this.state.cost} </p>
+                  </div>
+                  <div className='form-group'>
+                    <label for='telephone'><b id='lable'> Duration :</b></label>
+                    <p className='lead' className='fa-2x'>{this.state.duration} </p>
+                  </div>
+                  <div className='form-group'>
+                    <label for='telephone'><b id='lable'> Type :</b></label>
+                    <p className='lead' className='fa-2x'>{this.state.eventType} </p>
+                  </div>
+                  <div className='form-group'>
+                    <label for='exampleInputUsername'><b id='lable'>Description : </b></label>
+                    <p className='lead' className='fa-2x'>{this.state.description} </p>
+                  </div>
+                  <div>
+                    <Link to='/Profile'><button type='button' className='btn btn-default submit block-center' onClick={this.add}> Attend</button></Link>
+                  </div>
+                </div>
+                <div className='col-md-6'>
+                  <div className='form-group'>
+                    <label for='description' id='lable'> Add Comment </label>
+                    <textarea className='form-control' id='description' placeholder='Enter Your Comment' name='commentText' onChange={this.onChange} />
+                  </div>
+                  <div>
+                    <button type='button' className='btn btn-default submit' onClick={this.addComment}> Add Comment</button>
+                  </div>
+                  {(this.state.comments).map(comment => <Comment key={comment._id} comment={comment} />)}
+
+                </div>
+              </form>
+            </div>
+          </div>
+        </section>
+
       </div>
-      </div>
-    </section>
-    </div>
 
     )
   }

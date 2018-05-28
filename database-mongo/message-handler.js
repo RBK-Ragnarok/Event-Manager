@@ -1,6 +1,5 @@
-var Message=require('./Message.js')
+var Message = require('./Message.js')
 var mongoose = require('mongoose')
-
 
 exports.saveMessage = function (req, res) {
 
@@ -12,7 +11,7 @@ exports.saveMessage = function (req, res) {
     to: to,
     from: from,
     text: text,
-    date:new Date().toString()
+    date: new Date().toString()
   })
   console.log(newMessage)
 

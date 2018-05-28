@@ -9,11 +9,16 @@ const Map = compose(
     isMarkerShown: false,
     markerPosition: null
   }), {
-    onMapClick: ({ isMarkerShown }) => (e) => ({
-      markerPosition: e.latLng,
-      isMarkerShown: true
+    onMapClick: ({ isMarkerShown }) => (e) => {
+      console.log(e.latLng.lng())
+      console.log(e.latLng.lat())
+      // setState({latLng:e.latLng})
+      return ({
+        markerPosition: e.latLng,
+        isMarkerShown: true
 
-    })
+      })
+    }
   }
   ),
   withScriptjs,
@@ -33,6 +38,9 @@ const Map = compose(
 export default class MapContainer extends React.Component {
   constructor (props) {
     super(props)
+    this.state = {
+      latLng: ''
+    }
   }
 
   render () {
