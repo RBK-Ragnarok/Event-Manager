@@ -34,7 +34,7 @@ componentDidMount(){
     success: (data) => {
       console.log('in ajax get :', data)
       that.setState({
-        messages:data
+        messages:data.reverse()
       })
     }
     })
@@ -52,37 +52,37 @@ componentDidMount(){
 
   render () {
     return(
+<div className="container">
 
-              <div className="container">
-            <form>
-                   <FormGroup
-                     controlId="formBasicText"
-                   >
-                     <ControlLabel>Recipent</ControlLabel>
-                     <FormControl
-                      name="to"
-                       type="text"
-                       placeholder="Send to..."
-                       onChange={this.onChange}
-                     />
 
-                     <FormGroup controlId="formControlsTextarea">
-                       <ControlLabel>Message</ControlLabel>
+  <FormGroup
+    controlId="formBasicText"
+    >
+    <ControlLabel>Recipent</ControlLabel>
+    <FormControl
+      name="to"
+      type="text"
+      placeholder="Send to..."
+      onChange={this.onChange}
+      />
 
-                       <FormControl name="text" componentClass="textarea" onChange={this.onChange} placeholder="Enter your message here..." />
-                     </FormGroup>
-                     <Button className="btn btn-lg submit" onClick={this.sendMessage}>Send</Button>
-                     <FormControl.Feedback />
-                   </FormGroup>
-                 </form>
-                 <div style={{ height: '500px' }}>
-                 {(this.state.messages).map(message=>{
-                   <Message key={message._id} message={message} />
-                  })
-                  }
-                 </div>
 
-                 </div>
+    <ControlLabel>Message</ControlLabel>
+
+    <FormControl name="text" componentClass="textarea" onChange={this.onChange} placeholder="Enter your message here..." />
+    <Button className="btn btn-lg submit" onClick={this.sendMessage}>Send</Button>
+  </FormGroup>
+  <div>
+    {this.state.messages.map((message)=>
+      <Message
+      key={message._id}
+      message={message} />
+      )}
+
+  </div>
+
+</div>
+
     )
   }
 }
