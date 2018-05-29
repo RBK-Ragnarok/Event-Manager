@@ -12,7 +12,8 @@ const Map = compose(
     onMapClick: ({ isMarkerShown }) => (e) => {
       console.log(e.latLng.lng())
       console.log(e.latLng.lat())
-      // setState({latLng:e.latLng})
+      //this.setState({lat:e.latLng.lat(),lng:e.latLng.lng()})
+      //console.log(this.state.lat)
       return ({
         markerPosition: e.latLng,
         isMarkerShown: true
@@ -39,7 +40,8 @@ export default class MapContainer extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      latLng: ''
+      lat:0,
+      lng:0
     }
   }
 

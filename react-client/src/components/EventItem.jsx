@@ -97,8 +97,8 @@ class EventItem extends Component {
       Countdown to {this.state.deadline}
           <EventTimer deadline={this.state.deadline} />
           <div />
-          <h1><b>MyName: {this.props.event.creator} .</b></h1>
-          <h2 className='w3-opacity'><b>EventName: {this.props.event.eventName}.</b></h2>
+          <h1><b>Creator: {this.props.event.creator} .</b></h1>
+          <h2 className='w3-opacity'><b>Event: {this.props.event.eventName}.</b></h2>
           <h3><b>Place : </b>{this.props.event.place} .</h3>
           <p><Link to={`/eventinfo/${this.props.event._id}`}><button className='w3-button w3-light-grey btn btn-primary w3-block'
               onClick={this.componentDidMount}>More Info</button> </Link></p>
