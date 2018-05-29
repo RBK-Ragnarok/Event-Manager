@@ -13,6 +13,7 @@ class Profile extends React.Component {
       email: '',
       age: '',
       gender: '',
+      image:'',
       editing: false
     }
 
@@ -23,10 +24,56 @@ class Profile extends React.Component {
     this.handelChange4 = this.handelChange4.bind(this)
     this.renderStart = this.renderStart.bind(this)
     this.renderedit = this.renderedit.bind(this)
+    this.uploadImg = this.uploadImg.bind(this)
+    this.getUploadImg = this.getUploadImg.bind(this)
+  }
+
+
+  getUploadImg(){
+    var that = this
+    $.ajax({
+      url:"/user",
+      type:"GET",
+      success:(res)=>{
+        console.log("check res", res)
+   // that.setState({
+   //  image:res.data
+   // })
+
+ }
+})
+
+  }
+
+  uploadImg(img){
+    var that = this
+    console.log(img.target.files)
+    var imgFile = img.target.files[0]
+    var fileReader = new FileReader()
+    fileReader.readAsDataURL(imgFile)
+    fileReader.onload = function (e){
+      console.log("alo alo", e.target.result)
+      that.setState({image:e.target.result})
+//       $.ajax({
+//         url:'/profile',
+//        type:"PUT",
+//        data:{image:e.target.result},
+//        success: (sata) => {
+//         console.log("mohammed",sata)
+//         //window.location.reload()
+//       },
+//       error:(err)=>{
+// console.log("didnt work with me!")
+//       }
+
+//     })
+    }
   }
 
   componentDidMount () {
     var that = this
+    that.getUploadImg()
+
     $.ajax({
       url: '/user',
       type: 'GET',
@@ -91,7 +138,9 @@ class Profile extends React.Component {
     var arr = []
     var use = this.state.data.username
     this.state.data.events.forEach(function (elem) {
-      arr.push(<li>{elem.eventName}</li>)
+      arr.push(<li>{elem.eventName +','+ elem.place}</li>
+
+       )
     })
 
     if (this.state.sata === undefined) {
@@ -107,37 +156,40 @@ class Profile extends React.Component {
 
     return (
       <div>
-        <div className='container'>
-          <div className='row'>
-            <div className='col-xs-20 col-sm-8 col-md-8'>
-              <div className='well well-sm'>
-                <div className='row'>
-                  <div className='col-sm-6 col-md-4'>
-                    <img src='http://qualiscare.com/wp-content/uploads/2017/08/default-user.png' alt='' className='img-rounded img-responsive' />
-                    <h4 className='col-sm-6 col-md-4'>{this.state.data.username}</h4>
-                  </div>
-                  <div className='col-sm-6 col-md-8'>
-                    <p>
-                      <i className='glyphicon glyphicon-envelope' /><b>Email:</b>{this.state.data.email}
-                      <br />
-                      <br />
-                      <i className='glyphicon glyphicon-gift' /><b>Gender:</b><a>{this.state.data.gender}</a>
-                      <br />
-                      <br />
-                      <i className='glyphicon glyphicon-globe' /><b>Age:</b>{this.state.data.age}</p>
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <br />
-                    <Button className='col-sm-6 col-md-8' bsStyle='primary' onClick={this.edit}>Edit Profile</Button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div className='container'>
+      <div className='row'>
+      <div className='col-xs-20 col-sm-8 col-md-8'>
+      <div className='well well-sm'>
+      <div className='row'>
+      <div className='col-sm-6 col-md-4'>
+      <img src={this.state.image || 'http://qualiscare.com/wp-content/uploads/2017/08/default-user.png'} alt='' className='img-rounded img-responsive' />
+      <form>
+      <input type = "file" onChange={this.uploadImg}/>
+      </form>
+      <h4 className='col-sm-6 col-md-4'>{this.state.data.username}</h4>
+      </div>
+      <div className='col-sm-6 col-md-8'>
+      <p>
+      <i className='glyphicon glyphicon-envelope' /><b>Email:</b>{this.state.data.email}
+      <br />
+      <br />
+      <i className='glyphicon glyphicon-gift' /><b>Gender:</b><a>{this.state.data.gender}</a>
+      <br />
+      <br />
+      <i className='glyphicon glyphicon-globe' /><b>Age:</b>{this.state.data.age}</p>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <Button className='col-sm-6 col-md-8' bsStyle='primary' onClick={this.edit}>Edit Profile</Button>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
         {/* <Col md={2}>
               <span id="textcolor" >User Name: <p className="fa-1x"> {this.state.data.username}</p></span>
           </Col>
@@ -156,23 +208,23 @@ class Profile extends React.Component {
         */}
         <br />
         <div>
-          <Col md={2} />
-          <Col md={2}>
-            <span id='textcolor' >Attended Events:</span>
-            <ul>
-              {arr}
-            </ul>
-          </Col>
-          <Col md={4} />
-          <Col md={2}>
-            <span id='textcolor' >Created Events:</span>
-            <ul>
-              {rra}
-            </ul>
-          </Col>
+        <Col md={2} />
+        <Col md={2}>
+        <span id='textcolor' >Attended Events:</span>
+        <ul>
+        {arr}
+        </ul>
+        </Col>
+        <Col md={4} />
+        <Col md={2}>
+        <span id='textcolor' >Created Events:</span>
+        <ul>
+        {rra}
+        </ul>
+        </Col>
         </div>
-      </div>
-    )
+        </div>
+        )
   }
 
   renderedit () {
@@ -184,45 +236,45 @@ class Profile extends React.Component {
     //    </div>
     return (
       <div className='row'>
-        <div className='col-md-3' style={{'paddingLeft': '20px'}} />
+      <div className='col-md-3' style={{'paddingLeft': '20px'}} />
 
-        <div className='col-md-6'>
-          <FormControl
-            bsSize='large'
-            value={this.state.email}
-            placeholder='Email'
-            onChange={this.handelChange2}
-          />
-          <hr />
-          <FormControl
-            bsSize='large'
-            value={this.state.age}
-            placeholder='Age'
-            onChange={this.handelChange3}
-          />
-          <hr />
+      <div className='col-md-6'>
+      <FormControl
+      bsSize='large'
+      value={this.state.email}
+      placeholder='Email'
+      onChange={this.handelChange2}
+      />
+      <hr />
+      <FormControl
+      bsSize='large'
+      value={this.state.age}
+      placeholder='Age'
+      onChange={this.handelChange3}
+      />
+      <hr />
 
-          <FormControl componentClass='select' placeholder='Gender' name='gender' onChange={this.handelChange4} required value={this.state.gender}>
-            <option hidden>Gender</option>
-            <option value='female'>Female</option>
-            <option value='male'>Male</option>
-          </FormControl>
-          <hr />
-          <Button bsStyle='success' onClick={this.save}>Save</Button>
-        </div>
+      <FormControl componentClass='select' placeholder='Gender' name='gender' onChange={this.handelChange4} required value={this.state.gender}>
+      <option hidden>Gender</option>
+      <option value='female'>Female</option>
+      <option value='male'>Male</option>
+      </FormControl>
+      <hr />
+      <Button bsStyle='success' onClick={this.save}>Save</Button>
       </div>
-    )
+      </div>
+      )
   }
 
   render () {
     if (this.state.editing) {
       return (
         this.renderedit()
-      )
+        )
     } else {
       return (
         this.renderStart()
-      )
+        )
     }
   }
 }
