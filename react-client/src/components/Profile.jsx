@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import { Row, Col, Button, FormGroup, FormControl, ControlLabel } from 'react-bootstrap'
 import {Route, Link, Switch, browserHistory, BrowserRouter as Router} from 'react-router-dom'
 import $ from 'jquery'
+import EventItemProfile from './EventItemProfile.jsx'
 
 class Profile extends React.Component {
   constructor (props) {
@@ -138,7 +139,7 @@ class Profile extends React.Component {
     var arr = []
     var use = this.state.data.username
     this.state.data.events.forEach(function (elem) {
-      arr.push(<li>{elem.eventName +','+ elem.place}</li>
+      arr.push(<EventItemProfile event={event}/>
 
        )
     })
@@ -150,7 +151,7 @@ class Profile extends React.Component {
     var rra = []
     this.state.sata.forEach(function (element) {
       if (element.creator === use) {
-        rra.push(<li>{element.eventName}</li>)
+        rra.push(<EventItemProfile event={element}/>)
       }
     })
 
@@ -204,17 +205,16 @@ class Profile extends React.Component {
           </Col>
         */}
         <br />
-        <div>
-        <Col md={2} />
+        <div className="container">
         <Col md={2}>
-        <span id='textcolor' >Attended Events:</span>
+        <h2 className="text-center">>Attended Events:</h2>
         <ul>
         {arr}
         </ul>
         </Col>
         <Col md={4} />
         <Col md={2}>
-        <span id='textcolor' >Created Events:</span>
+        <h2 className="text-center">Created Events:</h2>
         <ul>
         {rra}
         </ul>
