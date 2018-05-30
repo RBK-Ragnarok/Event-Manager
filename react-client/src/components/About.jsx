@@ -39,7 +39,7 @@ class About extends React.Component {
 
   render () {
     return (
-      <div id ="about" className='container-fluid stylish-form'>
+      <div id='about' className='container-fluid stylish-form'>
         <div id='diiv'>
           <div className='container'>
             <div className='row main'>
