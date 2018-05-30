@@ -31,7 +31,7 @@ class NavBarComponent extends React.Component {
     if (this.state.loggedIn) {
       return (
 
-        <Navbar className='navbar navbar-default' >
+        <Navbar className='navbar navbar-fixed-top' >
           <div className='container-fluid'>
             <Navbar.Header>
               <Navbar.Brand >
@@ -51,7 +51,7 @@ class NavBarComponent extends React.Component {
         </Navbar>)
     } else {
       return (
-        <Navbar className='navbar navbar-default' >
+        <Navbar className='navbar navbar-fixed-top' >
           <div className='container-fluid'>
             <Navbar.Header>
               <Navbar.Brand >
