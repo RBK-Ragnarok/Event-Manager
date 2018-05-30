@@ -155,41 +155,38 @@ class Profile extends React.Component {
     })
 
     return (
-      <div>
-      <div className='container'>
-      <div className='row'>
-      <div className='col-xs-20 col-sm-8 col-md-8'>
-      <div className='well well-sm'>
-      <div className='row'>
-      <div className='col-sm-6 col-md-4'>
-      <img src={this.state.image || 'http://qualiscare.com/wp-content/uploads/2017/08/default-user.png'} alt='' className='img-rounded img-responsive' />
-      <form>
-      <input type = "file" onChange={this.uploadImg}/>
-      </form>
-      <h4 className='col-sm-6 col-md-4'>{this.state.data.username}</h4>
-      </div>
-      <div className='col-sm-6 col-md-8'>
-      <p>
-      <i className='glyphicon glyphicon-envelope' /><b>Email:</b>{this.state.data.email}
-      <br />
-      <br />
-      <i className='glyphicon glyphicon-gift' /><b>Gender:</b><a>{this.state.data.gender}</a>
-      <br />
-      <br />
-      <i className='glyphicon glyphicon-globe' /><b>Age:</b>{this.state.data.age}</p>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <Button className='col-sm-6 col-md-8' bsStyle='primary' onClick={this.edit}>Edit Profile</Button>
-      </div>
-      </div>
-      </div>
-      </div>
-      </div>
-      </div>
+        <div>
+        <div className='container'>
+          <div className='row'>
+            <div className='panel panel-default'>
+              <div className='panel-heading' />
+              <div id='profile' className='panel-body'>
+                <div className='col-md-4 col-xs-12 col-sm-6 col-lg-4'>
+                  <img alt='User Pic' src={this.state.image  || 'https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg'} id='profile-image1' className='img-circle img-responsive' />
+                  <form>
+                  <input type = "file" onChange={this.uploadImg}/>
+                  </form>
+                </div>
+                <div className='col-md-8 col-xs-12 col-sm-6 col-lg-8' >
+                  <div className='container' >
+                    <h2>User Name:{this.state.data.username}</h2>
+                  </div>
+                  <hr />
+                  <ul className='container details' >
+                    <li><p><span className='glyphicon glyphicon-user one' bsStyle='width:50px;' /><b>Gender:</b>{this.state.data.gender}</p></li>
+                    <li><p><span className='glyphicon glyphicon-envelope one' bsStyle='width:50px;' /><b>Email:</b>{this.state.data.email}</p></li>
+                  </ul>
+                  <div className='col-sm-5 col-xs-6 tital ' ><li><b>Age:</b>{this.state.data.age}</li></div>
+                </div>
+              </div>
+              <div id='but' className='col-md-8 col-xs-12' bsStyle='margin: 0px;padding: 0px;'>
+                <Button id='but' className='col-md-4 col-xs-4 well' bsStyle='primary' onClick={this.edit}>Edit Profile</Button>
+                <Link to='/Mail'><Button id='but' className='col-md-4 col-xs-4 well' bsStyle='primary'><i className='fa fa-thumbs-o-up fa-lg' />Mail Us</Button></Link>
+              </div>
+            </div>
+
+          </div>
+        </div>
         {/* <Col md={2}>
               <span id="textcolor" >User Name: <p className="fa-1x"> {this.state.data.username}</p></span>
           </Col>

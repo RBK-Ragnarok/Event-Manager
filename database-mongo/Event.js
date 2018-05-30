@@ -11,8 +11,8 @@ var EventSchema = mongoose.Schema({
   cost: {type: Number, required: false},
   description: {type: String, required: false},
   comments: [CommentSchema],
-  lat:Number,
-  lang:Number
+  lat:{type: Number, required: false},
+  lng: {type: Number, required: false},
 }, {
   usePushEach: true
 })

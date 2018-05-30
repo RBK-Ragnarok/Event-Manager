@@ -10,9 +10,12 @@ const Map = compose(
     markerPosition: null
   }), {
     onMapClick: ({ isMarkerShown }) => (e) => {
+    console.log(this)
       console.log(e.latLng.lng())
       console.log(e.latLng.lat())
-      // setState({latLng:e.latLng})
+     // this.props.test(e.latLng.lng(), e.latLng.lat())
+      // this.setState({lat:e.latLng.lat(),lng:e.latLng.lng()})
+      // console.log(this.state.lat)
       return ({
         markerPosition: e.latLng,
         isMarkerShown: true
@@ -29,7 +32,7 @@ const Map = compose(
     <GoogleMap
       defaultZoom={8}
       defaultCenter={{ lat: 31.9454, lng: 35.9284 }}
-      onClick={props.onMapClick} >
+      onClick={(e)=>{props.onMapClick(e),props.handlelatlng(e.latLng.lng(),e.latLng.lat())}} >
       {props.isMarkerShown && <Marker position={props.markerPosition} /> }
     </GoogleMap>
   </div>
@@ -39,9 +42,19 @@ export default class MapContainer extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      latLng: ''
+      lat: 0,
+      lng: 0
     }
+    //this.test = this.test.bind(this)
   }
+
+  // test (lng, lat) {
+  //   this.setState({
+  //     lat: 0,
+  //     lng: 0
+  //   })
+  //   console.log(this.state)
+  // }
 
   render () {
     return (
@@ -49,10 +62,12 @@ export default class MapContainer extends React.Component {
         <div className='map' >
 
           <Map
+           handlelatlng={this.props.setLngLat}
             googleMapURL='https:maps.googleapis.com/maps/api/js?key=AIzaSyCraOU8nyaSGWghFudXj_yWBSsFVkSD68g'
             loadingElement={<div style={{ height: `300px` }} />}
             containerElement={<div style={{ height: `300px` }} />}
             mapElement={<div style={{ height: `300px` }} />}
+           // test={this.test}
           />
 
         </div>

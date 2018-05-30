@@ -39,14 +39,14 @@ class About extends React.Component {
 
   render () {
     return (
-      <div className='container-fluid stylish-form'>
+      <div id='about' className='container-fluid stylish-form'>
         <div id='diiv'>
           <div className='container'>
             <div className='row main'>
               <div className='w3-container w3-dark-grey w3-center w3-text-light-grey w3-padding-32' id='about'>
                 <div id='div1'>
                   <h3 id='h3'><b>About Us</b></h3>
-                  <img id='img' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT50T7lDUD2E0p0f5G8x6EohkKX66zCtviKK8oZirEtp3UFbcOSiA' alt='Me' className='w3-image w3-padding-32' />
+                  <img id='img' src='https://images.pexels.com/photos/533405/pexels-photo-533405.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940' alt='Me' className='w3-image w3-padding-32' />
                   <div className='w3-content w3-justify' >
                     <h4>Who are we?</h4>
                     <p>Some text about me. I love taking photos of PEOPLE. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure

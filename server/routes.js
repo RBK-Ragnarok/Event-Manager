@@ -181,7 +181,7 @@ Router.route('/users')
   })
 
 Router.route('/profile')
-  .get(util.checkUser, function (req, res) {
+  .get(function (req, res) {
     res.sendFile(path.join(__dirname, '../react-client/dist/index.html'))
   })
   .post(function (req, res) {
