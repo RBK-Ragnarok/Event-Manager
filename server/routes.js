@@ -181,7 +181,7 @@ Router.route('/users')
   })
 
 Router.route('/profile')
-  .get(util.checkUser, function (req, res) {
+  .get(function (req, res) {
     res.sendFile(path.join(__dirname, '../react-client/dist/index.html'))
   })
   .post(function (req, res) {
@@ -207,6 +207,7 @@ Router.route('/comments')
     res.sendStatus(404)
   })
 
+<<<<<<< HEAD
 
   Router.route('/messages')
     .get(util.checkUser, function (req, res) {
@@ -221,4 +222,18 @@ Router.route('/comments')
           res.sendFile(path.join(__dirname, '../react-client/dist/index.html'))
         })
      
+=======
+Router.route('/messages')
+  .get(util.checkUser, function (req, res) {
+    messageFunctions.getAllMessages(req, res)
+  })
+  .post(function (req, res) {
+    messageFunctions.saveMessage(req, res)
+  })
+Router.route('/mail')
+  .get(function (req, res) {
+    res.sendFile(path.join(__dirname, '../react-client/dist/index.html'))
+  })
+
+>>>>>>> more styling and more worke on the map
 module.exports = Router

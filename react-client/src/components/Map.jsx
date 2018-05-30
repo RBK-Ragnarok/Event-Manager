@@ -12,8 +12,9 @@ const Map = compose(
     onMapClick: ({ isMarkerShown }) => (e) => {
       console.log(e.latLng.lng())
       console.log(e.latLng.lat())
-      //this.setState({lat:e.latLng.lat(),lng:e.latLng.lng()})
-      //console.log(this.state.lat)
+      this.props.test(e.latLng.lng(),e.latLng.lat())
+      // this.setState({lat:e.latLng.lat(),lng:e.latLng.lng()})
+      // console.log(this.state.lat)
       return ({
         markerPosition: e.latLng,
         isMarkerShown: true
@@ -40,9 +41,18 @@ export default class MapContainer extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      lat:0,
-      lng:0
+      lat: 0,
+      lng: 0
     }
+    this.test = this.test.bind(this);
+  }
+
+  test(lng,lat) {
+    this.setState({
+      lat: 0,
+      lng: 0
+    })
+    console.log(this.state)
   }
 
   render () {
@@ -55,6 +65,7 @@ export default class MapContainer extends React.Component {
             loadingElement={<div style={{ height: `300px` }} />}
             containerElement={<div style={{ height: `300px` }} />}
             mapElement={<div style={{ height: `300px` }} />}
+            test = {this.test}
           />
 
         </div>
