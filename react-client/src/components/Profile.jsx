@@ -155,72 +155,17 @@ class Profile extends React.Component {
     })
 
     return (
-      <div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-      <div className='container'>
-      <div className='row'>
-      <div className='col-xs-20 col-sm-8 col-md-8'>
-      <div className='well well-sm'>
-      <div className='row'>
-      <div className='col-sm-6 col-md-4'>
-      <img src={this.state.image || 'http://qualiscare.com/wp-content/uploads/2017/08/default-user.png'} alt='' className='img-rounded img-responsive' />
-      <form>
-      <input type = "file" onChange={this.uploadImg}/>
-      </form>
-      <h4 className='col-sm-6 col-md-4'>{this.state.data.username}</h4>
-      </div>
-      <div className='col-sm-6 col-md-8'>
-      <p>
-      <i className='glyphicon glyphicon-envelope' /><b>Email:</b>{this.state.data.email}
-      <br />
-      <br />
-      <i className='glyphicon glyphicon-gift' /><b>Gender:</b><a>{this.state.data.gender}</a>
-      <br />
-      <br />
-      <i className='glyphicon glyphicon-globe' /><b>Age:</b>{this.state.data.age}</p>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <Button className='col-sm-6 col-md-8' bsStyle='primary' onClick={this.edit}>Edit Profile</Button>
-      </div>
-      </div>
-      </div>
-      </div>
-      </div>
-      </div>
-=======
-      <div className="container">    
-                  <div className="row">
-                      <div className="panel panel-default">
-                      <div className="panel-heading"></div>
-                       <div id="profile" className="panel-body">
-                      <div className="col-md-4 col-xs-12 col-sm-6 col-lg-4">
-                       <img alt="User Pic" src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" id="profile-image1" className="img-circle img-responsive"/> 
-                      </div>
-                      <div className="col-md-8 col-xs-12 col-sm-6 col-lg-8" >
-                          <div className="container" >
-                            <h2>User Name:{this.state.data.username}</h2>
-                          </div>
-                           <hr/>
-                          <ul className="container details" >
-                            <li><p><span className="glyphicon glyphicon-user one" bsStyle="width:50px;"></span><b>Gender:</b><a>{this.state.data.gender}</a></p></li>
-                            <li><p><span className="glyphicon glyphicon-envelope one" bsStyle="width:50px;"></span><b>Email:</b>{this.state.data.email}</p></li>
-                          </ul>
-                          <div className="col-sm-5 col-xs-6 tital " ><b>Age:</b>{this.state.data.age}</div>
-                      </div>
-=======
+        <div>
         <div className='container'>
           <div className='row'>
             <div className='panel panel-default'>
               <div className='panel-heading' />
               <div id='profile' className='panel-body'>
                 <div className='col-md-4 col-xs-12 col-sm-6 col-lg-4'>
-                  <img alt='User Pic' src='https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg' id='profile-image1' className='img-circle img-responsive' />
->>>>>>> more styling and more worke on the map
+                  <img alt='User Pic' src={this.state.image  || 'https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg'} id='profile-image1' className='img-circle img-responsive' />
+                  <form>
+                  <input type = "file" onChange={this.uploadImg}/>
+                  </form>
                 </div>
                 <div className='col-md-8 col-xs-12 col-sm-6 col-lg-8' >
                   <div className='container' >
@@ -239,13 +184,9 @@ class Profile extends React.Component {
                 <Link to='/Mail'><Button id='but' className='col-md-4 col-xs-4 well' bsStyle='primary'><i className='fa fa-thumbs-o-up fa-lg' />Mail Us</Button></Link>
               </div>
             </div>
-<<<<<<< HEAD
->>>>>>> more styling
-=======
 
           </div>
         </div>
->>>>>>> more styling and more worke on the map
         {/* <Col md={2}>
               <span id="textcolor" >User Name: <p className="fa-1x"> {this.state.data.username}</p></span>
           </Col>
@@ -264,7 +205,6 @@ class Profile extends React.Component {
         */}
         <br />
         <div>
-<<<<<<< HEAD
         <Col md={2} />
         <Col md={2}>
         <span id='textcolor' >Attended Events:</span>
@@ -279,39 +219,6 @@ class Profile extends React.Component {
         {rra}
         </ul>
         </Col>
-=======
-          <Col md={2} />
-          <Col md={2}>
-            <span id='textcolor' ><b>Attended Events:</b></span>
-            <div className='container'>
-              <div className='card float-left'>
-                <div className='row '>
-                  <div className='col-sm-7'>
-                    <div className='card-block'>
-                      <p>{arr}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <hr />
-          </Col>
-          <Col md={4} />
-          <Col md={2}>
-            <span id='textcolor' ><b>Created Events:</b></span>
-            <div id='font' className='container'>
-              <div className='card float-left'>
-                <div className='row '>
-                  <div className='col-sm-7'>
-                    <div className='card-block'>
-                      <p>{rra}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Col>
->>>>>>> more styling
         </div>
         </div>
         )
