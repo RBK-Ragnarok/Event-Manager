@@ -12,7 +12,8 @@ exports.eventCreate = function (req, res) {
   var eventType = req.body.eventType
   var cost = req.body.cost
   var description = req.body.description
-
+  var lat=req.body.lat
+  var lng=req.body.lng
   var newEvent = new Event({
     creator: creator,
     eventName: eventName,
@@ -21,6 +22,8 @@ exports.eventCreate = function (req, res) {
     place: place,
     eventType: eventType,
     cost: cost,
+    lat:lat,
+    lng:lng,
     description: description
   })
   console.log(newEvent)

@@ -67,33 +67,32 @@ class Mail extends Component {
                 <form name='sentMessage' id='contactForm' novalidate=''>
                   <div className='row'>
                     <div className='col-md-6'>
-                      <div className='form-group'>
-                        <input type='text' className='form-control' placeholder='Recipent Name *' id='name' required=''
-                          data-validation-required-message='Please enter your name.' name='to' onChange={this.onChange} />
-                        <p className='help-block text-danger' />
-                      </div>
                     </div>
-                    <div className='col-md-6'>
-                      <div className='form-group'>
-                        <textarea className='form-control' placeholder='Your Message *' id='messages' required='' data-validation-required-message='Please enter a message.'onChange={this.onChange} />
-                        <p className='help-block text-danger' />
-                      </div>
-                    </div>
+                    <FormGroup>
+                <ControlLabel>Recipent</ControlLabel>
+                <FormControl
+                  name="to"
+                  type="text"
+                  placeholder="Send to..."
+                  onChange={this.onChange}
+                        />
+                <ControlLabel>Message</ControlLabel>
+                <FormControl name="text" componentClass="textarea" onChange={this.onChange} placeholder="Enter your message here..." />
+                 <div className='group'>
+                    <button type='submit' className='btn btn-warning col-xs-3 col-xs-offset-9' onClick={this.sendMessage} >Send
+                        <span className='glyphicon glyphicon-send' /></button>
+                 </div>
+              </FormGroup>
+                 <div>
+                {this.state.messages.map((message)=>
+                  <Message
+                  key={message._id}
+                  message={message} />
+                  )}
+                 </div>
                     <div className='clearfix' />
                     <div className='col-lg-12 text-center'>
-                      <div id='success' />
-                      <div className='group'>
-                        <button type='submit' className='btn btn-warning col-xs-3 col-xs-offset-9' onClick={this.sendMessage} >Send
-                          <span className='glyphicon glyphicon-send' /></button>
-                      </div>
-                    </div>
-                    <div>
-                      {this.state.messages.map((message) =>
-                        <Message
-                          key={message._id}
-                          message={message} />
-                      )}
-
+                      <div id='success' />                     
                     </div>
                   </div>
                 </form>

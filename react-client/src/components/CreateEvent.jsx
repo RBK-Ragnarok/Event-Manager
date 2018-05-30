@@ -27,8 +27,8 @@ class CreateEvent extends React.Component {
     }
     this.onChange = this.onChange.bind(this)
     this.create = this.create.bind(this)
-    this.handleChangesLongitude = this.handleChangesLongitude.bind(this)
-    this.handleChangesLaltitude = this.handleChangesLaltitude.bind(this)
+   // this.handleChangesLongitude = this.handleChangesLongitude.bind(this)
+   // this.handleChangesLaltitude = this.handleChangesLaltitude.bind(this)
     this.setLngLat = this.setLngLat.bind(this)
     // this.handlelatlng = this.handlelatlng.bind(this)
   }
@@ -40,7 +40,7 @@ class CreateEvent extends React.Component {
 
   create () {
     var that = this
-
+console.log(this.state)
     $.ajax({
       url: '/event',
       type: 'POST',
@@ -76,18 +76,19 @@ class CreateEvent extends React.Component {
   setLngLat (lng, lat) {
     this.setState({lng: lng,
       lat: lat})
+    console.log(lat,lng)
   }
 
-  // here we will change this.state.longitude when ever the value of the textbox is changed
-  handleChangesLongitude (event) {
-    this.setState({lng: event.target.value})
-    console.log(this.state.lat)
-  }
+  // // here we will change this.state.longitude when ever the value of the textbox is changed
+  // handleChangesLongitude (event) {
+  //   //this.setState({lng: event.target.value})
+  //   console.log(this.state.lng)
+  // }
 
-  handleChangesLaltitude (event) {
-    this.setState({lat: event.target.value})
-    console.log(this.state.laltitude)
-  }
+  // handleChangesLaltitude (event) {
+  //   this.setState({lat: event.target.value})
+  //   console.log(this.state.lat)
+  // }
 
   render () {
     return (
@@ -174,7 +175,7 @@ class CreateEvent extends React.Component {
                   </div>
                 </form>
                 <div id='map'>
-                  <Map setLngLat={this.setLngLat} longitude={this.state.lng} laltitude={this.state.lat} />
+                  <Map setLngLat={this.setLngLat}/>
                 </div>
               </div>
             </div>
