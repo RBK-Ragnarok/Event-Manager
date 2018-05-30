@@ -205,17 +205,16 @@ class Profile extends React.Component {
           </Col>
         */}
         <br />
-        <div>
-        <Col md={2} />
+        <div className="container">
         <Col md={2}>
-        <span id='textcolor' >Attended Events:</span>
+        <h2 className="text-center">>Attended Events:</h2>
         <ul>
         {arr}
         </ul>
         </Col>
         <Col md={4} />
         <Col md={2}>
-        <span id='textcolor' >Created Events:</span>
+        <h2 className="text-center">Created Events:</h2>
         <ul>
         {rra}
         </ul>
