@@ -55,19 +55,20 @@ class Profile extends React.Component {
     fileReader.onload = function (e){
       console.log("alo alo", e.target.result)
       that.setState({image:e.target.result})
-//       $.ajax({
-//         url:'/profile',
-//        type:"PUT",
-//        data:{image:e.target.result},
-//        success: (sata) => {
-//         console.log("mohammed",sata)
-//         //window.location.reload()
-//       },
-//       error:(err)=>{
-// console.log("didnt work with me!")
-//       }
+      console.log(that.state);
+      $.ajax({
+        url:'/image',
+       type:"PUT",
+       data:that.state,
+       success: (sata) => {
+        console.log("mohammed",sata)
+        //window.location.reload()
+      },
+      error:(err)=>{
+console.log("didnt work with me!")
+      }
 
-//     })
+    })
     }
   }
 
@@ -139,7 +140,7 @@ class Profile extends React.Component {
     var arr = []
     var use = this.state.data.username
     this.state.data.events.forEach(function (elem) {
-      arr.push(<EventItemProfile event={event}/>
+      arr.push(<EventItemProfile key={elem._id} event={elem}/>
 
        )
     })
@@ -151,7 +152,7 @@ class Profile extends React.Component {
     var rra = []
     this.state.sata.forEach(function (element) {
       if (element.creator === use) {
-        rra.push(<EventItemProfile event={element}/>)
+        rra.push(<EventItemProfile key={element._id} event={element}/>)
       }
     })
 

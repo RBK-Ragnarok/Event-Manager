@@ -6,12 +6,12 @@ var UserSchema = mongoose.Schema({
   username: { type: String, required: false, unique: true},
   password: { type: String, required: false },
   email: { type: String, required: false, unique: true},
-  age: Number,
+  age: String,
   gender: String,
   about: String,
   rating: Number,
-  events: [eventSchema],
-  imgsrc: String
+  imgsrc: String,
+  events: [eventSchema]
 }, {
   usePushEach: true
 })
