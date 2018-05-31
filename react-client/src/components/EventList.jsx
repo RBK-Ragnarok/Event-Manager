@@ -46,8 +46,11 @@ class EventList extends Component {
     filterd.reverse()
     return (
       <div>
+        <br></br>
+          <br></br>
+        <br></br>
         <form>
-          <input placeholder='Search..' id='inp' type='text' className='col-xs-offset-7 fa fa-check-circle col-xs-4'
+          <input placeholder='Search..' id='inp' type='text' className='col-xs-offset-4 fa fa-check-circle col-xs-4'
             value={this.state.search}
             onChange={this.updateSearch.bind(this)}
           />
@@ -57,7 +60,7 @@ class EventList extends Component {
         })
 
         }
-        <h1 id='h1'>Not Found</h1>
+        <h1 id='h1'className='col-xs-offset-4 fa fa-check-circle col-xs-4'>there are no more events...</h1>
       </div>
 
     )
