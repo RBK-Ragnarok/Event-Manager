@@ -3,14 +3,13 @@ import { InfoWindow, withGoogleMap, withScriptjs, GoogleMap, Marker } from 'reac
 import { compose, withStateHandlers } from 'recompose'
 import $ from 'jquery'
 import ReactDOM from 'react-dom'
-//import Map2 from '/Map2.jsx'
+// import Map2 from '/Map2.jsx'
 const Map = compose(
   withStateHandlers(() => ({
     isMarkerShown: false,
     markerPosition: null
   }), {
     onMapClick: ({ isMarkerShown }) => (e) => {
-    
       console.log(e.latLng.lng())
       console.log(e.latLng.lat())
       // this.props.test(e.latLng.lng(), e.latLng.lat())
@@ -69,9 +68,9 @@ export default class MapContainer extends React.Component {
             mapElement={<div style={{ height: `300px` }} />}
             // test={this.test}
           />
-       
+
         </div>
-    
+
       </div>
     )
   }

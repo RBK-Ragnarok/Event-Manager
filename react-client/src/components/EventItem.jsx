@@ -30,15 +30,15 @@ class EventItem extends Component {
       img: '',
       data: '',
       deadline: this.props.event.startDate,
-      lng:0,
-      lat:0,
+      lng: 0,
+      lat: 0,
       newDeadline: '',
-      showmarker:false
+      showmarker: false
       // show: false
     }
 
     this.onChange = this.onChange.bind(this)
-    
+
     this.showeventbox = this.showeventbox.bind(this)
     //  this.handleClick = e => {
     //   this.setState({ target: e.target, show: !this.state.show });
@@ -89,7 +89,7 @@ class EventItem extends Component {
         this.state.img = url5
       }
     }
-////////////////////
+    /// /////////////////
   	return (
       <div>
       <div className='container' style={{display: 'flex', justifyContent: 'center'}}>
@@ -106,8 +106,8 @@ class EventItem extends Component {
           <h3><b>Place : </b>{this.props.event.place} .</h3>
           <p><Link to={`/eventinfo/${this.props.event._id}`}><button className='w3-button w3-light-grey btn btn-primary w3-block'
               onClick={this.componentDidMount}>More Info</button> </Link></p>
-    </div>
-    </div>
+        </div>
+        </div>
     </div>
     )
   }

@@ -32,14 +32,14 @@ class EventInfo extends Component {
       message: '',
       commentText: '',
       comments: [],
-      lat:0,
-      lng:0,
+      lat: 0,
+      lng: 0,
       date: ''
     }
     this.onChange = this.onChange.bind(this)
     this.add = this.add.bind(this)
     this.addComment = this.addComment.bind(this)
-    //this.setLngLat=this.setLngLat.bind(this)
+    // this.setLngLat=this.setLngLat.bind(this)
   }
 
   onChange (e) {
@@ -66,8 +66,8 @@ class EventInfo extends Component {
           cost: data.cost,
           description: data.description,
           comments: data.comments,
-          lat:data.lat,
-          lng:data.lng
+          lat: data.lat,
+          lng: data.lng
 
         })
       },
@@ -183,7 +183,7 @@ class EventInfo extends Component {
               </form>
             </div>
             <div>
-              <Map2  pos={{lng:this.state.lng,lat:this.state.lat}} />
+              <Map2 pos={{lng: this.state.lng, lat: this.state.lat}} />
             </div>
           </div>
         </section>
