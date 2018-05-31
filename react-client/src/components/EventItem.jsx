@@ -5,6 +5,7 @@ import {Navbar, Nav, NavItem, Carousel, Jumbotron, Button, ButtonToolbar,
   Overlay, Popover, OverlayTrigger} from 'react-bootstrap'
 // import { Link } from 'react-router-dom';
 import Events from './Events.jsx'
+import Map2 from './Map2.jsx'
 import EventList from './EventList.jsx'
 import EventInfo from './EventInfo.jsx'
 import Profile from './Profile.jsx'
@@ -29,11 +30,15 @@ class EventItem extends Component {
       img: '',
       data: '',
       deadline: this.props.event.startDate,
-      newDeadline: ''
+      lng:0,
+      lat:0,
+      newDeadline: '',
+      showmarker:false
       // show: false
     }
 
     this.onChange = this.onChange.bind(this)
+    
     this.showeventbox = this.showeventbox.bind(this)
     //  this.handleClick = e => {
     //   this.setState({ target: e.target, show: !this.state.show });
@@ -60,7 +65,6 @@ class EventItem extends Component {
     // [e.target.name]: e.target.value ,
     // [e.target.description]: e.target.value
   };
-
   render () {
     var data = this.props.event
     for (var key in data) {
@@ -85,7 +89,7 @@ class EventItem extends Component {
         this.state.img = url5
       }
     }
-
+////////////////////
   	return (
       <div>
       <div className='container' style={{display: 'flex', justifyContent: 'center'}}>
@@ -102,8 +106,8 @@ class EventItem extends Component {
           <h3><b>Place : </b>{this.props.event.place} .</h3>
           <p><Link to={`/eventinfo/${this.props.event._id}`}><button className='w3-button w3-light-grey btn btn-primary w3-block'
               onClick={this.componentDidMount}>More Info</button> </Link></p>
-        </div>
-        </div>
+    </div>
+    </div>
     </div>
     )
   }

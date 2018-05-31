@@ -7,6 +7,8 @@ import {Navbar, Nav, NavItem, Carousel, Jumbotron, Button, ButtonToolbar,
   Overlay, Popover, OverlayTrigger, FormControl} from 'react-bootstrap'
 import EventList from './Profile.jsx'
 import Comment from './Comment.jsx'
+import Map from './Map.jsx'
+import Map2 from './Map2.jsx'
 import EventTimer from './EventTimer.jsx'
 import {
   Route,
@@ -30,11 +32,14 @@ class EventInfo extends Component {
       message: '',
       commentText: '',
       comments: [],
+      lat:0,
+      lng:0,
       date: ''
     }
     this.onChange = this.onChange.bind(this)
     this.add = this.add.bind(this)
     this.addComment = this.addComment.bind(this)
+    //this.setLngLat=this.setLngLat.bind(this)
   }
 
   onChange (e) {
@@ -60,7 +65,9 @@ class EventInfo extends Component {
           eventType: data.eventType,
           cost: data.cost,
           description: data.description,
-          comments: data.comments
+          comments: data.comments,
+          lat:data.lat,
+          lng:data.lng
 
         })
       },
@@ -123,6 +130,7 @@ class EventInfo extends Component {
       }
     })
   }
+
   render () {
     return (
       <div>
@@ -171,13 +179,14 @@ class EventInfo extends Component {
                     <button type='button' className='btn btn-default submit' onClick={this.addComment}> Add Comment</button>
                   </div>
                   {(this.state.comments).map(comment => <Comment key={comment._id} comment={comment} />)}
-
                 </div>
               </form>
             </div>
+            <div>
+              <Map2  pos={{lng:this.state.lng,lat:this.state.lat}} />
+            </div>
           </div>
         </section>
-
       </div>
 
     )

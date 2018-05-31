@@ -9,7 +9,6 @@ import Profile from './Profile.jsx'
 
 class CreateEvent extends React.Component {
   constructor (props) {
-    console.log(Map)
     super(props)
     this.state = {
       creator: '',
@@ -27,8 +26,8 @@ class CreateEvent extends React.Component {
     }
     this.onChange = this.onChange.bind(this)
     this.create = this.create.bind(this)
-   // this.handleChangesLongitude = this.handleChangesLongitude.bind(this)
-   // this.handleChangesLaltitude = this.handleChangesLaltitude.bind(this)
+    // this.handleChangesLongitude = this.handleChangesLongitude.bind(this)
+    // this.handleChangesLaltitude = this.handleChangesLaltitude.bind(this)
     this.setLngLat = this.setLngLat.bind(this)
     // this.handlelatlng = this.handlelatlng.bind(this)
   }
@@ -40,7 +39,6 @@ class CreateEvent extends React.Component {
 
   create () {
     var that = this
-console.log(this.state)
     $.ajax({
       url: '/event',
       type: 'POST',
@@ -76,7 +74,7 @@ console.log(this.state)
   setLngLat (lng, lat) {
     this.setState({lng: lng,
       lat: lat})
-    console.log(lat,lng)
+    console.log(lat, lng)
   }
 
   // // here we will change this.state.longitude when ever the value of the textbox is changed
@@ -175,7 +173,7 @@ console.log(this.state)
                   </div>
                 </form>
                 <div id='map'>
-                  <Map setLngLat={this.setLngLat}/>
+                  <Map setLngLat={this.setLngLat} />
                 </div>
               </div>
             </div>

@@ -14,7 +14,7 @@ class Profile extends React.Component {
       email: '',
       age: '',
       gender: '',
-      image:'',
+      image: '',
       editing: false
     }
 
@@ -29,24 +29,21 @@ class Profile extends React.Component {
     this.getUploadImg = this.getUploadImg.bind(this)
   }
 
-
-  getUploadImg(){
+  getUploadImg () {
     var that = this
     $.ajax({
-      url:"/user",
-      type:"GET",
-      success:(res)=>{
-        console.log("check res", res)
-   // that.setState({
-   //  image:res.data
-   // })
-
- }
-})
-
+      url: '/user',
+      type: 'GET',
+      success: (res) => {
+        console.log('check res', res)
+        // that.setState({
+        //  image:res.data
+        // })
+      }
+    })
   }
 
-  uploadImg(img){
+  uploadImg (img) {
     var that = this
     console.log(img.target.files)
     var imgFile = img.target.files[0]
@@ -140,9 +137,13 @@ console.log("didnt work with me!")
     var arr = []
     var use = this.state.data.username
     this.state.data.events.forEach(function (elem) {
+<<<<<<< HEAD
       arr.push(<EventItemProfile key={elem._id} event={elem}/>
+=======
+      arr.push(<li>{elem.eventName + ',' + elem.place}</li>
+>>>>>>> rendering the map on the event list with specific location
 
-       )
+      )
     })
 
     if (this.state.sata === undefined) {
@@ -157,16 +158,16 @@ console.log("didnt work with me!")
     })
 
     return (
-        <div>
+      <div>
         <div className='container'>
           <div className='row'>
             <div className='panel panel-default'>
               <div className='panel-heading' />
               <div id='profile' className='panel-body'>
                 <div className='col-md-4 col-xs-12 col-sm-6 col-lg-4'>
-                  <img alt='User Pic' src={this.state.image  || 'https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg'} id='profile-image1' className='img-circle img-responsive' />
+                  <img alt='User Pic' src={this.state.image || 'https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg'} id='profile-image1' className='img-circle img-responsive' />
                   <form>
-                  <input type = "file" onChange={this.uploadImg}/>
+                    <input type='file' onChange={this.uploadImg} />
                   </form>
                 </div>
                 <div className='col-md-8 col-xs-12 col-sm-6 col-lg-8' >
@@ -206,6 +207,7 @@ console.log("didnt work with me!")
           </Col>
         */}
         <br />
+<<<<<<< HEAD
         <div className="container">
         <Col md={2}>
         <h2 className="text-center">>Attended Events:</h2>
@@ -221,8 +223,26 @@ console.log("didnt work with me!")
         </ul>
         </Col>
         </div>
+=======
+        <div>
+          <Col md={2} />
+          <Col md={2}>
+            <span id='textcolor' >Attended Events:</span>
+            <ul>
+              {arr}
+            </ul>
+          </Col>
+          <Col md={4} />
+          <Col md={2}>
+            <span id='textcolor' >Created Events:</span>
+            <ul>
+              {rra}
+            </ul>
+          </Col>
+>>>>>>> rendering the map on the event list with specific location
         </div>
-        )
+      </div>
+    )
   }
 
   renderedit () {
@@ -234,45 +254,45 @@ console.log("didnt work with me!")
     //    </div>
     return (
       <div className='row'>
-      <div className='col-md-3' style={{'paddingLeft': '20px'}} />
+        <div className='col-md-3' style={{'paddingLeft': '20px'}} />
 
-      <div className='col-md-6'>
-      <FormControl
-      bsSize='large'
-      value={this.state.email}
-      placeholder='Email'
-      onChange={this.handelChange2}
-      />
-      <hr />
-      <FormControl
-      bsSize='large'
-      value={this.state.age}
-      placeholder='Age'
-      onChange={this.handelChange3}
-      />
-      <hr />
+        <div className='col-md-6'>
+          <FormControl
+            bsSize='large'
+            value={this.state.email}
+            placeholder='Email'
+            onChange={this.handelChange2}
+          />
+          <hr />
+          <FormControl
+            bsSize='large'
+            value={this.state.age}
+            placeholder='Age'
+            onChange={this.handelChange3}
+          />
+          <hr />
 
-      <FormControl componentClass='select' placeholder='Gender' name='gender' onChange={this.handelChange4} required value={this.state.gender}>
-      <option hidden>Gender</option>
-      <option value='female'>Female</option>
-      <option value='male'>Male</option>
-      </FormControl>
-      <hr />
-      <Button bsStyle='success' onClick={this.save}>Save</Button>
+          <FormControl componentClass='select' placeholder='Gender' name='gender' onChange={this.handelChange4} required value={this.state.gender}>
+            <option hidden>Gender</option>
+            <option value='female'>Female</option>
+            <option value='male'>Male</option>
+          </FormControl>
+          <hr />
+          <Button bsStyle='success' onClick={this.save}>Save</Button>
+        </div>
       </div>
-      </div>
-      )
+    )
   }
 
   render () {
     if (this.state.editing) {
       return (
         this.renderedit()
-        )
+      )
     } else {
       return (
         this.renderStart()
-        )
+      )
     }
   }
 }
