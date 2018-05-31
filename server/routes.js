@@ -146,7 +146,7 @@ Router.route('/allevents')
 
 // creating, retrieving,updating and deleting single event.
 Router.route('/event')
-  .get(function (req, res) { })
+  .get(util.checkUser,function (req, res) { })
   .post(util.checkUser, function (req, res) {
     eventFunctions.eventCreate(req, res)
   })
@@ -176,15 +176,15 @@ Router.route('/users')
   .get(util.checkUser, function (req, res) {
     userFunctions.retrieveAll(req, res)
   })
-  .post(function (req, res) {
+  .post(util.checkUser,function (req, res) {
     res.sendStatus(404)
   })
 
 Router.route('/profile')
-  .get(function (req, res) {
+  .get(util.checkUser,function (req, res) {
     res.sendFile(path.join(__dirname, '../react-client/dist/index.html'))
   })
-  .post(function (req, res) {
+  .post(util.checkUser,function (req, res) {
     res.sendStatus(404)
   })
   .put(util.checkUser, function (req, res) {
@@ -203,7 +203,7 @@ Router.route('/comments')
   .get(util.checkUser, function (req, res) {
     userFunctions.retrieveAll(req, res)
   })
-  .post(function (req, res) {
+  .post(util.checkUser,function (req, res) {
     res.sendStatus(404)
   })
 
@@ -221,7 +221,7 @@ Router.route('/comments')
     .get(util.checkUser, function (req, res) {
       messageFunctions.getAllMessages(req, res)
     })
-    .post(function (req, res) {
+    .post(util.checkUser,function (req, res) {
       messageFunctions.saveMessage(req, res)
 
     })

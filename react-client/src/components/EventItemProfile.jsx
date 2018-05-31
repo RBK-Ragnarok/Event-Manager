@@ -94,8 +94,8 @@ class EventItemProfile extends Component {
       <div id='jumbotron' className='col-xs-3 col-xs-offset-4'>
           <div>
           <div />
-          <h1><b>Event Creator: {this.props.event.creator} .</b></h1>
-          <h2 className='w3-opacity'><b>Event Name: {this.props.event.eventName}.</b></h2>
+          <h1 className='w3-opacity'><b>Event Name: {this.props.event.eventName}.</b></h1>
+          <h2><b>Event Creator: {this.props.event.creator} .</b></h2>
           <h3><b>Place : </b>{this.props.event.place} .</h3>
           Event starts in {this.state.deadline}
           <EventTimer deadline={this.state.deadline} />

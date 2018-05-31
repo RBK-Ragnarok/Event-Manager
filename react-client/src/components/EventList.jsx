@@ -60,7 +60,7 @@ class EventList extends Component {
         })
 
         }
-        <h1 id='h1'className='col-xs-offset-4 fa fa-check-circle col-xs-4'>there are no more events...</h1>
+        <h1 id='h1'className='col-xs-offset-4 col-xs-4'>there are no more events...</h1>
       </div>
 
     )

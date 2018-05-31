@@ -205,14 +205,14 @@ console.log("didnt work with me!")
         <br />
         <div className="container">
         <Col md={2}>
-        <h2 className="text-center">Attended Events:</h2>
+        <h2 >Attended Events:</h2>
         <ul>
         {arr}
         </ul>
         </Col>
         <Col md={4} />
         <Col md={2}>
-        <h2 className="text-center">Created Events:</h2>
+        <h2 >Created Events:</h2>
         <ul>
         {rra}
         </ul>
