@@ -66,33 +66,32 @@ class Mail extends Component {
               <div className='col-md-8'>
                 <form name='sentMessage' id='contactForm' novalidate=''>
                   <div className='row'>
-                    <div className='col-md-6'>
-                    </div>
+                    <div className='col-md-6' />
                     <FormGroup>
-                <ControlLabel>Recipent</ControlLabel>
-                <FormControl
-                  name="to"
-                  type="text"
-                  placeholder="Send to..."
-                  onChange={this.onChange}
-                        />
-                <ControlLabel>Message</ControlLabel>
-                <FormControl name="text" componentClass="textarea" onChange={this.onChange} placeholder="Enter your message here..." />
-                 <div className='group'>
-                    <button type='submit' className='btn btn-warning col-xs-3 col-xs-offset-9' onClick={this.sendMessage} >Send
+                      <ControlLabel>Recipent</ControlLabel>
+                      <FormControl
+                        name='to'
+                        type='text'
+                        placeholder='Send to...'
+                        onChange={this.onChange}
+                      />
+                      <ControlLabel>Message</ControlLabel>
+                      <FormControl name='text' componentClass='textarea' onChange={this.onChange} placeholder='Enter your message here...' />
+                      <div className='group'>
+                        <button type='submit' className='btn btn-warning col-xs-3 col-xs-offset-9' onClick={this.sendMessage} >Send
                         <span className='glyphicon glyphicon-send' /></button>
-                 </div>
-              </FormGroup>
-                 <div>
-                {this.state.messages.map((message)=>
-                  <Message
-                  key={message._id}
-                  message={message} />
-                  )}
-                 </div>
+                      </div>
+                    </FormGroup>
+                    <div>
+                      {this.state.messages.map((message) =>
+                        <Message
+                          key={message._id}
+                          message={message} />
+                      )}
+                    </div>
                     <div className='clearfix' />
                     <div className='col-lg-12 text-center'>
-                      <div id='success' />                     
+                      <div id='success' />
                     </div>
                   </div>
                 </form>
