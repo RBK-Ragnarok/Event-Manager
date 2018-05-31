@@ -61,7 +61,7 @@ class Home extends Component {
               <div className='container'>
                 <div className='carousel-inner ' role='listbox'>
                   <div className='item active'>
-                    <h3 white data-wow-delay='0.1s'><b>Welcome to Slab</b></h3>
+                    <h3 white data-wow-delay='0.1s'><b>Welcome to <span className='content-header wow fadeIn ' data-wow-delay='0.2s' data-wow-duration='2s'> Slab</span></b></h3>
                     <h1 className='section-header'>Get in <span className='content-header wow fadeIn ' data-wow-delay='0.2s' data-wow-duration='2s'> Touch with us</span></h1>
                   </div>
                 </div>
@@ -76,7 +76,8 @@ class Home extends Component {
 
             The name SLAB is a combination of the  first letter of each team member and it is used
           as an attend button in the events page. press Slab on an event and count youself in.
-          </p>   <footer className='navbar-bottom footer'>
+          </p>   </div>
+          <footer className='navbar-bottom footer'>
             <div className='container'>
               <div className='row'>
                 <h4> Contact Us :</h4>
@@ -86,7 +87,7 @@ class Home extends Component {
                 <SocialIcon url='http://github.com' />
               </div>
             </div>
-          </footer> </div>
+          </footer> 
       </div>
     )
   }
