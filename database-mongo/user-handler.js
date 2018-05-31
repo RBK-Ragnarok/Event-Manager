@@ -70,6 +70,7 @@ exports.deleteOne = function (req, res) {
 }
 
 exports.updateOne = function (req, res) {
+  console.log(req.body);
   var username = req.session.user.username
   var email = req.body.email
   var age = req.body.age
@@ -88,6 +89,27 @@ exports.updateOne = function (req, res) {
     }
     res.json(data)
   })
+}
+
+
+exports.updateImg = function (req, res) {
+  // console.log(req.body.image);
+  var username = req.session.user.username
+  var imgsrc=req.body.image
+
+  User.update({
+  username: username
+}, {
+  $set: {
+    "imgsrc": imgsrc
+  }
+}, function (err, user) {
+    if (err) throw error
+    console.log(user)
+    console.log("update user complete")
+})
+
+
 }
 exports.updateUser = function (req, res) {
   var username = req.session.user.username

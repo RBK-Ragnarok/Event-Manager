@@ -16,7 +16,8 @@ class Signup extends React.Component {
       loggedIn: false,
       age: '',
       gender: '',
-      about: ''
+      about: '',
+      imgsrc:''
     }
     this.onChange = this.onChange.bind(this)
     this.Signup = this.Signup.bind(this)
