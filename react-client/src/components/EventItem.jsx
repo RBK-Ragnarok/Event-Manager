@@ -30,8 +30,6 @@ class EventItem extends Component {
       img: '',
       data: '',
       deadline: this.props.event.startDate,
-      lng: 0,
-      lat: 0,
       newDeadline: '',
       showmarker: false
       // show: false

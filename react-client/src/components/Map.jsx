@@ -47,13 +47,13 @@ export default class MapContainer extends React.Component {
     // this.test = this.test.bind(this)
   }
 
-  test (lng, lat) {
-    this.setState({
-      lat: 232332,
-      lng: 2323455
-    })
-    console.log(this.state)
-  }
+  // test (lng, lat) {
+  //   this.setState({
+  //     lat:0,
+  //     lng:0
+  //   })
+  //   console.log(this.state)
+  // }
 
   render () {
     return (

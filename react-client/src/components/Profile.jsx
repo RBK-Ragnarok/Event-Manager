@@ -137,11 +137,7 @@ console.log("didnt work with me!")
     var arr = []
     var use = this.state.data.username
     this.state.data.events.forEach(function (elem) {
-<<<<<<< HEAD
       arr.push(<EventItemProfile key={elem._id} event={elem}/>
-=======
-      arr.push(<li>{elem.eventName + ',' + elem.place}</li>
->>>>>>> rendering the map on the event list with specific location
 
       )
     })
@@ -207,7 +203,6 @@ console.log("didnt work with me!")
           </Col>
         */}
         <br />
-<<<<<<< HEAD
         <div className="container">
         <Col md={2}>
         <h2 className="text-center">>Attended Events:</h2>
@@ -223,23 +218,7 @@ console.log("didnt work with me!")
         </ul>
         </Col>
         </div>
-=======
         <div>
-          <Col md={2} />
-          <Col md={2}>
-            <span id='textcolor' >Attended Events:</span>
-            <ul>
-              {arr}
-            </ul>
-          </Col>
-          <Col md={4} />
-          <Col md={2}>
-            <span id='textcolor' >Created Events:</span>
-            <ul>
-              {rra}
-            </ul>
-          </Col>
->>>>>>> rendering the map on the event list with specific location
         </div>
       </div>
     )
@@ -253,33 +232,62 @@ console.log("didnt work with me!")
     //      <img src={imgUrl}  width = '250px' className="img-thumbnail"/>
     //    </div>
     return (
-      <div className='row'>
-        <div className='col-md-3' style={{'paddingLeft': '20px'}} />
-
-        <div className='col-md-6'>
-          <FormControl
-            bsSize='large'
-            value={this.state.email}
-            placeholder='Email'
-            onChange={this.handelChange2}
-          />
-          <hr />
-          <FormControl
-            bsSize='large'
-            value={this.state.age}
-            placeholder='Age'
-            onChange={this.handelChange3}
-          />
-          <hr />
-
-          <FormControl componentClass='select' placeholder='Gender' name='gender' onChange={this.handelChange4} required value={this.state.gender}>
-            <option hidden>Gender</option>
-            <option value='female'>Female</option>
-            <option value='male'>Male</option>
-          </FormControl>
-          <hr />
-          <Button bsStyle='success' onClick={this.save}>Save</Button>
+      <div>
+      <div>
+        <div className='container-fluid stylish-form'>
+          <div className='container'>
+            <div className='row main'>
+              <div className='main-login main-center'>
+                <h5>Creat your Event here</h5>
+                <form className='' method='post' action='#'>
+                  <div className='form-group'>
+                    <label for='name' className='cols-sm-2 control-label'>Email</label>
+                    <div className='cols-sm-10'>
+                      <div className='input-group'>
+                        <span className='input-group-addon'><i className='fa fa-tree' aria-hidden='true' /></span>
+                        <FormControl
+                          bsSize='large'
+                          value={this.state.email}
+                          placeholder='Email'
+                          onChange={this.handelChange2}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div className='form-group'>
+                    <label for='username' className='cols-sm-2 control-label'>Age</label>
+                    <div className='cols-sm-10'>
+                      <div className='input-group'>
+                        <span className='input-group-addon'><i className='  fa fa-copyright' aria-hidden='true' /></span>
+                        <FormControl
+                            bsSize='large'
+                            value={this.state.age}
+                            placeholder='Age'
+                            onChange={this.handelChange3}
+                          />
+                      </div>
+                    </div>
+                  </div>
+                  <div className='form-group'>
+                    <label for='username' className='cols-sm-2 control-label'>Gender</label>
+                    <div className='cols-sm-10'>
+                      <div className='input-group'>
+                        <span className='input-group-addon'><i className='  fa fa-copyright' aria-hidden='true' /></span>
+                        <FormControl componentClass='select' placeholder='Gender' name='gender' onChange={this.handelChange4} required value={this.state.gender}>
+                            <option hidden>Gender</option>
+                            <option value='female'>Female</option>
+                            <option value='male'>Male</option>
+                          </FormControl>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+                <Button bsStyle='success' onClick={this.save}>Save</Button>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
       </div>
     )
   }
