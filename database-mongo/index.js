@@ -1,5 +1,8 @@
 var mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost/test')
+// mongoose.connect('mongodb://localhost/test')
+mongoose.connect('mongodb://belalfaouri:abc123@ds241570.mlab.com:41570/eventful')
+
+
 
 var db = mongoose.connection
 
