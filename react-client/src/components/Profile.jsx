@@ -35,13 +35,9 @@ class Profile extends React.Component {
     $.ajax({
       url:"/user",
       type:"GET",
-      success:(res)=>{
-        console.log("check res", res)
-   // that.setState({
-   //  image:res.data
-   // })
-
- }
+      success:(data)=>{
+        that.setState({data: data})
+  }
 })
 
   }
@@ -55,17 +51,16 @@ class Profile extends React.Component {
     fileReader.onload = function (e){
       console.log("alo alo", e.target.result)
       that.setState({image:e.target.result})
-      console.log(that.state);
       $.ajax({
-        url:'/image',
-       type:"PUT",
-       data:that.state,
-       success: (sata) => {
-        console.log("mohammed",sata)
-        //window.location.reload()
+        url:'/user',
+        type:"PUT",
+        data:that.state,
+        success: (data) => {
+        that.setStatete({data:data})
+        console.log("mohammedddddddddddd",data)
       },
       error:(err)=>{
-console.log("didnt work with me!")
+            
       }
 
     })
@@ -164,7 +159,7 @@ console.log("didnt work with me!")
               <div className='panel-heading' />
               <div id='profile' className='panel-body'>
                 <div className='col-md-4 col-xs-12 col-sm-6 col-lg-4'>
-                  <img alt='User Pic' src={this.state.image  || 'https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg'} id='profile-image1' className='img-circle img-responsive' />
+                  <img alt='User Pic' src={this.state.data.imgsrc || 'https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg'} id='profile-image1' className='img-circle img-responsive' />
                   <form>
                   <input type = "file" onChange={this.uploadImg}/>
                   </form>
