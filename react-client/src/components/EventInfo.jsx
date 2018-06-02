@@ -167,7 +167,7 @@ class EventInfo extends Component {
                     <p className='lead' className='fa-2x'>{this.state.description} </p>
                   </div>
                   <div>
-                    <Link to='/Profile'><button type='button' className='btn btn-default submit block-center' onClick={this.add}> Attend</button></Link>
+                    <Link to='/events'><button type='button' className='btn btn-default submit block-center' onClick={this.add}> Attend</button></Link>
                   </div>
                 </div>
                 <div className='col-md-6'>
