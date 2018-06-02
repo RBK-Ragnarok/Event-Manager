@@ -62,7 +62,7 @@ class Signup extends React.Component {
     } else {
       return (
         <div className='container-fluid stylish-form'>
-          <h2 className='text-center'>Thank You For Visiting Us</h2>
+          <h2 className='text-center'>Join us today!</h2>
           <div className='row mar20' >
             <div className='col-md-12 col-sm-12 col-xs-12'>
               <div className='inner-section'>
@@ -86,14 +86,14 @@ class Signup extends React.Component {
                         required autoFocus value={this.state.username} />
                     </div>
                     <div className='input-group'>
-                      <span className='input-group-addon'><i className='fa fa-envelope ' /></span>
-                      <input type='email' className='form-control' name='email' onChange={this.onChange} placeholder='Email...'
-                        required value={this.state.email} />
-                    </div>
-                    <div className='input-group'>
                       <span className='input-group-addon'><i className='fa fa-lock ' /></span>
                       <input type='password' className='form-control' name='password' onChange={this.onChange} placeholder='Password...'
                         required value={this.state.password} />
+                    </div>
+                    <div className='input-group'>
+                      <span className='input-group-addon'><i className='fa fa-envelope ' /></span>
+                      <input type='email' className='form-control' name='email' onChange={this.onChange} placeholder='Email...'
+                        required value={this.state.email} />
                     </div>
                     <div className='input-group'>
                       <span className='input-group-addon'><i className='fa fa-child ' /></span>
@@ -109,7 +109,7 @@ class Signup extends React.Component {
                     </FormGroup>
                     <div className='footer text-center'>
                       <Router>
-                        <Link to='/' ><button className='col-xs-4 col-xs-offset-4' type='Submit' onClick={this.Signup}>Signup</button></Link>
+                        <Link to='/' ><button className='col-xs-4 col-xs-offset-4' type='btn btn-default' onClick={this.Signup}>Signup</button></Link>
                       </Router>
                     </div>
                   </div>

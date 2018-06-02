@@ -47,7 +47,7 @@ class login extends React.Component {
     return (
       <div>
         <div className='container-fluid stylish-form'>
-          <h2 className='text-center'>Thank You For Visiting Us</h2>
+          <h2 className='text-center'>Welcome back,enter your info below:</h2>
           <div className='row mar20' >
             <div className='col-md-12 col-sm-12 col-xs-12'>
               <div className='inner-section'>

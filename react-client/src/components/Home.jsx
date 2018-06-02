@@ -61,7 +61,7 @@ class Home extends Component {
               <div className='container'>
                 <div className='carousel-inner ' role='listbox'>
                   <div className='item active'>
-                    <h3 white data-wow-delay='0.1s'><b>Welcome to <span className='content-header wow fadeIn ' data-wow-delay='0.2s' data-wow-duration='2s'> Slab</span></b></h3>
+                    <h3 white data-wow-delay='0.1s'><b>Welcome to <span className='content-header wow fadeIn ' data-wow-delay='0.2s' data-wow-duration='2s'> Eventful</span></b></h3>
                     <h1 className='section-header'>Get in <span className='content-header wow fadeIn ' data-wow-delay='0.2s' data-wow-duration='2s'> Touch with us</span></h1>
                   </div>
                 </div>
@@ -71,11 +71,11 @@ class Home extends Component {
         </div>
         <div className='container text-center'>
           <h2>Description:</h2>
-          <p> Connect with friends and the world around you with Slab.
+          <p> Connect with friends and the world around you with Eventful.
           You can create events or attend as many as you want, meet new people and learn new things.
 
             The name SLAB is a combination of the  first letter of each team member and it is used
-          as an attend button in the events page. press Slab on an event and count youself in.
+          as an attend button in the events page. press Eventful on an event and count youself in.
           </p>   </div>
           <footer className='navbar-bottom footer'>
             <div className='container'>
@@ -87,7 +87,7 @@ class Home extends Component {
                 <SocialIcon url='http://github.com' />
               </div>
             </div>
-          </footer> 
+          </footer>
       </div>
     )
   }

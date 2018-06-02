@@ -180,7 +180,7 @@ console.log("didnt work with me!")
               </div>
               <div id='but' className='col-md-8 col-xs-12' bsStyle='margin: 0px;padding: 0px;'>
                 <Button id='but' className='col-md-4 col-xs-4 well' bsStyle='primary' onClick={this.edit}>Edit Profile</Button>
-                <Link to='/Mail'><Button id='but' className='col-md-4 col-xs-4 well' bsStyle='primary'><i className='fa fa-thumbs-o-up fa-lg' />Mail Us</Button></Link>
+                <Link to='/Mail'><Button id='but' className='col-md-4 col-xs-4 well' bsStyle='primary'><i className='' />Check Mail</Button></Link>
               </div>
             </div>
 
@@ -205,14 +205,14 @@ console.log("didnt work with me!")
         <br />
         <div className="container">
         <Col md={2}>
-        <h2 className="text-center">>Attended Events:</h2>
+        <h2 >Attended Events:</h2>
         <ul>
         {arr}
         </ul>
         </Col>
         <Col md={4} />
         <Col md={2}>
-        <h2 className="text-center">Created Events:</h2>
+        <h2 >Created Events:</h2>
         <ul>
         {rra}
         </ul>

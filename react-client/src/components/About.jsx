@@ -46,16 +46,16 @@ class About extends React.Component {
               <div className='w3-container w3-dark-grey w3-center w3-text-light-grey w3-padding-32' id='about'>
                 <div id='div1'>
                   <h3 id='h3'><b>About Us</b></h3>
-                  <img id='img' src='https://images.pexels.com/photos/533405/pexels-photo-533405.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940' alt='Me' className='w3-image w3-padding-32' />
+                  <img id='img' src='https://www.thecareersgroup.co.uk/media/1929/contact-us-banner.png' alt='Me' className='w3-image w3-padding-32' />
                   <div className='w3-content w3-justify' >
                     <h4>Who are we?</h4>
-                    <p>Some text about me. I love taking photos of PEOPLE. I am lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                    dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit,</p>
+                    <p>We are Ragnarok, RBK thesis project group, our team is 4 members big, Belal Faouri, Abdullah AlRamahi, Sara Koki and Lena Salamat, our main goal is to make an app that gathers people who share the same interests and passions, this app is a work in
+                      progress as all software apps are, but we can always hope that it will keep on improving. </p>
 
                   </div>
                 </div>
                 <br />
-                <div id='div2' >
+                <div className='col-xs-4 col-xs-offset-4' id='div2' >
                   <h3 id='h3'>Contact Us ..</h3>
                   <br />
                   <div className='w3-container w3-padding-large w3-grey'>
@@ -82,9 +82,9 @@ class About extends React.Component {
                     <input type='text' className='form-control' placeholder='Message...' name='message' placeholder='Message...' /* onChange={this.onChange} value={this.state.message} */
                       required autoFocus />
                   </div>
+                  <button className='col-xs-4 col-xs-offset-4' onClick={this.sendMessage} type='Submit'>Send Message</button>
                 </div>
                 <br />
-                <button className='col-xs-4 col-xs-offset-4' onClick={this.sendMessage} type='Submit'>Send Message</button>
               </div>
             </div>
           </div>
