@@ -85,7 +85,6 @@ class EventItemProfile extends Component {
         this.state.img = url5
       }
     }
-
     return (
       <div>
       <div className='container' style={{display: 'flex', justifyContent: 'center'}}>
