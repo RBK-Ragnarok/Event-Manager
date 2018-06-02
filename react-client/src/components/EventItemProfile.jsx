@@ -86,7 +86,7 @@ class EventItemProfile extends Component {
       }
     }
 
-  	return (
+    return (
       <div>
       <div className='container' style={{display: 'flex', justifyContent: 'center'}}>
           <h2 onClick={() => this.showeventbox(this.items)} >{this.items}</h2>

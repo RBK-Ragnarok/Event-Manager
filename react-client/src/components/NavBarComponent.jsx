@@ -31,7 +31,7 @@ class NavBarComponent extends React.Component {
     if (this.state.loggedIn) {
       return (
 
-        <Navbar className='navbar navbar-fixed-top' >
+        <Navbar  >
           <div className='container-fluid'>
             <Navbar.Header>
               <Navbar.Brand >

@@ -83,8 +83,8 @@ class EventItem extends Component {
         this.state.img = url4
       }
       if (data[key] === 'Political') {
-        var url5 = 'https://images.pexels.com/photos/159775/library-la-trobe-study-students-159775.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
-        this.state.img = url5
+        var url1 = 'https://images.pexels.com/photos/159775/library-la-trobe-study-students-159775.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
+        this.state.img = url1
       }
     }
     /// /////////////////
