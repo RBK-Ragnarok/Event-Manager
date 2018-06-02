@@ -154,7 +154,7 @@ console.log("didnt work with me!")
     })
 
     return (
-      <div>
+      <div id="about">
         <div className='container'>
           <div className='row'>
             <div className='panel panel-default'>
@@ -244,7 +244,7 @@ console.log("didnt work with me!")
                     <label for='name' className='cols-sm-2 control-label'>Email</label>
                     <div className='cols-sm-10'>
                       <div className='input-group'>
-                        <span className='input-group-addon'><i className='fa fa-tree' aria-hidden='true' /></span>
+                        <span className='input-group-addon'><i className='fa fa-at' aria-hidden='true' /></span>
                         <FormControl
                           bsSize='large'
                           value={this.state.email}
@@ -258,7 +258,7 @@ console.log("didnt work with me!")
                     <label for='username' className='cols-sm-2 control-label'>Age</label>
                     <div className='cols-sm-10'>
                       <div className='input-group'>
-                        <span className='input-group-addon'><i className='  fa fa-copyright' aria-hidden='true' /></span>
+                        <span className='input-group-addon'><i className='  fa fa-history' aria-hidden='true' /></span>
                         <FormControl
                             bsSize='large'
                             value={this.state.age}
@@ -272,7 +272,7 @@ console.log("didnt work with me!")
                     <label for='username' className='cols-sm-2 control-label'>Gender</label>
                     <div className='cols-sm-10'>
                       <div className='input-group'>
-                        <span className='input-group-addon'><i className='  fa fa-copyright' aria-hidden='true' /></span>
+                        <span className='input-group-addon'><i className='    fa fa-child' aria-hidden='true' /></span>
                         <FormControl componentClass='select' placeholder='Gender' name='gender' onChange={this.handelChange4} required value={this.state.gender}>
                             <option hidden>Gender</option>
                             <option value='female'>Female</option>

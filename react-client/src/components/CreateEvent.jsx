@@ -177,9 +177,9 @@ class CreateEvent extends React.Component {
                 </div>
               </div>
             </div>
-            <Button id='jobb' bsStyle='primary' className='col-xs-4 col-xs-offset-4' onClick={this.create} type='submit' bsSize='large' >
+           <Link to="/Events" ><Button id='jobb' bsStyle='primary' className='col-xs-4 col-xs-offset-4' onClick={this.create} type='submit' bsSize='large' >
                 Create Event
-            </Button>
+            </Button></Link>
           </div>
         </div>
       </div>

@@ -85,8 +85,7 @@ class EventItemProfile extends Component {
         this.state.img = url5
       }
     }
-
-  	return (
+    return (
       <div>
       <div className='container' style={{display: 'flex', justifyContent: 'center'}}>
           <h2 onClick={() => this.showeventbox(this.items)} >{this.items}</h2>
