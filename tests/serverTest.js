@@ -27,9 +27,10 @@ describe('App', function () {
   it('should be able to signup', function (done) {
     request(app)
       .post('/signup')
-      .send({username: 'rbk', password: 'rbk', email: 'rbk@rbk.com', age: 2, gender: 'Male'})
+      .send({username: 'rbk', password: 'rbk', email: 'rbk@rbk.com', age: '2', gender: 'Male'})
       .expect(200, 'User already exists!')
       .end(done)
+      done()
   })
 
   it('should be able to logout', function (done) {
@@ -44,6 +45,8 @@ describe('App', function () {
       .send({username: 'rbk', password: 'rb'})
       .expect(404)
       .end(done)
+      done()
+
   })
 
   it('should login with correct info', function (done) {
@@ -52,6 +55,8 @@ describe('App', function () {
       .send({username: 'rbk', password: 'rbk'})
       .expect('201')
       .end(done)
+      done()
+      
   })
 
   it('should respond to GET on events path', function (done) {
