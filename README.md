@@ -1,4 +1,3 @@
-
 # Event-Manager
 Create or attend different kind of events
 
