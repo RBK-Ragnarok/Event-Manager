@@ -17,6 +17,7 @@ These instructions will get you a copy of the project up and running on your loc
 ### Technologies
 
 Make sure you installed the following :
+
 - [ReactJS](https://reactjs.org) - Front-end framework
 - [Nodejs](https://nodejs.org/) - the server
 - [MongoDB/mongoose](https://docs.mongodb.com/) - Database and ORM used
