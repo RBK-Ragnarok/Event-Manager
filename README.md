@@ -8,20 +8,18 @@ These instructions will get you a copy of the project up and running on your loc
 ## Table of Contents
 
 1. [Getting Started](#getting-started)
-    1. [Prerequisites](#prerequisites)
+    1. [Technologies](#technologies)
     1. [Installation](#installation)
-1. [File Hieghrarcy](#file-hieghrarcy)
+    1. [Usage](#usage)
 1. [Delopyment](#delopyment)
-1. [Built With](#built-with)
 1. [Authors](#authors)
 
-### Prerequisites
-Make sure you installed the following technologies locally:
+### Technologies
 
-    React using webpack
-    Nodejs
-    Express
-    Mongodb
+Make sure you installed the following :
+- [ReactJS](https://reactjs.org/docs/hello-world.html) - Front-end framework
+- [Nodejs/Express](https://nodejs.org/en/docs/) - the server/server framework
+- [MongoDB/mongoose](https://docs.mongodb.com/) - Database and ORM used
 
 ### Installation
 
@@ -33,6 +31,9 @@ $ git clone https://github.com/Sarakoki/Event-Manager
 ```
 $ npm install
 ``` 
+
+### Usage
+
 ```
 $ mongod
 ```   
@@ -42,12 +43,6 @@ $ npm run dev
 
 ## Delopyment
 You can see a demo of the app in [Heroku](https://guarded-reaches-36133.herokuapp.com/)
-
-## Built With
-- [ReactJS](https://reactjs.org/docs/hello-world.html) - Front-end framework
-- [Nodejs/Express](https://nodejs.org/en/docs/) - the server/server framework
-- [MongoDB/mongoose](https://docs.mongodb.com/) - Database and ORM used
-- [npm](https://www.npmjs.com/) - Dependency Management
 
 ## Authors
 - [Abduallah AlRamahi](https://github.com/abdallahalramahi) - Product Owner.
