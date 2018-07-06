@@ -40,56 +40,6 @@ $ mongod
 $ npm run dev
 ```
 
-## File Hieghrarcy
-    Event-Manager
-    - server
-      - index.js
-      - routes.js
-      - util.js
-    - database-mongo
-      - Comment.js
-      - event-handler.js
-      - Event.js
-      - index.js
-      - Message.js
-      - user-handler.js
-      - User.js
-    - react-client
-      - dist
-        - photos
-        - index.html
-      - src
-        - components
-          - About.jsx
-          - Comment.jsx
-          - CreateEvent.jsx
-          - EventInfo.jsx
-          - EventItem.jsx
-          - EventList.jsx
-          - Events.jsx
-          - EventTimer.jsx
-          - Home.jsx
-          - login.jsx
-          - Map.jsx
-          - NavBarComponent.jsx
-          - Profile.jsx
-          - Signup.jsx
-        - routes
-            - AppRouter.jsx
-        - index.jsx
-    - tests
-      - components
-        - EventList.js
-        - Home.js
-        - Login.js
-      - database
-        - EventTest.js
-        - UserTest.js
-      - serverTest.js
-      - test.js
-    - package.json
-    - README.md
-
 ## Delopyment
 You can see a demo of the app in [Heroku](https://guarded-reaches-36133.herokuapp.com/)
 
