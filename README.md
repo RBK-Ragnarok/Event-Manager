@@ -1,29 +1,51 @@
-# Thesis Project
-
-# Event Manager
-an easy and convenient way to organize and browse different types of events.
+# Event-Manager
+Create or attend different kind of events
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-## to run the server :
-* be in the root of the repo
-* npm install -g webpack
-* npm install
-* monogod
+## Table of Contents
 
-* npm run dev
+1. [Getting Started](#getting-started)
+1. [Technologies](#technologies)
+1. [Installation](#installation)
+1. [Usage](#usage)
+1. [Delopyment](#delopyment)
+1. [Authors](#authors)
 
+### Technologies
 
-## Built With
-* ReactJS - front-end framework
-* node.js/express.js - the server/server framework
-* MongoDB/mongoose - Database and ORM used.
-* npm - Dependency Management
+Make sure you installed the following :
 
+- [ReactJS](https://reactjs.org) - Front-end framework
+- [Nodejs](https://nodejs.org/) - the server
+- [MongoDB/mongoose](https://docs.mongodb.com/) - Database and ORM used
+
+### Installation
+
+- Get a copy of the repo
+```
+$ git clone https://github.com/Sarakoki/Event-Manager
+```
+- install all dependencies found in 'packkage.json' file
+```
+$ npm install
+```
+
+### Usage
+
+```
+$ mongod
+```
+```
+$ npm run dev
+```
+
+## Delopyment
+You can see a demo of the app in [Heroku](https://guarded-reaches-36133.herokuapp.com/)
 
 ## Authors
-* Belal Faouri - Scrum master
-* abduallah AlRamahi - Product Owner
-* Lena Salamat - Team member
-* Sara Koki - Team member
+- [Abduallah AlRamahi](https://github.com/abdallahalramahi) - Product Owner.
+- [Belal Faouri](https://github.com/BelalFaouri) - Scrum master.
+- [Sara Koki](https://github.com/Sarakoki) - Team member.
+- [Lena Salamat](https://github.com/lenaSalamat) - Team member.
