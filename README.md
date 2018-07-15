@@ -25,7 +25,7 @@ Make sure you installed the following :
 
 - Get a copy of the repo
 ```
-$ git clone https://github.com/Sarakoki/Event-Manager
+$ git clone <Your clone link>
 ```
 - install all dependencies found in 'packkage.json' file
 ```
