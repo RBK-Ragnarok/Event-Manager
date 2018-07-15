@@ -36,9 +36,9 @@ class Profile extends React.Component {
       type: 'GET',
       success: (res) => {
         console.log('check res', res)
-        // that.setState({
-        //  image:res.data
-        // })
+        that.setState({
+         image:res.imgsrc
+        })
       }
     })
   }
@@ -53,12 +53,13 @@ class Profile extends React.Component {
       console.log("alo alo", e.target.result)
       that.setState({image:e.target.result})
       console.log(that.state);
+      that.state.data.imgsrc=that.state.image
       $.ajax({
-        url:'/image',
+        url:'/user',
        type:"PUT",
        data:that.state,
        success: (sata) => {
-        console.log("mohammed",sata)
+        alert('done')
         //window.location.reload()
       },
       error:(err)=>{

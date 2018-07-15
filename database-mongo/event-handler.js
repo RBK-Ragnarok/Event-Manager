@@ -1,76 +1,76 @@
-var Event = require('./Event')
-var User = require('./User')
-var mongoose = require('mongoose')
+var Event = require("./Event")
+var User = require("./User")
+var mongoose = require("mongoose")
 
 exports.eventCreate = function (req, res) {
-  // console.log(req.body,req.session.user);
-  var creator = req.session.user.username
-  var eventName = req.body.eventName
-  var duration = req.body.duration
-  var startDate = req.body.startDate
-  var place = req.body.place
-  var eventType = req.body.eventType
-  var cost = req.body.cost
-  var description = req.body.description
-  var lat = req.body.lat
-  var lng = req.body.lng
-  var newEvent = new Event({
-    creator: creator,
-    eventName: eventName,
-    duration: duration,
-    startDate: startDate,
-    place: place,
-    eventType: eventType,
-    cost: cost,
-    lat: lat,
-    lng: lng,
-    description: description
-  })
-  console.log(newEvent)
+    // console.log(req.body,req.session.user);
+    var creator = req.session.user.username
+    var eventName = req.body.eventName
+    var duration = req.body.duration
+    var startDate = req.body.startDate
+    var place = req.body.place
+    var eventType = req.body.eventType
+    var cost = req.body.cost
+    var description = req.body.description
+    var lat = req.body.lat
+    var lng = req.body.lng
+    var newEvent = new Event({
+        creator: creator,
+        eventName: eventName,
+        duration: duration,
+        startDate: startDate,
+        place: place,
+        eventType: eventType,
+        cost: cost,
+        lat: lat,
+        lng: lng,
+        description: description
+    })
+    console.log(newEvent)
 
-  newEvent.save(function (err, event) {
-    if (err) {
-      console.log(err)
-    } else {
-      console.log(event)
-    }
-  })
+    newEvent.save(function (err, event) {
+        if (err) {
+            console.log(err)
+        } else {
+            console.log(event)
+        }
+    })
 }
 
 exports.retrieveAll = function (req, res) {
-  Event.find({}, function (err, events) {
-    if (err) {
-      console.log(err)
-    }
-    if (events.length === 0) {
-      return res.sendStatus(404)
-    }
-    res.json(events)
-  })
+    Event.find({}, function (err, events) {
+        if (err) {
+            console.log(err)
+        }
+        if (events.length === 0) {
+            return res.sendStatus(404)
+        }
+        res.json(events)
+    })
 }
 
 exports.getEventById = function (req, res) {
-  console.log(req.params.id)
-  var id = req.params.id
-  Event.findById(id, function (err, event) {
-    if (err) {
-      console.log('in findbyid function couldnt find the event', err)
-    }
-    res.json(event)
-  })
+    console.log(req.params.id)
+    var id = req.params.id
+    Event.findById(id, function (err, event) {
+        if (err) {
+            console.log("in findbyid function couldnt find the event", err)
+        }
+        res.json(event)
+    })
 }
 
 exports.findEventByType = function (req, res) {
-  var eventType = req.body.eventType
-  Event.find({eventType: eventType}, function (err, events) {
-    if (err) {
+    var eventType = req.body.eventType
+    Event.find({eventType: eventType}, function (err, events) {
+        if (err) {
 	  return res.status(500).json(err.data)
-    }
-    if (!events) {
-      return res.sendStatus(404)
-    }
-    res.json(events)
-  })
+        }
+        if (!events) {
+            return res.sendStatus(404)
+        }
+        res.json(events)
+    })
 }
 
 //
@@ -85,61 +85,61 @@ exports.findEventByType = function (req, res) {
 // }
 
 exports.deleteOne = function (req, res) {
-  var name = req.params.eventName
-  Event.findOneAndRemove({eventName: eventName}, function (err, deleted) {
-    if (err) {
-      console.log(err)
-    }
-    res.send(deleted)
-  })
+    var name = req.params.eventName
+    Event.findOneAndRemove({eventName: eventName}, function (err, deleted) {
+        if (err) {
+            console.log(err)
+        }
+        res.send(deleted)
+    })
 }
 
 exports.updateOne = function (req, res) {
-  var creator = req.body.creator
-  var eventName = req.body.name
-  var duration = req.body.duration
-  var startDate = req.body.startDate
-  var place = req.body.place
-  var eventType = req.body.eventType
-  var cost = req.body.cost
-  var description = req.body.description
+    var creator = req.body.creator
+    var eventName = req.body.name
+    var duration = req.body.duration
+    var startDate = req.body.startDate
+    var place = req.body.place
+    var eventType = req.body.eventType
+    var cost = req.body.cost
+    var description = req.body.description
 
-  var eventObj = {
-    eventName: eventName,
-    duration: duration,
+    var eventObj = {
+        eventName: eventName,
+        duration: duration,
 	    startDate: startDate,
 	    place: place,
 	    eventType: eventType,
 	    cost: cost,
 	    description: description
-  }
-  Event.findOneAndUpdate({eventName: eventName}, eventObj, function (err, data) {
-    if (err) {
-      console.log(err)
     }
-    res.json(data)
-  })
+    Event.findOneAndUpdate({eventName: eventName}, eventObj, function (err, data) {
+        if (err) {
+            console.log(err)
+        }
+        res.json(data)
+    })
 }
 
 exports.updateEventWithComment = function (req, res) {
-  console.log(req.body)
-  var eventName = req.body.eventName
+    console.log(req.body)
+    var eventName = req.body.eventName
 
-  var newComment = {
-    sender: req.session.user.username,
-    text: req.body.commentText,
-    date: new Date().toString()
-  }
-  Event.findOne({eventName: eventName}, function (err, foundEvent) {
-    foundEvent.comments.push(newComment)
+    var newComment = {
+        sender: req.session.user.username,
+        text: req.body.commentText,
+        date: new Date().toString()
+    }
+    Event.findOne({eventName: eventName}, function (err, foundEvent) {
+        foundEvent.comments.push(newComment)
 
-    foundEvent.save(function (err, savedEvent) {
-      if (err) {
-        console.log(err)
-        res.send(err)
-      } else {
-        res.end()
-      }
+        foundEvent.save(function (err, savedEvent) {
+            if (err) {
+                console.log(err)
+                res.send(err)
+            } else {
+                res.end()
+            }
+        })
     })
-  })
 }

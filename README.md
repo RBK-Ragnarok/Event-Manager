@@ -25,7 +25,7 @@ Make sure you installed the following :
 
 - Get a copy of the repo
 ```
-$ git clone https://github.com/Sarakoki/Event-Manager
+$ git clone <Your clone link>
 ```
 - install all dependencies found in 'packkage.json' file
 ```
@@ -42,7 +42,7 @@ $ npm run dev
 ```
 
 ## Delopyment
-You can see a demo of the app in [Heroku](https://guarded-reaches-36133.herokuapp.com/)
+You can see a demo of the app in [Heroku](http://guarded-reaches-36133.herokuapp.com/)
 
 ## Authors
 - [Abduallah AlRamahi](https://github.com/abdallahalramahi) - Product Owner.
