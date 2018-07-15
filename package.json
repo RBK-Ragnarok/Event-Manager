@@ -22,6 +22,7 @@
     "babel-preset-react": "^6.23.0",
     "concurrently": "^3.5.1",
     "enzyme": "^3.3.0",
+    "eslint": "^5.1.0",
     "install": "^0.11.0",
     "jsdom": "11.10.0",
     "jsdom-global": "3.0.2",
