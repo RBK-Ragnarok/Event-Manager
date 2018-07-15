@@ -42,7 +42,7 @@ $ npm run dev
 ```
 
 ## Delopyment
-You can see a demo of the app in [Heroku](https://guarded-reaches-36133.herokuapp.com/)
+You can see a demo of the app in [Heroku](http://guarded-reaches-36133.herokuapp.com/)
 
 ## Authors
 - [Abduallah AlRamahi](https://github.com/abdallahalramahi) - Product Owner.
